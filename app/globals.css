@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080808;
+  --foreground: #e8e0d4;
+  /* warm parchment */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+
+  /* Monochrome scale */
+  --void: #080808;
+  --ash: #111111;
+  --stone: #1c1c1c;
+  --smoke: #2e2e2e;
+  --mist: #888888;
+  --bone: #c8bfb0;
+  --parchment: #e8e0d4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--void);
+  color: var(--parchment);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: rgba(200, 191, 176, 0.25);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--smoke);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mist);
+}
+
+/* ── Text utilities ─────────────────────────────────── */
+.text-balance {
+  text-wrap: balance;
+}
+
+.museum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Mode hooks ─────────────────────────────────────── */
+.mode-aesthetic .technical-only {
+  display: none;
+}
+
+.mode-technical .technical-only {
+  display: block;
+}
+
+.mode-technical .aesthetic-only {
+  opacity: 0.7;
+}
+
+/* ── Transitions ────────────────────────────────────── */
+.page-transition {
+  transition: opacity 0.6s ease;
+}
