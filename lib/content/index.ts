@@ -64,7 +64,7 @@ export const projects: Project[] = [
         technicalArchitecture: "Implemented a framework for systematic model grading using weighted rubrics and adversarial prompt injection to uncover reasoning 'hallucinations'.",
         stack: ["OpenAI API", "Anthropic API", "Python", "Custom Eval Engine"],
         media: {
-            hero: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2670&auto=format&fit=crop",
+            hero: "/projects/handshake-ai.jpg",
         }
     }
 ];
