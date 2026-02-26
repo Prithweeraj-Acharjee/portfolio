@@ -16,7 +16,7 @@ export const projects: Project[] = [
             github: "https://github.com/Prithweeraj-Acharjee",
         },
         media: {
-            hero: "/projects/aesthetic-resistance-hero.jpg",
+            hero: "/projects/aesthetic-resistance.jpg",
         }
     },
     {
