@@ -50,37 +50,36 @@ export default function SeriesDetailPage() {
                 </motion.div>
             </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20">
+            <div className="flex flex-col gap-y-40 mt-32">
                 {artworks.map((art, index) => (
                     <motion.div key={art.id}
-                        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-40px" }} transition={{ delay: index * 0.07 }}
-                        className="group cursor-pointer" onClick={() => setSelectedIdx(index)}>
-                        <div className="aspect-[3/4] relative overflow-hidden border border-white/[0.04] mb-5 transition-all duration-500 group-hover:border-white/[0.1]"
-                            style={{ background: "rgba(255,255,255,0.01)" }}>
-                            <div className="absolute inset-0 p-6 md:p-10">
-                                <div className="relative w-full h-full">
-                                    <Image src={art.media} alt={art.title} fill
-                                        className="object-contain opacity-80 group-hover:opacity-100 transition-all duration-700 grayscale group-hover:grayscale-0"
-                                        sizes="(max-width: 768px) 100vw, 42vw" />
-                                </div>
-                            </div>
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div className="p-3 border border-white/20 bg-void/60 backdrop-blur-sm">
-                                    <Maximize2 size={18} className="text-parchment/60" />
+                        initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-10%" }} transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="group cursor-pointer w-full flex flex-col items-center"
+                        onClick={() => setSelectedIdx(index)}>
+
+                        {/* Massive Image Container */}
+                        <div className="w-full relative overflow-hidden mb-10"
+                            style={{ height: "80vh", maxHeight: "1200px" }}>
+                            <Image src={art.media} alt={art.title} fill
+                                className="object-contain opacity-80 group-hover:opacity-100 transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-[1.02]"
+                                sizes="100vw" />
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <div className="p-4 bg-void/50 backdrop-blur-md text-bone/60 border border-white/10">
+                                    <Maximize2 size={20} strokeWidth={1} />
                                 </div>
                             </div>
                         </div>
-                        <div className="px-1">
-                            <div className="flex items-start justify-between mb-2">
-                                <h3 className="font-sans text-xl tracking-tighter text-gray-300" style={{ fontWeight: 400 }}>{art.title}</h3>
-                                <span className="text-[10px] text-mist/40 font-mono mt-1">{art.year}</span>
+
+                        {/* Minimalist Tiny Typography */}
+                        <div className="flex flex-col items-center text-center max-w-2xl px-4 relative z-10 transition-transform duration-700 group-hover:-translate-y-2">
+                            <h3 className="font-mono text-xs md:text-sm tracking-[0.3em] text-gray-300 uppercase mb-4">{art.title}</h3>
+                            <p className="text-[10px] md:text-[11px] text-mist/50 leading-relaxed uppercase tracking-[0.15em] mb-5 max-w-lg">{art.concept}</p>
+                            <div className="flex items-center gap-4 text-[9px] text-mist/30 font-mono uppercase tracking-[0.2em]">
+                                <span>{art.year}</span>
+                                <span className="w-1 h-1 rounded-full bg-white/10" />
+                                <span>{art.medium}</span>
                             </div>
-                            <div className="w-8 h-[1px] mb-3 group-hover:w-14 transition-all duration-500 bg-bone/30" />
-                            <p className="text-xs text-mist/60 leading-relaxed mb-3">{art.concept}</p>
-                            <span className="inline-block text-[9px] uppercase tracking-widest text-mist/30 px-2.5 py-1 border border-white/[0.06]">
-                                {art.medium}
-                            </span>
                         </div>
                     </motion.div>
                 ))}

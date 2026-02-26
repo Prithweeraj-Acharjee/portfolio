@@ -26,44 +26,39 @@ export default function GalleryPage() {
                 </motion.p>
             </header>
 
-            <div className="space-y-2">
+            <div className="space-y-40 mt-16 pb-20">
                 {series.map((item, index) => (
                     <motion.div key={item.id}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-60px" }}
-                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}>
-                        <Link href={`/gallery/${item.id}`} className="group block">
-                            <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 p-6 md:p-8 border border-white/[0.04] transition-all duration-500 hover:border-white/[0.1] overflow-hidden"
-                                style={{ background: "rgba(255,255,255,0.01)" }}>
+                        viewport={{ once: true, margin: "-10%" }}
+                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}>
+                        <Link href={`/gallery/${item.id}`} className="group block w-full flex flex-col items-center">
 
-                                {/* Hover fill */}
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                                    style={{ background: "rgba(200,191,176,0.03)" }} />
+                            {/* Massive Cover Container */}
+                            <div className="w-full relative overflow-hidden mb-12"
+                                style={{ height: "70vh", maxHeight: "1000px" }}>
+                                <Image src={item.coverImage} alt={item.title} fill
+                                    className="object-cover opacity-60 group-hover:opacity-90 transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-[1.03]"
+                                    sizes="100vw" />
 
-                                {/* Ghost number */}
-                                <span className="absolute right-6 top-6 font-serif leading-none select-none pointer-events-none text-7xl md:text-9xl"
-                                    style={{ color: "rgba(200,191,176,0.06)", fontWeight: 300 }}>
-                                    0{index + 1}
-                                </span>
-
-                                {/* Thumbnail */}
-                                <div className="relative lg:w-64 xl:w-80 aspect-video flex-shrink-0 overflow-hidden bg-stone">
-                                    <Image src={item.coverImage} alt={item.title} fill
-                                        className="object-cover opacity-50 group-hover:opacity-80 group-hover:scale-[1.02] transition-all duration-700 grayscale"
-                                        sizes="(max-width: 1024px) 100vw, 320px" />
+                                {/* Giant Ghost Number Overlay */}
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <span className="font-serif text-[clamp(12rem,25vw,30rem)] text-white/[0.02] group-hover:text-white/[0.04] transition-colors duration-1000 select-none">
+                                        0{index + 1}
+                                    </span>
                                 </div>
+                            </div>
 
-                                {/* Info */}
-                                <div className="flex-1 relative z-10">
-                                    <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl mb-3 tracking-tighter text-gray-300 group-hover:translate-x-1 transition-transform duration-500"
-                                        style={{ fontWeight: 400 }}>
-                                        {item.title}
-                                    </h2>
-                                    <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-mist/40 group-hover:text-bone transition-colors duration-300">
-                                        <span>Explore</span>
-                                        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                                    </div>
+                            {/* Minimalist Info */}
+                            <div className="flex flex-col items-center text-center relative z-10 transition-transform duration-700 group-hover:-translate-y-3">
+                                <h2 className="font-mono text-sm tracking-[0.4em] text-gray-300 uppercase mb-6">
+                                    {item.title}
+                                </h2>
+                                <div className="inline-flex items-center gap-4 text-[9px] uppercase tracking-[0.2em] text-mist/40 group-hover:text-mist/80 transition-colors duration-500">
+                                    <span>Explore Series</span>
+                                    <div className="w-6 h-[1px] bg-white/20 group-hover:w-10 transition-all duration-500" />
+                                    <ArrowRight size={12} className="group-hover:translate-x-2 transition-transform duration-500" />
                                 </div>
                             </div>
                         </Link>
