@@ -35,4 +35,37 @@ Personal portfolio website showcasing computational art, systems research, and e
 <div align="center">
 
 | Category | Technology |
-|---
+|----------|-----------|
+| **Framework** | Next.js 14 |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS |
+| **Animation** | Framer Motion |
+| **Deployment** | Vercel |
+
+</div>
+
+---
+
+## Getting Started
+
+```bash
+git clone https://github.com/Prithweeraj-Acharjee/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view locally.
+
+---
+
+## Author
+
+**Prithweeraj Acharjee Porag**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Prithweeraj--Acharjee-181717?style=flat-square&logo=github)](https://github.com/Prithweeraj-Acharjee)
+[![Portfolio](https://img.shields.io/badge/Portfolio-prithwee.vercel.app-000000?style=flat-square&logo=vercel)](https://prithwee.vercel.app)
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=100&section=footer" width="100%" />
+</div>
