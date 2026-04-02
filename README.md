@@ -28,3 +28,11 @@ Personal portfolio website showcasing computational art, systems research, and e
 - **About** - background and philosophy
 - **Contact** - reach out
 
+---
+
+## Tech Stack
+
+<div align="center">
+
+| Category | Technology |
+|---
