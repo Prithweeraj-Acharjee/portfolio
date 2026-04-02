@@ -1,82 +1,30 @@
-# Prithweeraj Acharjee - Museum-Grade Portfolio
+<div align="center">
 
-A world-class portfolio merging computational art, GPU graphics, ML research, and systems architecture. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=200&section=header&text=Portfolio&fontSize=44&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Prithweeraj%20Acharjee%20%E2%80%A2%20Systems%20%26%20Aesthetics&descSize=16&descAlignY=55" width="100%" />
 
-## 🚀 Getting Started
+[![Live Site](https://img.shields.io/badge/Live-prithwee.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://prithwee.vercel.app)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)]()
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)]()
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)]()
 
-### Prerequisites
-- Node.js 18+ 
-- npm / yarn / pnpm
-
-### Installation
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Open [http://localhost:3000](http://localhost:3000) to see the result.
+</div>
 
 ---
 
-## 🎨 Asset Intake Checklist (Action Required)
+## About
 
-To replace placeholders with your actual work, follow this checklist. Please upload the following assets to the specified paths:
+Personal portfolio website showcasing computational art, systems research, and engineering projects. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
-### 1. Gallery Artworks (`/public/artworks/`)
-For each artwork, upload a high-quality JPEG or WebP. 
-*Recommended: 2000px on the longest side, ~1-2MB.*
-
-- [ ] `/public/artworks/gallery-a/echoes-01.jpg`
-- [ ] `/public/artworks/mixed-media/kinetic-memory.jpg`
-- [ ] *Add more following the folder structure.*
-
-### 2. Project Hero Images (`/public/projects/`)
-High-impact visuals for the Systems page.
-*Recommended: 16:10 Aspect Ratio, 2560x1600px.*
-
-- [ ] `/public/projects/aesthetic-resistance-hero.jpg`
-- [ ] `/public/projects/conservatwin-hero.jpg`
-- [ ] `/public/projects/arabic-mt-hero.jpg`
-- [ ] `/public/projects/bengali-fn-hero.jpg`
-- [ ] `/public/projects/handshake-ai-hero.jpg`
-
-### 3. About & Branding
-- [ ] `/public/about/portrait.jpg` (Editorial style portrait, B&W recommended)
-- [ ] Favicon (Standard 32x32px)
+**Live at:** [prithwee.vercel.app](https://prithwee.vercel.app)
 
 ---
 
-## 📝 Content Management (How to Edit)
+## Sections
 
-All site data is centralized in `lib/content/index.ts`. No code rewrites are required for content updates.
+- **Systems** - engineering projects and digital twins
+- **Gallery** - computational and mixed-media artworks
+- **Research** - published papers and ongoing research
+- **Writing** - essays and reflections
+- **About** - background and philosophy
+- **Contact** - reach out
 
-### Adding a New Project
-1. Open [lib/content/index.ts](file:///d:/New%20folder%20(3)/lib/content/index.ts).
-2. Add a new object to the `projects` array.
-3. Ensure the `id` matches the filename of your hero image in `/public/projects/`.
-
-### Adding a New Series & Artwork
-1. Open [lib/content/index.ts](file:///d:/New%20folder%20(3)/lib/content/index.ts).
-2. Add a new object to the `series` array.
-3. Each series contains an `artworks` array.
-4. Ensure you include `dimensions` and `medium` for each artwork to maintain the museum aesthetic.
-5. Set the `id` for each series/artwork to match your folder/filenames in `/public/artworks/`.
-
----
-
-## 🏛️ Design System Notes
-- **Aesthetic Mode**: Maximizes negative space and typography. Use this for gallery visitors.
-- **Technical Mode**: Reveals `TechnicalBlock` components, architecture diagrams, and stack tags. Use this for engineering peers and recruiters.
-- **Fonts**: Uses *Playfair Display* (Serif) for headings and *Inter* (Sans) for body text to maintain a museum-grade editorial feel.
-
----
-
-## 📦 Deployment on Vercel
-1. Push your code to a GitHub repository.
-2. Connect the repository to Vercel.
-3. Vercel will automatically detect Next.js and deploy.
