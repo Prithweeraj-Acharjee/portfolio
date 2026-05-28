@@ -4,6 +4,7 @@ import "./globals.css";
 import { ModeProvider } from "@/lib/mode-context";
 import Navbar from "@/components/Navbar";
 import GrainBackground from "@/components/GrainBackground";
+import ScribbleBackground from "@/components/ScribbleBackground";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ModeProvider>
           <div className="relative min-h-screen flex flex-col">
             <GrainBackground />
+            <ScribbleBackground />
             <Navbar />
             <main className="flex-grow relative z-10">
               {children}

@@ -15,6 +15,9 @@
   --mist: #888888;
   --bone: #c8bfb0;
   --parchment: #e8e0d4;
+
+  /* Signature crimson — RAR theater + recent paintings */
+  --bloodred: #7f1d1d;
 }
 
 html {

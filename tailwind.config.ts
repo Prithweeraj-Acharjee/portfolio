@@ -30,6 +30,8 @@ const config: Config = {
         "ink-muted": "#888888",
         "ink-faint": "#3a3a3a",
         "accent": "#c8bfb0",
+        // signature crimson — matches RAR theater + recent paintings
+        "bloodred": "#7f1d1d",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "serif"],

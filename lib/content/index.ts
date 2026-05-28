@@ -2,6 +2,48 @@ import { Project, Artwork, Writing, Research, Series } from "@/types/content";
 
 export const projects: Project[] = [
     {
+        id: "haorgrix",
+        title: "HaorGrix",
+        year: "2026",
+        tags: ["Studio", "AI", "Bangladesh", "Founder"],
+        summary: "A 13-person digital studio in Dhaka building AI-native products. Founded as a venture-capable studio that backs the people inside it, not just the projects.",
+        longDescription: "HaorGrix is a Dhaka-based digital studio I founded. We build AI-native products for clients while incubating our own. The team is 13 people as of 2026, working across web, mobile, AI engineering, and design. The bet: a small, senior team in Bangladesh can outbuild a 50-person agency anywhere else, given the right product focus.",
+        conceptualFraming: "Most of the talent that gets sucked into outsourcing in Bangladesh is undervalued and undermentored. HaorGrix is an attempt to build something else — a place where the work is hard, the equity is real, and the products carry our names.",
+        technicalArchitecture: "Stack varies by client. House defaults: Next.js, TypeScript, FastAPI/Postgres, Anthropic/OpenAI APIs, Vercel/Fly.",
+        stack: ["Next.js", "TypeScript", "FastAPI", "Postgres", "Anthropic API", "OpenAI API"],
+        media: {
+            hero: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop",
+        },
+    },
+    {
+        id: "ai-immigration-assistant",
+        title: "AI Immigration Assistant (concept)",
+        year: "2026",
+        tags: ["AI", "F-1 visa", "Bangladesh", "South Asia", "Product"],
+        summary: "An AI assistant for international students navigating U.S. F-1 status, SEVIS, OPT, and transfers. Born from my own immigration crisis in May 2026.",
+        longDescription: "The plan: an AI immigration assistant that handles the long, paperwork-heavy questions international students currently pay $300/hour lawyers to answer — F-1 transfer windows, SEVIS timelines, OPT eligibility, school comparisons, document checklists. Bangladesh wedge first (73% F-1 denial rate, no major incumbent), then South Asia, then global.",
+        conceptualFraming: "When my own F-1 status was on a 21-day clock, I built the playbook from scratch in two weeks. I had to. Most students don't have the time, the English, or the energy to do that themselves — and the cost of getting it wrong is the country.",
+        technicalArchitecture: "RAG over a curated DSO-grade knowledge base (USCIS rules, SEVP school list, school-specific OISSS practice). Conversational UI in Bengali + English. Document checklist generator. Anonymized real cases as training corpus, with consent.",
+        stack: ["Next.js", "TypeScript", "Postgres + pgvector", "Anthropic Claude", "Whisper for voice intake"],
+        media: {
+            hero: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2671&auto=format&fit=crop",
+        },
+    },
+    {
+        id: "robotheater",
+        title: "Robotheater",
+        year: "2025",
+        tags: ["Embodied AI", "Installation", "Live Performance"],
+        summary: "Interactive installation: embodied AI agents performing live within a theatrical structure. Pitch + demo reel.",
+        longDescription: "A collaboration where AI agents act in a staged scene, audio-reactive, projection-mapped, scripted-but-generative. The deliverable is a working prototype and a demo reel; the collaborator is pitching the full production.",
+        conceptualFraming: "Most generative-AI 'performances' are screens with a screen on them. Robotheater puts the agents in physical space and asks what acting looks like when the actor is a model.",
+        technicalArchitecture: "Real-time agent behavior loop driving servo + projection. Audio analyzer feeds the agent state. Stage built around a single fixed camera POV.",
+        stack: ["Python", "Pygame for prototype", "OSC", "Resolume for projection"],
+        media: {
+            hero: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2670&auto=format&fit=crop",
+        },
+    },
+    {
         id: "aesthetic-resistance",
         title: "Aesthetic Resistance",
         year: "2024",
@@ -70,6 +112,32 @@ export const projects: Project[] = [
 ];
 
 export const series: Series[] = [
+    {
+        id: "central-face",
+        title: "Central Face",
+        statement: `A working body of paintings, May 2026 to ongoing.
+
+The face sits in the middle of the canvas and the rest of the canvas is allowed to riot around it. I had been making collage and photograph-based work for a year and never knew when a piece was finished. Once a face is on a surface, every other mark has to negotiate with it — the drips choose to go around the eye or through it, the colors push the head forward or let it sink. There is somebody to argue with.
+
+Scribbling is the opposite of drawing. A scribble is what the hand does when it stops asking for permission. Charcoal on top of tempera on top of acrylic on top of spray, scratched into with a key — none of these marks are decisions exactly. They are speeds.
+
+Many of the recent pieces have something falling — cloth, hair, paint itself — partly covering the face. I grew up in a country where women in my family kept their hair and their skin and their bodies under cloth most of the time. That is part of where the drape comes from. The other part is the realization that being covered and being free are not opposites. Sometimes the drape is what lets the face stay alive.
+
+These works are 4 × 6 ft and bigger. They live at the size of a person.
+
+— Prithwee A, 2026`,
+        coverImage: "/artworks/central-face/central-01.jpg",
+        artworks: [
+            { id: "cf-01", title: "Things finally seems to settle up", year: "2026", concept: "Two figure-masses against pale teal stripes. Drips anchor the lower figure to the ground. A study in the temporary nature of settled feeling.", medium: "Acrylic, tempera, spray, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-01.jpg" },
+            { id: "cf-02", title: "Capital", year: "2026", concept: "Face as compressed authority. The head looks back without expression.", medium: "Acrylic, tempera, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-02.jpg" },
+            { id: "cf-03", title: "yeah I speak", year: "2026", concept: "Mouth-region scratched in charcoal, the rest of the head smothered. Voice as residue.", medium: "Acrylic, tempera, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-03.jpg" },
+            { id: "cf-04", title: "Self view", year: "2026", concept: "The painter looking at the painter. Painter as mirror, mirror as object.", medium: "Acrylic, tempera, spray, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-04.jpg" },
+            { id: "cf-05", title: "Masked", year: "2026", concept: "A head fully covered by drape. What is being protected and what is being prevented from looking.", medium: "Acrylic, tempera, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-05.jpg" },
+            { id: "cf-06", title: "Torn", year: "2026", concept: "Paint pulled vertically through a face. Tear as gesture, not event.", medium: "Acrylic, tempera, spray, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-06.jpg" },
+            { id: "cf-07", title: "Inner face", year: "2026", concept: "A second face hiding beneath a first. The one underneath does not get to come out.", medium: "Acrylic, tempera, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-07.jpg" },
+            { id: "cf-08", title: "Freedom Under (study)", year: "2026", concept: "A central-face study within the older Freedom Under inquiry. Bridge piece.", medium: "Acrylic, tempera, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-08.jpg" },
+        ],
+    },
     {
         id: "freedom-under",
         title: "Freedom Under",
@@ -487,19 +555,54 @@ export const writings: Writing[] = [];
 
 export const research: Research[] = [
     {
+        id: "rar",
+        title: "We Are Trapped in RAR (under review)",
+        year: "2026",
+        institution: "AIES — Anonymized while under review",
+        abstract: "A held-out falsification study of representational bias in widely used text-to-image diffusion models, showing strong statistical convergence toward a narrow occupational aesthetic across thousands of generations.",
+        technicalDetails: "Pearson r = 0.873 between LAION-Aesthetics V2 score and the model's outputs; 200,000-trial Monte Carlo (p < 1e-5). FairFace classification across an occupational prompt set. The paper title is omitted while the manuscript is under double-blind review.",
+    },
+    {
+        id: "dp-4dgs",
+        title: "DP-4DGS — Differentiable physics for 4D Gaussian Splatting",
+        year: "2026",
+        institution: "Dr. Aniruddha Ray Lab, UToledo",
+        abstract: "Working draft. Coupling 4D Gaussian splat scene reconstruction with a differentiable physics prior to improve dynamic-scene fidelity under sparse observation.",
+        technicalDetails: "First-author preliminary results presented at the Midwest Symposium 2026 (poster). Manuscript in preparation for a graphics/vision venue.",
+    },
+    {
+        id: "bengali-misinfo-qpain",
+        title: "Bengali Misinformation in the LLM Era",
+        year: "2025",
+        institution: "QPAIN 2025",
+        abstract: "Published. An audit of how state-of-the-art LLMs handle Bengali-language misinformation versus their English performance, with implications for low-resource language safety.",
+        technicalDetails: "Built on the earlier Bengali fake news LSTM line. Extends to current-generation LLM evaluation across a curated Bengali rumor corpus. Co-author.",
+    },
+    {
+        id: "robotheater",
+        title: "Robotheater — embodied AI as stage practice",
+        year: "2025",
+        institution: "Collaborative",
+        abstract: "An interactive installation pitch where embodied AI agents perform live, scripted-but-generative, within a theatrical structure. Built with collaborator; deliverable + demo video.",
+        technicalDetails: "Real-time agent behavior loop, audio-reactive movement, projection-mapped stage. The collaborator is pitching the work; my contribution was build and prototype.",
+        links: [
+            { url: "/projects/robotheater-demo.mp4", label: "Demo Reel" },
+        ],
+    },
+    {
+        id: "bengali-fake-news",
+        title: "Bengali Fake News Detection (LSTM ensemble)",
+        year: "2023",
+        institution: "IEEE — Published",
+        abstract: "Multi-layer LSTM ensemble achieves 82.43% accuracy in detecting disinformation within Bengali news cycles.",
+        technicalDetails: "An ensemble of multi-layered LSTMs and GRUs, trained on a curated dataset of over 50,000 verified news items. Weighted prediction merging.",
+    },
+    {
         id: "arabic-mt",
         title: "Context-Aware Arabic MT",
         year: "2023",
         institution: "Research Investigation",
-        abstract: "Advanced Machine Translation system handling regional register control and dialectal variations in Arabic.",
-        technicalDetails: "A research-focused project tackling the complexities of Arabic dialects. The system uses context-aware embeddings and a modified Transformer architecture with dialect-specific attention heads."
+        abstract: "Machine translation system handling regional register control and dialectal variations in Arabic.",
+        technicalDetails: "Context-aware embeddings and a modified Transformer architecture with dialect-specific attention heads.",
     },
-    {
-        id: "bengali-fake-news",
-        title: "Bengali Fake News Detection",
-        year: "2023",
-        institution: "NLP Research",
-        abstract: "Multi-layer LSTM ensemble achieves 82.43% accuracy in detecting disinformation within Bengali news cycles.",
-        technicalDetails: "An ensemble of multi-layered LSTMs and GRUs, trained on a curated dataset of over 50,000 verified news items. Features weighted prediction merging for increased reliability."
-    }
 ];
