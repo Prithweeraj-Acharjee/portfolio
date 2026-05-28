@@ -6,7 +6,6 @@ import { series } from "@/lib/content";
 import Image from "next/image";
 import { useState } from "react";
 import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import GalleryScribbleBackground from "@/components/GalleryScribbleBackground";
 
 export default function SeriesDetailPage() {
     const { id } = useParams();
@@ -26,32 +25,28 @@ export default function SeriesDetailPage() {
     const selectedArt = selectedIdx !== null ? artworks[selectedIdx] : null;
 
     return (
-        <>
-            <GalleryScribbleBackground />
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
             <button onClick={() => router.push('/gallery')}
-                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/40 hover:text-bone transition-colors mb-20 group">
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/40 hover:text-bone transition-colors mb-16 group">
                 <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform" />
                 All Series
             </button>
 
-            <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-32">
+            <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24">
                 <div className="lg:col-span-7">
                     <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                        className="text-[10px] uppercase tracking-[0.5em] text-bloodred/70 mb-6 block">Series</motion.span>
+                        className="text-[11px] uppercase tracking-[0.45em] text-mist/50 mb-4 block">Series</motion.span>
                     <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-sans text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.92] text-parchment"
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="font-sans text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-none text-gray-300"
                         style={{ fontWeight: 400 }}>
                         {currentSeries.title}
                     </motion.h1>
-                    <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.5, duration: 0.9 }}
-                        className="h-px w-16 bg-bloodred/60 mt-10 origin-left" />
                 </div>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.9 }}
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
                     className="lg:col-span-5 flex flex-col justify-end">
-                    <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/30 mb-5">Statement</h2>
-                    <p className="font-serif text-bone/70 text-[0.95rem] leading-[1.85] whitespace-pre-wrap">{currentSeries.statement}</p>
+                    <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/30 mb-4">Statement</h2>
+                    <p className="text-sm leading-relaxed text-mist/60 whitespace-pre-wrap">{currentSeries.statement}</p>
                 </motion.div>
             </header>
 
@@ -139,7 +134,6 @@ export default function SeriesDetailPage() {
                     </motion.div>
                 )}
             </AnimatePresence>
-            </div>
-        </>
+        </div>
     );
 }

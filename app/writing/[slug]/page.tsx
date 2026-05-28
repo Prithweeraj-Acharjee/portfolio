@@ -55,14 +55,14 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
                             <Link
                                 key={t}
                                 href={`/tag/${encodeURIComponent(t)}`}
-                                className="text-[10px] uppercase tracking-widest text-bloodred/70 hover:text-bloodred border border-bloodred/20 hover:border-bloodred/50 px-3 py-1 transition-colors"
+                                className="text-[10px] uppercase tracking-widest text-mist/50 hover:text-bone border border-white/[0.06] hover:border-white/[0.15] px-3 py-1 transition-colors"
                             >
                                 {t}
                             </Link>
                         ))}
                     </div>
                 )}
-                <div className="mt-12 h-px w-16 bg-bloodred/50" />
+                <div className="mt-12 h-px w-16 bg-bone/30" />
             </header>
 
             <Prose>

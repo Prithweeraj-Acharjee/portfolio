@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowDown } from "lucide-react";
 
 const quote = `well, Art is something I always had trouble learning in school, as I could never draw those perfect lines, yet I kept drawing as a wonderless child. Art is something that brought trouble into my home, yet I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit or feel the vision embedded in a piece of mud. Art is something that messes with me, and I keep messing with it too.`;
 
@@ -64,7 +62,7 @@ export default function HomeHero() {
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 1.2, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="h-[1px] w-16 bg-bloodred/60 mb-8 origin-left"
+                        className="h-[1px] w-16 bg-bone/40 mb-8 origin-left"
                     />
 
                     <motion.blockquote
@@ -79,17 +77,6 @@ export default function HomeHero() {
 
                 </div>
             </div>
-
-            {/* Scroll cue */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.4, y: [0, 6, 0] }}
-                transition={{ opacity: { duration: 1, delay: 3.2 }, y: { duration: 2.5, repeat: Infinity, ease: "easeInOut" } }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 pointer-events-none"
-            >
-                <span className="text-[9px] uppercase tracking-[0.4em] text-mist/40">Scroll</span>
-                <ArrowDown size={12} className="text-mist/40" />
-            </motion.div>
 
             <div
                 className="absolute bottom-0 left-0 right-0 h-[55%] md:hidden z-[1] pointer-events-none"
