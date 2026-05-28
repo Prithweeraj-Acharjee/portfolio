@@ -5,7 +5,7 @@ import { series, projects, research } from "@/lib/content";
 const SITE = "https://prithwee.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticRoutes = ["", "/gallery", "/writing", "/research", "/systems", "/about", "/contact", "/now"].map((p) => ({
+    const staticRoutes = ["", "/gallery", "/writing", "/research", "/systems", "/about", "/contact"].map((p) => ({
         url: `${SITE}${p}`,
         lastModified: new Date(),
     }));

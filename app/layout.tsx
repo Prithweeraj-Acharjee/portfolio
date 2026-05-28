@@ -5,6 +5,7 @@ import { ModeProvider } from "@/lib/mode-context";
 import Navbar from "@/components/Navbar";
 import GrainBackground from "@/components/GrainBackground";
 import ScribbleBackground from "@/components/ScribbleBackground";
+import SiteFooter from "@/components/SiteFooter";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -20,8 +21,16 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Prithweeraj Acharjee | Computational Art & Systems Research",
-  description: "Portfolio of Prithweeraj Acharjee — art, systems, and research.",
+  title: "Prithweeraj Acharjee — Painter, Researcher, Builder",
+  description: "Selected paintings, research, and ongoing work by Prithweeraj Acharjee.",
+  metadataBase: new URL("https://prithwee.vercel.app"),
+  openGraph: {
+    title: "Prithweeraj Acharjee",
+    description: "Selected paintings, research, and ongoing work.",
+    url: "https://prithwee.vercel.app",
+    siteName: "Prithweeraj Acharjee",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -38,14 +47,7 @@ export default function RootLayout({
             <main className="flex-grow relative z-10">
               {children}
             </main>
-            <footer className="relative z-10 border-t border-white/[0.04] py-6 px-6 md:px-12 flex items-center justify-between">
-              <span className="text-[10px] text-mist/40 tracking-widest uppercase font-sans">
-                © {new Date().getFullYear()} Prithweeraj Acharjee
-              </span>
-              <span className="text-[10px] text-mist/25 tracking-[0.35em] uppercase font-sans">
-                Systems & Aesthetics
-              </span>
-            </footer>
+            <SiteFooter />
           </div>
         </ModeProvider>
       </body>
