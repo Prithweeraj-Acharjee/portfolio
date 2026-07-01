@@ -196,11 +196,13 @@ export default function HaorGrixPage() {
                     {team.map((m) => (
                         <motion.div key={m.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }} transition={{ duration: 0.5 }} className="group">
-                            <div className="relative aspect-[4/5] overflow-hidden bg-stone/40">
+                            <motion.div initial={{ clipPath: "inset(100% 0 0 0)" }} whileInView={{ clipPath: "inset(0% 0 0 0)" }}
+                                viewport={{ once: true }} transition={{ duration: 0.9, ease }}
+                                className="relative aspect-[4/5] overflow-hidden bg-stone/40">
                                 <Image src={m.img} alt={m.name} fill
-                                    className="object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700"
+                                    className="object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-[1000ms] ease-out"
                                     sizes="(max-width: 768px) 50vw, 25vw" />
-                            </div>
+                            </motion.div>
                             <h3 className="mt-4 text-base text-gray-200 leading-tight" style={{ fontWeight: 400 }}>{m.name}</h3>
                             <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-mist/40">{m.role}</p>
                         </motion.div>

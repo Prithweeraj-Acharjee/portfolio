@@ -92,14 +92,18 @@ export default function SeriesDetailPage() {
                     {artworks.map((art, i) => (
                         <figure key={art.id} className="snap-center shrink-0 flex flex-col items-center"
                             style={{ scrollSnapAlign: "center" }}>
-                            <button onClick={() => setSelectedIdx(i)}
-                                className="group cursor-zoom-in block"
+                            <motion.button onClick={() => setSelectedIdx(i)}
+                                initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
+                                whileInView={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
+                                viewport={{ once: true, margin: "-8%" }}
+                                transition={{ duration: 1.15, ease }}
+                                className="group cursor-zoom-in block overflow-hidden"
                                 style={{ background: "#e9e1d3", padding: "clamp(10px,1.1vw,16px)", boxShadow: "0 44px 90px rgba(0,0,0,0.62)" }}>
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img src={art.media} alt={art.title}
-                                    className="block transition-transform duration-700 group-hover:scale-[1.012]"
+                                    className="block transition-transform duration-[1100ms] ease-out group-hover:scale-[1.04]"
                                     style={{ maxHeight: "64vh", maxWidth: "80vw", width: "auto", height: "auto" }} />
-                            </button>
+                            </motion.button>
                             <figcaption className="mt-7 text-center" style={{ maxWidth: "46ch" }}>
                                 <h3 className="italic text-parchment/90 text-xl md:text-2xl leading-snug"
                                     style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}>
