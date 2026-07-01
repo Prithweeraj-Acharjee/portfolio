@@ -124,7 +124,7 @@ export default function SystemsPage() {
                                     )
                                 ) : (
                                     <Image src={project.media.hero} alt={project.title} fill
-                                        className="object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-700 grayscale group-hover:grayscale-0"
+                                        className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
                                         sizes="(max-width: 1024px) 100vw, 60vw" />
                                 )}
                             </motion.div>

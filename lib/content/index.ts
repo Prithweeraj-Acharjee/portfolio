@@ -15,21 +15,7 @@ export const projects: Project[] = [
             demo: "https://haorgrix.com",
         },
         media: {
-            hero: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop",
-        },
-    },
-    {
-        id: "ai-immigration-assistant",
-        title: "AI Immigration Assistant (concept)",
-        year: "2026",
-        tags: ["AI", "F-1 visa", "Bangladesh", "South Asia", "Product"],
-        summary: "An AI assistant for international students navigating U.S. F-1 status, SEVIS, OPT, and transfers. Born from my own immigration crisis in May 2026.",
-        longDescription: "The plan: an AI immigration assistant that handles the long, paperwork-heavy questions international students currently pay $300/hour lawyers to answer, F-1 transfer windows, SEVIS timelines, OPT eligibility, school comparisons, document checklists. Bangladesh wedge first (73% F-1 denial rate, no major incumbent), then South Asia, then global.",
-        conceptualFraming: "When my own F-1 status was on a 21-day clock, I built the playbook from scratch in two weeks. I had to. Most students don't have the time, the English, or the energy to do that themselves, and the cost of getting it wrong is the country.",
-        technicalArchitecture: "RAG over a curated DSO-grade knowledge base (USCIS rules, SEVP school list, school-specific OISSS practice). Conversational UI in Bengali + English. Document checklist generator. Anonymized real cases as training corpus, with consent.",
-        stack: ["Next.js", "TypeScript", "Postgres + pgvector", "Anthropic Claude", "Whisper for voice intake"],
-        media: {
-            hero: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2671&auto=format&fit=crop",
+            hero: "/projects/haorgrix.png",
         },
     },
     {
@@ -97,7 +83,7 @@ export const projects: Project[] = [
             demo: "https://a-river-of-gaze.vercel.app",
         },
         media: {
-            hero: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2670&auto=format&fit=crop",
+            hero: "/projects/river-of-gaze.png",
         },
     },
     {
@@ -114,7 +100,7 @@ export const projects: Project[] = [
             demo: "https://the-frustrated-sun.vercel.app",
         },
         media: {
-            hero: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2670&auto=format&fit=crop",
+            hero: "/projects/frustrated-sun.png",
         },
     },
     {
@@ -152,37 +138,6 @@ export const projects: Project[] = [
             hero: "/projects/conservatwin-hero.png",
         }
     },
-    {
-        id: "studio-ecosystem",
-        title: "Studio Ecosystem",
-        year: "2023",
-        tags: ["Python", "Pygame", "Generative Art", "AI", "Installation", "Prototype"],
-        summary: "A cinematic Pygame prototype pitching a large-scale physical installation, virtual AI robot artists live in a 3D perspective room, generating real-time generative art on walls and floor as they move.",
-        longDescription: "Studio Ecosystem is a concept prototype for a physical AI art installation where real robots paint on LED walls and floors. Three robot personas, Pop Printer, Neo Oracle, Cubist Engineer, each have unique movement logic and a distinct visual language. The show runs on an automated lifecycle: sparse beginnings build toward a unified Final Mural.",
-        conceptualFraming: "Every serious system starts somewhere embarrassing. This is that somewhere, and it's also the pitch for something much bigger.",
-        technicalArchitecture: "Single-file Python simulation using Pygame. Perspective room rendering, per-entity movement logic, interactive show lifecycle (Calm/Chaos/Finalize), mouse-directed robot control, and a timed act structure.",
-        stack: ["Python", "Pygame"],
-        links: {
-            github: "https://github.com/Prithweeraj-Acharjee/noob-prototype",
-        },
-        media: {
-            hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop",
-        }
-    },
-    {
-        id: "handshake-ai",
-        title: "Handshake AI Fellowship",
-        year: "2024",
-        tags: ["LLM Eval", "AI Safety", "Adversarial Testing"],
-        summary: "Research on LLM evaluation frameworks, focusing on gold solutions, rubrics, and systematic failure modes.",
-        longDescription: "During the Handshake AI Fellowship, I developed rigorous evaluation frameworks for Large Language Models to identify edge-case failures in reasoning.",
-        conceptualFraming: "As AI systems grow more capable, the methods we use to verify their safety and accuracy must grow in complexity and nuance.",
-        technicalArchitecture: "Implemented a framework for systematic model grading using weighted rubrics and adversarial prompt injection to uncover reasoning 'hallucinations'.",
-        stack: ["OpenAI API", "Anthropic API", "Python", "Custom Eval Engine"],
-        media: {
-            hero: "/projects/handshake-ai.jpg",
-        }
-    }
 ];
 
 export const series: Series[] = [

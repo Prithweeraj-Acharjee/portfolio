@@ -33,7 +33,7 @@ export default function HomeRecentWork() {
                             alt={art.title}
                             fill
                             sizes="(max-width: 768px) 50vw, 33vw"
-                            className="object-cover transition-all duration-[1200ms] ease-out grayscale-[25%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
+                            className="object-cover transition-all duration-[1200ms] ease-out opacity-95 group-hover:opacity-100 group-hover:scale-[1.03]"
                         />
                     </Link>
                 ))}
