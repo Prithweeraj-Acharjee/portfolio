@@ -71,7 +71,7 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
 
             <footer className="mt-24 pt-12 border-t border-white/[0.05]">
                 <p className="text-mist/50 font-serif italic text-sm">
-                  , Prithweeraj
+                  Prithweeraj
                 </p>
             </footer>
         </div>
