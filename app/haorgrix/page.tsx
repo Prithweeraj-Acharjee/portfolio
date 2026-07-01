@@ -6,38 +6,64 @@ import { ArrowUpRight } from "lucide-react";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
-const capabilities = [
-    { k: "01", t: "Custom Software & SaaS", d: "Product-grade web and platform builds, from zero to launch." },
-    { k: "02", t: "AI / MLOps", d: "Applied AI, agents, retrieval, evaluation, and the pipelines that keep them honest." },
-    { k: "03", t: "Cloud Architecture", d: "Systems designed to scale without becoming a liability." },
-    { k: "04", t: "Data Engineering", d: "Pipelines and data products that turn raw signal into something usable." },
-    { k: "05", t: "UI / UX Design", d: "Interfaces with taste, built to be used, not just demoed." },
-    { k: "06", t: "Mobile", d: "Native-feeling apps for the device your users actually hold." },
-    { k: "07", t: "Security", d: "Built in from the first commit, not bolted on at the end." },
+const services = [
+    "Custom Software & SaaS", "AI & Business Automation", "Cloud & Reliability",
+    "Data & Market Intelligence", "Design That Converts", "Mobile Apps",
+    "Security & Compliance", "Growth & Digital Marketing", "DevOps & Operations",
+    "MLOps & AI Deployment",
 ];
 
-const products = [
+const featured = [
     {
-        name: "Reiva",
-        line: "The receptionist that never sleeps.",
+        name: "Reiva", line: "The receptionist that never sleeps.",
         desc: "An AI receptionist for clinics. Reiva answers patients, books appointments with live serial queues, generates digital prescriptions, tracks payments, and reports to a real-time dashboard, in Bangla and English, around the clock.",
-        image: "/projects/reiva.png",
-        href: "https://reiva.haorgrix.com",
+        image: "/projects/reiva.png", href: "https://reiva.haorgrix.com",
     },
     {
-        name: "Irris",
-        line: "Your phone, on autopilot.",
+        name: "Irris", line: "Your phone, on autopilot.",
         desc: "A mobile AI agent. Tell it a goal in plain language and Irris plans the steps and carries them out across your apps and your device. Agentic, not just chat.",
-        image: "/projects/irris.png",
-        href: "https://irris.vercel.app",
+        image: "/projects/irris.png", href: "https://irris.vercel.app",
     },
 ];
 
-const models = [
-    { t: "Fixed-scope delivery", d: "A defined build, shipped to spec." },
-    { t: "Dedicated retained teams", d: "A senior team that works as yours." },
-    { t: "API-licensed products", d: "Our data products, in your stack." },
+const lab = [
+    { name: "Warranty Tracker", type: "Mobile App", desc: "Photograph receipts, archive warranties, and search them the moment you need them.", img: "/haorgrix/lab/warranty.png" },
+    { name: "ProVocab, English to Bangla", type: "Mobile App", desc: "A vocabulary builder with spaced repetition, made for Bengali speakers.", img: "/haorgrix/lab/provocab.jpg" },
+    { name: "Grammar Gladiator", type: "Mobile App", desc: "Gamified English grammar and punctuation training.", img: "/haorgrix/lab/grammar.png" },
 ];
+
+const team = [
+    { name: "Prithweeraj A. Porag", role: "Chief Executive Officer", img: "/haorgrix/team/prithweeraj-porag.jpg" },
+    { name: "Pradipta Roy Sarkar", role: "CFO & Legal Affairs", img: "/haorgrix/team/pradipta-roy-sarkar.jpg" },
+    { name: "Sampanna Mahapatra", role: "Chief Operating Officer", img: "/haorgrix/team/sampanna-mahapatra.jpg" },
+    { name: "Afroza Nowshin", role: "Product Manager", img: "/haorgrix/team/afroza-nowshin.jpg" },
+    { name: "Dibbando Paul", role: "Head of Growth", img: "/haorgrix/team/dibbando-paul.jpg" },
+    { name: "Nirupama Das", role: "People & Operations Manager", img: "/haorgrix/team/nirupama-das.jpg" },
+    { name: "Antardip Himel", role: "Senior Software Engineer", img: "/haorgrix/team/antardip-himel.jpg" },
+    { name: "Tanvir Alam Turjoy", role: "Sr. Content & Social Media", img: "/haorgrix/team/tanvir-alam-turjoy.jpg" },
+    { name: "S N M Rayhan", role: "Software Engineer", img: "/haorgrix/team/snm-rayhan.jpg" },
+    { name: "Sudipa Biswas", role: "Machine Learning Engineer", img: "/haorgrix/team/sudipa-biswas.jpg" },
+    { name: "Soumita Paul Shyama", role: "Full Stack Developer", img: "/haorgrix/team/soumita-paul-shama.jpg" },
+    { name: "Soumen Das", role: "Digital Marketing Manager", img: "/haorgrix/team/soumen-das.jpg" },
+    { name: "MD Faysal Ahmad", role: "Content & Social Media Exec", img: "/haorgrix/team/md-faysal-ahmad.jpg" },
+];
+
+const clients = [
+    { quote: "HaorGrix built our entire brand from the ground up and delivered precisely.", person: "Mustaque Ahmed", role: "Managing Director", company: "Lexfin Consulting", photo: "/haorgrix/clients/mustaque-ahmed.jpg", preview: "/haorgrix/clients/lexfin-preview.png" },
+    { quote: "Our lead generation increased 3x within the first two months.", person: "Mustafizur Rahman Fahim", role: "CEO", company: "FizzBrush", photo: "/haorgrix/clients/mustafizur.jpg", preview: "/haorgrix/clients/fizzbrush-logo.png" },
+    { quote: "HaorGrix handles literally everything for us and tripled our engagement.", person: "Aminul Haque Saurav", role: "Founder", company: "Filoix", photo: "/haorgrix/clients/aminul.jpg", preview: "/haorgrix/clients/filoix-logo.png" },
+];
+
+function HaorGrixLink({ label = "Visit haorgrix.com", href = "https://haorgrix.com", solid = false }: { label?: string; href?: string; solid?: boolean }) {
+    return (
+        <a href={href} target="_blank" rel="noopener"
+            className={`group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] px-6 py-3.5 transition-colors ${solid ? "text-void bg-parchment hover:bg-bone" : "text-parchment border border-white/[0.1] hover:border-white/30"}`}
+            style={solid ? {} : { background: "rgba(255,255,255,0.01)" }}>
+            {label}
+            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </a>
+    );
+}
 
 export default function HaorGrixPage() {
     return (
@@ -63,21 +89,16 @@ export default function HaorGrixPage() {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
                     className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
                     <p className="lg:col-span-7 text-mist/60 leading-relaxed max-w-2xl">
-                        A 13-person digital studio building AI-native products for clients while incubating our own.
-                        We work across web, mobile, AI engineering, and design. The bet is simple: a small, senior
-                        team can outbuild a much larger agency, given the right product focus.
+                        An AI-native digital studio that handles software, AI and ML, data, design, and growth under
+                        one contract. One team, full accountability, instead of managing a stack of vendors. Based in
+                        Dhaka, working with clients across ten and more countries.
                     </p>
                     <div className="lg:col-span-5 flex lg:justify-end">
-                        <a href="https://haorgrix.com" target="_blank" rel="noopener"
-                            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-parchment border border-white/[0.1] hover:border-white/30 px-6 py-3.5 transition-colors"
-                            style={{ background: "rgba(255,255,255,0.01)" }}>
-                            Visit haorgrix.com
-                            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </a>
+                        <HaorGrixLink />
                     </div>
                 </motion.div>
                 <p className="mt-10 text-[11px] uppercase tracking-[0.25em] text-mist/35">
-                    Co-founded by Prithweeraj Acharjee
+                    Co-founded by Prithweeraj Acharjee, Chief Executive Officer
                 </p>
             </header>
 
@@ -92,8 +113,9 @@ export default function HaorGrixPage() {
                         is real, and the products carry our names.
                     </p>
                     <p>
-                        We are engineers and designers who like shipping. We take a small number of things and build
-                        them properly, with AI where it earns its place and craft everywhere.
+                        We are a small, senior team of engineers, designers, and operators who like shipping. We take
+                        a limited number of things and build them properly, with AI where it earns its place and
+                        craft everywhere.
                     </p>
                 </div>
             </section>
@@ -102,26 +124,23 @@ export default function HaorGrixPage() {
             <section className="mb-28 md:mb-40">
                 <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/40 mb-10">Capabilities</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/[0.06]">
-                    {capabilities.map((c) => (
-                        <motion.div key={c.k} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }} transition={{ duration: 0.6 }}
-                            className="border-b border-r border-white/[0.06] p-7 md:p-9 group hover:bg-white/[0.015] transition-colors">
-                            <span className="text-[10px] font-mono tracking-widest text-bone/40">{c.k}</span>
-                            <h3 className="mt-4 text-xl text-gray-200" style={{ fontWeight: 400 }}>{c.t}</h3>
-                            <p className="mt-3 text-sm text-mist/50 leading-relaxed">{c.d}</p>
-                        </motion.div>
+                    {services.map((s, i) => (
+                        <div key={s} className="border-b border-r border-white/[0.06] p-6 md:p-8 flex items-center gap-4 hover:bg-white/[0.015] transition-colors">
+                            <span className="text-[10px] font-mono tracking-widest text-bone/40">{String(i + 1).padStart(2, "0")}</span>
+                            <h3 className="text-lg text-gray-200" style={{ fontWeight: 400 }}>{s}</h3>
+                        </div>
                     ))}
                 </div>
             </section>
 
-            {/* Products */}
-            <section className="mb-28 md:mb-40">
+            {/* Featured products */}
+            <section className="mb-24 md:mb-36">
                 <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/40 mb-12">Products</h2>
                 <div className="space-y-24">
-                    {products.map((p, i) => (
+                    {featured.map((p, i) => (
                         <motion.div key={p.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.8, ease }}
-                            className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center ${i % 2 === 1 ? "" : ""}`}>
+                            className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                             <div className={`lg:col-span-7 ${i % 2 === 1 ? "lg:order-2" : ""}`}>
                                 <a href={p.href} target="_blank" rel="noopener"
                                     className="block relative aspect-[16/10] overflow-hidden border border-white/[0.05] group"
@@ -146,14 +165,66 @@ export default function HaorGrixPage() {
                 </div>
             </section>
 
-            {/* How we work */}
-            <section className="mb-24">
-                <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/40 mb-10">How we work</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.05]">
-                    {models.map((m) => (
-                        <div key={m.t} className="bg-void p-8">
-                            <h3 className="text-lg text-gray-200" style={{ fontWeight: 400 }}>{m.t}</h3>
-                            <p className="mt-2 text-sm text-mist/50 leading-relaxed">{m.d}</p>
+            {/* The Lab */}
+            <section className="mb-28 md:mb-40">
+                <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/40 mb-10">The Lab</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {lab.map((a) => (
+                        <motion.div key={a.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }} transition={{ duration: 0.6 }} className="group">
+                            <div className="relative aspect-[4/3] overflow-hidden border border-white/[0.05] bg-stone/30 flex items-center justify-center">
+                                <Image src={a.img} alt={a.name} fill
+                                    className="object-contain p-3 opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                                    sizes="(max-width: 768px) 100vw, 33vw" />
+                            </div>
+                            <span className="mt-5 block text-[10px] uppercase tracking-widest text-bone/40">{a.type}</span>
+                            <h3 className="mt-2 text-xl text-gray-200" style={{ fontWeight: 400 }}>{a.name}</h3>
+                            <p className="mt-2 text-sm text-mist/50 leading-relaxed">{a.desc}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Team */}
+            <section className="mb-28 md:mb-40">
+                <div className="flex items-baseline justify-between mb-12">
+                    <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/40">The Team</h2>
+                    <span className="text-[10px] font-mono tracking-widest text-mist/30">{team.length} people</span>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
+                    {team.map((m) => (
+                        <motion.div key={m.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }} transition={{ duration: 0.5 }} className="group">
+                            <div className="relative aspect-[4/5] overflow-hidden bg-stone/40">
+                                <Image src={m.img} alt={m.name} fill
+                                    className="object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700"
+                                    sizes="(max-width: 768px) 50vw, 25vw" />
+                            </div>
+                            <h3 className="mt-4 text-base text-gray-200 leading-tight" style={{ fontWeight: 400 }}>{m.name}</h3>
+                            <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-mist/40">{m.role}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Clients */}
+            <section className="mb-28 md:mb-36">
+                <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/40 mb-10">Selected Clients</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {clients.map((c) => (
+                        <div key={c.company} className="border border-white/[0.06] p-8 flex flex-col">
+                            <p className="italic text-lg text-bone/75 leading-relaxed flex-1" style={{ fontFamily: "var(--font-serif)" }}>
+                                &ldquo;{c.quote}&rdquo;
+                            </p>
+                            <div className="mt-8 flex items-center gap-4">
+                                <div className="relative w-11 h-11 rounded-full overflow-hidden bg-stone/50 flex-shrink-0">
+                                    <Image src={c.photo} alt={c.person} fill className="object-cover" sizes="44px" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-gray-200">{c.person}</p>
+                                    <p className="text-[10px] uppercase tracking-widest text-mist/40">{c.role}, {c.company}</p>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -165,11 +236,13 @@ export default function HaorGrixPage() {
                     style={{ fontFamily: "var(--font-serif)" }}>
                     If you are building something that deserves to be built well, let us talk.
                 </p>
-                <a href="https://haorgrix.com" target="_blank" rel="noopener"
-                    className="group mt-12 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-parchment border border-white/[0.12] hover:border-white/30 px-8 py-4 transition-colors">
-                    Build with HaorGrix
-                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
+                <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <HaorGrixLink label="Build with HaorGrix" solid />
+                    <a href="mailto:hello@haorgrix.com" className="text-[11px] uppercase tracking-[0.25em] text-mist/50 hover:text-parchment transition-colors">
+                        hello@haorgrix.com
+                    </a>
+                </div>
+                <p className="mt-10 text-[10px] uppercase tracking-[0.3em] text-mist/30">Dhaka, Bangladesh, working across 10 and more countries</p>
             </section>
         </div>
     );
