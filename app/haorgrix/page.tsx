@@ -34,6 +34,7 @@ const lab = [
 
 const team = [
     { name: "Prithweeraj A. Porag", role: "Chief Executive Officer", img: "/haorgrix/team/prithweeraj-porag.jpg" },
+    { name: "Md. Musfiqur Rahman", role: "Chief Technology Officer", img: "/haorgrix/team/musfiqur-rahman.jpg" },
     { name: "Pradipta Roy Sarkar", role: "CFO & Legal Affairs", img: "/haorgrix/team/pradipta-roy-sarkar.jpg" },
     { name: "Sampanna Mahapatra", role: "Chief Operating Officer", img: "/haorgrix/team/sampanna-mahapatra.jpg" },
     { name: "Afroza Nowshin", role: "Product Manager", img: "/haorgrix/team/afroza-nowshin.jpg" },

@@ -38,7 +38,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${cormorant.variable}`}>
-      <body className="bg-void text-parchment antialiased">
+      <body className="bg-void text-parchment antialiased overflow-x-hidden">
         <ModeProvider>
           <div className="relative min-h-screen flex flex-col">
             <GrainBackground />
