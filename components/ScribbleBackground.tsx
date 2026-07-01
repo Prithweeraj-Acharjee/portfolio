@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Global background — pale teal/green abstract scribbles.
+ * Global background, pale teal/green abstract scribbles.
  * Echoes the painted marks in the studio work. Very low opacity, slow drift.
  * Single canvas layer across the whole site (no per-route backgrounds).
  */

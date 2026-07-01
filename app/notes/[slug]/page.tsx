@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const post = getPostBySlug(slug, "note");
     if (!post) return {};
     return {
-        title: `${post.title} — Prithweeraj Acharjee`,
+        title: `${post.title}, Prithweeraj Acharjee`,
         description: post.summary,
     };
 }
@@ -35,7 +35,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
 
             <header className="mb-12">
                 <span className="text-[10px] uppercase tracking-widest text-bloodred/70 font-mono block mb-4">
-                    Note · {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                    Note / {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
                 </span>
                 <h1
                     className="font-sans text-3xl md:text-4xl tracking-tighter leading-tight text-parchment"

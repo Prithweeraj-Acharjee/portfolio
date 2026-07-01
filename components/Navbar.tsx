@@ -36,12 +36,12 @@ export default function Navbar() {
         )}>
             <div className="max-w-7xl mx-auto px-6 md:px-12 h-12 flex items-center justify-between">
 
-                {/* No logo — just blank left space on home, or a tiny dot/initial */}
+                {/* No logo, just blank left space on home, or a tiny dot/initial */}
                 <Link href="/" className="text-[11px] uppercase tracking-[0.35em] text-mist/40 hover:text-mist transition-colors duration-300 font-sans">
                     {pathname === '/' ? '' : 'Prithwee'}
                 </Link>
 
-                {/* Desktop nav — tiny, quiet */}
+                {/* Desktop nav, tiny, quiet */}
                 <div className="hidden md:flex items-center gap-6">
                     {navItems.map((item) => (
                         <Link

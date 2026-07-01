@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const post = getPostBySlug(slug, "essay");
     if (!post) return {};
     return {
-        title: `${post.title} — Prithweeraj Acharjee`,
+        title: `${post.title}, Prithweeraj Acharjee`,
         description: post.summary,
     };
 }
@@ -37,7 +37,7 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
             <header className="mb-16">
                 <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-mist/40 font-mono mb-6">
                     <span>{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
-                    <span>·</span>
+                    <span> / </span>
                     <span>{post.readingMinutes} min read</span>
                 </div>
                 <h1
@@ -71,7 +71,7 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
 
             <footer className="mt-24 pt-12 border-t border-white/[0.05]">
                 <p className="text-mist/50 font-serif italic text-sm">
-                    — Prithweeraj
+                  , Prithweeraj
                 </p>
             </footer>
         </div>

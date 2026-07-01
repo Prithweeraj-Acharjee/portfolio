@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { getEssays, getNotes } from "@/lib/writing";
 
 export const metadata = {
-    title: "Writing — Prithweeraj Acharjee",
+    title: "Writing, Prithweeraj Acharjee",
     description: "Essays and notes from a painter, researcher, and builder.",
 };
 

@@ -5,12 +5,15 @@ export const projects: Project[] = [
         id: "haorgrix",
         title: "HaorGrix",
         year: "2026",
-        tags: ["Studio", "AI", "Bangladesh", "Founder"],
-        summary: "A 13-person digital studio in Dhaka building AI-native products. Founded as a venture-capable studio that backs the people inside it, not just the projects.",
-        longDescription: "HaorGrix is a Dhaka-based digital studio I founded. We build AI-native products for clients while incubating our own. The team is 13 people as of 2026, working across web, mobile, AI engineering, and design. The bet: a small, senior team in Bangladesh can outbuild a 50-person agency anywhere else, given the right product focus.",
-        conceptualFraming: "Most of the talent that gets sucked into outsourcing in Bangladesh is undervalued and undermentored. HaorGrix is an attempt to build something else — a place where the work is hard, the equity is real, and the products carry our names.",
-        technicalArchitecture: "Stack varies by client. House defaults: Next.js, TypeScript, FastAPI/Postgres, Anthropic/OpenAI APIs, Vercel/Fly.",
+        tags: ["Studio", "AI", "Bangladesh", "Co-Founder"],
+        summary: "A 13-person digital studio building AI-native products. Co-founded as a venture-capable studio that backs the people inside it, not just the projects.",
+        longDescription: "HaorGrix is a digital studio I co-founded. We build AI-native products for clients while incubating our own. The team is 13 people as of 2026, working across web, mobile, AI engineering, and design. The bet is simple: a small, senior team can outbuild a much larger agency, given the right product focus.",
+        conceptualFraming: "Most of the talent that gets pulled into outsourcing is undervalued and undermentored. HaorGrix is an attempt to build something else, a place where the work is hard, the equity is real, and the products carry our names.",
+        technicalArchitecture: "Stack varies by client. House defaults: Next.js, TypeScript, FastAPI and Postgres, Anthropic and OpenAI APIs, Vercel.",
         stack: ["Next.js", "TypeScript", "FastAPI", "Postgres", "Anthropic API", "OpenAI API"],
+        links: {
+            demo: "https://haorgrix.com",
+        },
         media: {
             hero: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop",
         },
@@ -21,8 +24,8 @@ export const projects: Project[] = [
         year: "2026",
         tags: ["AI", "F-1 visa", "Bangladesh", "South Asia", "Product"],
         summary: "An AI assistant for international students navigating U.S. F-1 status, SEVIS, OPT, and transfers. Born from my own immigration crisis in May 2026.",
-        longDescription: "The plan: an AI immigration assistant that handles the long, paperwork-heavy questions international students currently pay $300/hour lawyers to answer — F-1 transfer windows, SEVIS timelines, OPT eligibility, school comparisons, document checklists. Bangladesh wedge first (73% F-1 denial rate, no major incumbent), then South Asia, then global.",
-        conceptualFraming: "When my own F-1 status was on a 21-day clock, I built the playbook from scratch in two weeks. I had to. Most students don't have the time, the English, or the energy to do that themselves — and the cost of getting it wrong is the country.",
+        longDescription: "The plan: an AI immigration assistant that handles the long, paperwork-heavy questions international students currently pay $300/hour lawyers to answer, F-1 transfer windows, SEVIS timelines, OPT eligibility, school comparisons, document checklists. Bangladesh wedge first (73% F-1 denial rate, no major incumbent), then South Asia, then global.",
+        conceptualFraming: "When my own F-1 status was on a 21-day clock, I built the playbook from scratch in two weeks. I had to. Most students don't have the time, the English, or the energy to do that themselves, and the cost of getting it wrong is the country.",
         technicalArchitecture: "RAG over a curated DSO-grade knowledge base (USCIS rules, SEVP school list, school-specific OISSS practice). Conversational UI in Bengali + English. Document checklist generator. Anonymized real cases as training corpus, with consent.",
         stack: ["Next.js", "TypeScript", "Postgres + pgvector", "Anthropic Claude", "Whisper for voice intake"],
         media: {
@@ -31,16 +34,87 @@ export const projects: Project[] = [
     },
     {
         id: "robotheater",
-        title: "Robotheater",
-        year: "2025",
-        tags: ["Embodied AI", "Installation", "Live Performance"],
-        summary: "Interactive installation: embodied AI agents performing live within a theatrical structure. Pitch + demo reel.",
-        longDescription: "A collaboration where AI agents act in a staged scene, audio-reactive, projection-mapped, scripted-but-generative. The deliverable is a working prototype and a demo reel; the collaborator is pitching the full production.",
-        conceptualFraming: "Most generative-AI 'performances' are screens with a screen on them. Robotheater puts the agents in physical space and asks what acting looks like when the actor is a model.",
-        technicalArchitecture: "Real-time agent behavior loop driving servo + projection. Audio analyzer feeds the agent state. Stage built around a single fixed camera POV.",
-        stack: ["Python", "Pygame for prototype", "OSC", "Resolume for projection"],
+        title: "RoboTheater",
+        year: "2026",
+        tags: ["Multimodal AI", "Model Evaluation", "AI Ethics", "Three.js"],
+        summary: "A frontier vision-language model is placed inside a live 3D trolley-problem simulation and given one instruction. It reasoned about the ethics correctly, and failed at seeing.",
+        longDescription: "RoboTheater puts Google Gemini inside a live Three.js trolley-problem simulation. A Python loop captures seven frames a second apart, sends them to the model with a zero-context prompt, and renders the decision back into the scene in real time. The entire prompt is: Watch. Decide. LEFT or RIGHT.",
+        conceptualFraming: "The finding is the point. The model recognized the trolley problem from pixels alone and reasoned about it with consistent utilitarian logic, but it made frequent left and right errors because each figure is only a few pixels wide at the camera distance it sees. It reasoned about the ethics correctly, and failed at seeing.",
+        technicalArchitecture: "A Three.js real-time simulation, a Python capture-and-inference loop against the Gemini API, a structured JSON decision schema (choice, reasoning, confidence), and live rendering of the decision back into the room. A research experience with Azad Salam.",
+        stack: ["Three.js", "Python", "Google Gemini API", "WebGL"],
+        links: {
+            demo: "https://robotheater-site.vercel.app",
+        },
         media: {
-            hero: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2670&auto=format&fit=crop",
+            hero: "/projects/robotheater.png",
+        },
+    },
+    {
+        id: "irris",
+        title: "Irris",
+        year: "2026",
+        tags: ["AI Agent", "Mobile", "Product", "Founder"],
+        summary: "A mobile AI agent. Tell it what you want in plain language and it plans the steps and gets it done, across your apps and your phone.",
+        longDescription: "Irris is a mobile-first AI agent I am building. You give it a goal, such as clean storage, sort these photos, or handle a task inside an app, and Irris plans the steps and carries them out on the device in your hand. It is agentic, not just chat: it does the doing.",
+        conceptualFraming: "Assistants talk. Irris acts. The bet is that the most useful place for an agent is the phone already in your pocket, where your life actually happens, and that it should work on your terms and your device.",
+        technicalArchitecture: "In development. A planner-executor loop over natural-language goals, with app and system actions as tools, designed mobile-first.",
+        stack: ["AI Agents", "Mobile", "TypeScript"],
+        links: {
+            demo: "https://irris.vercel.app",
+        },
+        media: {
+            hero: "/projects/irris.png",
+        },
+    },
+    {
+        id: "reiva",
+        title: "Reiva",
+        year: "2026",
+        tags: ["AI", "SaaS", "Healthcare", "Product"],
+        summary: "An AI receptionist for clinics. It handles patient chat, scheduling, prescriptions, and payments in Bangla and English, around the clock.",
+        longDescription: "Reiva is a shipped AI receptionist for clinics, a HaorGrix product. It answers patients, books appointments with live serial queues, generates digital prescriptions, tracks payments across local methods, sends reminders, and reports to a real-time dashboard, all in Bangla and English.",
+        conceptualFraming: "Small clinics lose hours and patients to a phone nobody can always answer. Reiva is the receptionist that never sleeps, built for the way care actually runs where it operates.",
+        technicalArchitecture: "Conversational AI over a clinic knowledge base, WhatsApp and web booking, digital prescriptions, multi-method payment tracking, and an analytics dashboard.",
+        stack: ["Next.js", "AI Chat", "Postgres", "WhatsApp"],
+        links: {
+            demo: "https://reiva.haorgrix.com",
+        },
+        media: {
+            hero: "/projects/reiva.png",
+        },
+    },
+    {
+        id: "a-river-of-gaze",
+        title: "A River of Gaze",
+        year: "2026",
+        tags: ["Generative Art", "Game", "Interactive", "Web"],
+        summary: "A playable one-verb game. Hold to hide. All of its art and sound are generated in code.",
+        longDescription: "A River of Gaze is a small, free, playable game built entirely in the browser, with every visual and every sound generated in code rather than drawn or recorded. It reduces play to a single verb, hold to hide, and lets meaning gather around that one act.",
+        conceptualFraming: "An extension of my painting question into something you do with your hands. The gaze is the subject again, only here you are inside it.",
+        technicalArchitecture: "A browser game with fully code-generated art and procedural sound. No external assets.",
+        stack: ["JavaScript", "Canvas", "Web Audio"],
+        links: {
+            demo: "https://a-river-of-gaze.vercel.app",
+        },
+        media: {
+            hero: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2670&auto=format&fit=crop",
+        },
+    },
+    {
+        id: "the-frustrated-sun",
+        title: "The Frustrated Sun",
+        year: "2026",
+        tags: ["Generative Art", "Living Painting", "Interactive", "Web"],
+        summary: "A living, generative painting assembled from my body of work. Endless, musical, and interactive.",
+        longDescription: "The Frustrated Sun is a contemporary generative piece built from my paintings and writing. It is endless and musical, changing as you watch and respond to you, a painting that keeps making itself.",
+        conceptualFraming: "If a painting is a recording of a negotiation, this one keeps negotiating. It never finishes, which is the point.",
+        technicalArchitecture: "A generative web system that composes from the corpus of my work, with procedural motion and sound.",
+        stack: ["JavaScript", "Canvas", "Web Audio"],
+        links: {
+            demo: "https://the-frustrated-sun.vercel.app",
+        },
+        media: {
+            hero: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2670&auto=format&fit=crop",
         },
     },
     {
@@ -50,7 +124,7 @@ export const projects: Project[] = [
         tags: ["WebGL", "GLSL", "Generative Art", "Next.js"],
         summary: "Real-time generative system exploring the boundaries of algorithmic beauty and systemic friction.",
         longDescription: "Aesthetic Resistance is a computational study on how generative systems can manifest friction within digital perfection. It uses custom GLSL shaders to simulate organic growth constrained by geometric logic.",
-        conceptualFraming: "In an era of hyper-optimized digital experiences, 'Aesthetic Resistance' serves as a visual counter-point—celebrating the beauty of non-linear processes and entropy.",
+        conceptualFraming: "In an era of hyper-optimized digital experiences, 'Aesthetic Resistance' serves as a visual counter-point, celebrating the beauty of non-linear processes and entropy.",
         technicalArchitecture: "The system is built on a custom Next.js bridge to a WebGL rendering context. Shaders are modularized to allow real-time parameter injection via React state without pipeline stalls.",
         stack: ["TypeScript", "Three.js", "GLSL", "React Frame", "Vercel"],
         links: {
@@ -83,9 +157,9 @@ export const projects: Project[] = [
         title: "Studio Ecosystem",
         year: "2023",
         tags: ["Python", "Pygame", "Generative Art", "AI", "Installation", "Prototype"],
-        summary: "A cinematic Pygame prototype pitching a large-scale physical installation — virtual AI robot artists live in a 3D perspective room, generating real-time generative art on walls and floor as they move.",
-        longDescription: "Studio Ecosystem is a concept prototype for a physical AI art installation where real robots paint on LED walls and floors. Three robot personas — Pop Printer, Neo Oracle, Cubist Engineer — each have unique movement logic and a distinct visual language. The show runs on an automated lifecycle: sparse beginnings build toward a unified Final Mural.",
-        conceptualFraming: "Every serious system starts somewhere embarrassing. This is that somewhere — and it's also the pitch for something much bigger.",
+        summary: "A cinematic Pygame prototype pitching a large-scale physical installation, virtual AI robot artists live in a 3D perspective room, generating real-time generative art on walls and floor as they move.",
+        longDescription: "Studio Ecosystem is a concept prototype for a physical AI art installation where real robots paint on LED walls and floors. Three robot personas, Pop Printer, Neo Oracle, Cubist Engineer, each have unique movement logic and a distinct visual language. The show runs on an automated lifecycle: sparse beginnings build toward a unified Final Mural.",
+        conceptualFraming: "Every serious system starts somewhere embarrassing. This is that somewhere, and it's also the pitch for something much bigger.",
         technicalArchitecture: "Single-file Python simulation using Pygame. Perspective room rendering, per-entity movement logic, interactive show lifecycle (Calm/Chaos/Finalize), mouse-directed robot control, and a timed act structure.",
         stack: ["Python", "Pygame"],
         links: {
@@ -113,19 +187,41 @@ export const projects: Project[] = [
 
 export const series: Series[] = [
     {
+        id: "material-expressions",
+        title: "Material: Expressions",
+        statement: `The most recent body of work, 2026. Paintings made under a specific condition in twenty one days, and the ones that came after. Mixed media on paper and canvas, mostly large, at the size of a person.
+
+This is the work the book Material was written next to. The full catalogue and the book live at material-expressions.vercel.app.
+
+Prithwee, 2026`,
+        coverImage: "/artworks/material-expressions/me-04.jpg",
+        artworks: [
+            { id: "me-01", title: "How Will I Recognize You I", year: "2026", concept: "From the Kemone series, after the Baul song by Shah Abdul Karim. A face searched for in the murk.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-01.jpg" },
+            { id: "me-04", title: "How Will I Recognize You IV", year: "2026", concept: "A pale figure surfacing through dragged gold, a red wound below. The painting performs its own title.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-04.jpg" },
+            { id: "me-02", title: "How Will I Recognize You II", year: "2026", concept: "Kemone series. Gold and grey, dark masses working against the ground.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-02.jpg" },
+            { id: "me-03", title: "How Will I Recognize You III", year: "2026", concept: "Kemone series. A cross-like figure in teal and grey.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-03.jpg" },
+            { id: "me-05", title: "Synthesis Under Suffer", year: "2026", concept: "The synthesis works, everything argued onto one surface under pressure.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-05.jpg" },
+            { id: "me-06", title: "Synthesis Under Suffer IV", year: "2026", concept: "Red and gold horizontal bands, scratched and worked, signed at the corner.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-06.jpg" },
+            { id: "me-07", title: "Synthesis", year: "2026", concept: "An abstract study in the negotiation between materials.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-07.jpg" },
+            { id: "me-08", title: "Padma: The River", year: "2026", concept: "The river carried in memory. My mind cries for the chars of the Padma.", medium: "Mixed media on canvas", dimensions: "Large", media: "/artworks/material-expressions/me-08.jpg" },
+            { id: "me-09", title: "Separated Expressions", year: "2026", concept: "A diptych of separated marks, expression pulled apart.", medium: "Mixed media, diptych", dimensions: "Large", media: "/artworks/material-expressions/me-09.jpg" },
+            { id: "me-10", title: "Self-Portrait", year: "2026", concept: "The painter looking at the painter.", medium: "Oil on canvas", dimensions: "12 x 16 in", media: "/artworks/material-expressions/me-10.jpg" },
+        ],
+    },
+    {
         id: "central-face",
         title: "Central Face",
         statement: `A working body of paintings, May 2026 to ongoing.
 
-The face sits in the middle of the canvas and the rest of the canvas is allowed to riot around it. I had been making collage and photograph-based work for a year and never knew when a piece was finished. Once a face is on a surface, every other mark has to negotiate with it — the drips choose to go around the eye or through it, the colors push the head forward or let it sink. There is somebody to argue with.
+The face sits in the middle of the canvas and the rest of the canvas is allowed to riot around it. I had been making collage and photograph-based work for a year and never knew when a piece was finished. Once a face is on a surface, every other mark has to negotiate with it, the drips choose to go around the eye or through it, the colors push the head forward or let it sink. There is somebody to argue with.
 
-Scribbling is the opposite of drawing. A scribble is what the hand does when it stops asking for permission. Charcoal on top of tempera on top of acrylic on top of spray, scratched into with a key — none of these marks are decisions exactly. They are speeds.
+Scribbling is the opposite of drawing. A scribble is what the hand does when it stops asking for permission. Charcoal on top of tempera on top of acrylic on top of spray, scratched into with a key, none of these marks are decisions exactly. They are speeds.
 
-Many of the recent pieces have something falling — cloth, hair, paint itself — partly covering the face. I grew up in a country where women in my family kept their hair and their skin and their bodies under cloth most of the time. That is part of where the drape comes from. The other part is the realization that being covered and being free are not opposites. Sometimes the drape is what lets the face stay alive.
+Many of the recent pieces have something falling, cloth, hair, paint itself, partly covering the face. I grew up in a country where women in my family kept their hair and their skin and their bodies under cloth most of the time. That is part of where the drape comes from. The other part is the realization that being covered and being free are not opposites. Sometimes the drape is what lets the face stay alive.
 
 These works are 4 × 6 ft and bigger. They live at the size of a person.
 
-— Prithwee A, 2026`,
+Prithwee A, 2026`,
         coverImage: "/artworks/central-face/central-01.jpg",
         artworks: [
             { id: "cf-01", title: "Things finally seems to settle up", year: "2026", concept: "Two figure-masses against pale teal stripes. Drips anchor the lower figure to the ground. A study in the temporary nature of settled feeling.", medium: "Acrylic, tempera, spray, charcoal on canvas", dimensions: "4 × 6 ft", media: "/artworks/central-face/central-01.jpg" },
@@ -141,16 +237,16 @@ These works are 4 × 6 ft and bigger. They live at the size of a person.
     {
         id: "freedom-under",
         title: "Freedom Under",
-        statement: `“Being born a woman is my awful tragedy. From the moment I was conceived I was doomed to sprout breasts and ovaries rather than penis and scrotum; to have my whole circle of action, thought and feeling rigidly circumscribed by my inescapable feminity. Yes, my consuming desire to mingle with road crews, sailors and soldiers, bar room regulars--to be a part of a scene, anonymous, listening, recording--all is spoiled by the fact that I am a girl, a female always in danger of assault and battery. My consuming interest in men and their lives is often misconstrued as a desire to seduce them, or as an invitation to intimacy. Yet, God, I want to talk to everybody I can as deeply as I can. I want to be able to sleep in an open field, to travel west, to walk freely at night...” ― Sylvia Plath, The Unabridged Journals of Sylvia Plath 
+        statement: `“Being born a woman is my awful tragedy. From the moment I was conceived I was doomed to sprout breasts and ovaries rather than penis and scrotum; to have my whole circle of action, thought and feeling rigidly circumscribed by my inescapable feminity. Yes, my consuming desire to mingle with road crews, sailors and soldiers, bar room regulars--to be a part of a scene, anonymous, listening, recording--all is spoiled by the fact that I am a girl, a female always in danger of assault and battery. My consuming interest in men and their lives is often misconstrued as a desire to seduce them, or as an invitation to intimacy. Yet, God, I want to talk to everybody I can as deeply as I can. I want to be able to sleep in an open field, to travel west, to walk freely at night...”, Sylvia Plath, The Unabridged Journals of Sylvia Plath 
 
 The lives of women in my country have always been entangled in a system of observation. As I grew up, beginning with my mother -I witnessed their quiet performances: existing under constant surveillance, maintaining beauty not as expression but as expectation. Under that, the definition of femininity, shaped by dominance, remains here elusive and distorted. 
-Balancing these everyday burdens becomes a ritual, an act of endurance. Some remain untethered, but many—like my mother—carry invisible chains, generations deep. 
+Balancing these everyday burdens becomes a ritual, an act of endurance. Some remain untethered, but many, like my mother, carry invisible chains, generations deep. 
 
 Freedom Under IV: The Veil of Observance reflects that half-conscious state that descends after sunset, when the sky feels both sheltering and suffocating. 
 
-I moved from a tiny populated town of Bangladesh to the United States, hence, so called modern world is not very different. Time passes, time passes—yet the gaze remains. Surveillance evolves, but it never disappears. The eyes only multiply. The so-called progressive spaces fail too, not through words, but through silence. They speak of liberation in public, yet protect abusers within their own walls. When women speak, the cost is often their livelihood, their safety, or their dignity. Ironically remembering watching the President of the United States on television, complimenting the Italian Prime Minister on her beauty during a global summit—a moment that revealed how deep the gaze runs, in the most polished rooms of power. 
+I moved from a tiny populated town of Bangladesh to the United States, hence, so called modern world is not very different. Time passes, time passes, yet the gaze remains. Surveillance evolves, but it never disappears. The eyes only multiply. The so-called progressive spaces fail too, not through words, but through silence. They speak of liberation in public, yet protect abusers within their own walls. When women speak, the cost is often their livelihood, their safety, or their dignity. Ironically remembering watching the President of the United States on television, complimenting the Italian Prime Minister on her beauty during a global summit, a moment that revealed how deep the gaze runs, in the most polished rooms of power. 
 
-Women, and all marginalized identities, become a test that humanity keeps failing— 
+Women, and all marginalized identities, become a test that humanity keeps failing, 
 the theist and the atheist, the left and the right 
 each one claiming progress, yet still bound by the same gaze. 
 
@@ -158,9 +254,9 @@ Freedom Under V explores this broken promise of liberation- how freedom itself f
 
 Freedom Under is where I worked with photographs and paints, memorizing this quiet persistence of control- how the lives of half the population are still shaped under watchful eyes. The gaze has evolved, perhaps grown more subtle, but it has never disappeared. 
 
-Freedom Under explores the tension between visibility and freedom — how being seen all the time can feel both empowering and imprisoning. I was collaging the record of looking and being looked at, a space that asks two questions: Who holds the gaze, and who gets to break it? 
+Freedom Under explores the tension between visibility and freedom, how being seen all the time can feel both empowering and imprisoning. I was collaging the record of looking and being looked at, a space that asks two questions: Who holds the gaze, and who gets to break it? 
 
-— Freedom Under 
+Freedom Under 
 Prithwee A, 2026`,
         coverImage: "/artworks/freedom-under/freedom-01.jpg",
         artworks: [
@@ -551,58 +647,57 @@ Prithwee A, 2026`,
     }
 ];
 
-export const writings: Writing[] = [];
+export const writings: Writing[] = [
+    {
+        id: "material-book",
+        title: "Material: Painting in the Post-AI Era",
+        date: "2026",
+        summary: "A book on what painting is for in a world that can generate images without a body. Written alongside the paintings, published online with a full reader and a catalogue.",
+        content: "Material is my book on painting in the post-AI era. It argues that painting is a material practice, and that the material is the argument, because the material remembers and the algorithm does not. It runs from a prologue in a Toledo studio through chapters on material, the gaze, photography and the algorithm, the face under cloth, the painter as researcher, reduction, and algorithmic refusal, and ends in a set of plates.",
+        links: [
+            { url: "https://material-expressions.vercel.app/book", label: "Read the book" },
+            { url: "https://material-expressions.vercel.app", label: "Material: Expressions, the catalogue" },
+        ],
+    },
+];
 
 export const research: Research[] = [
     {
         id: "rar",
-        title: "We Are Trapped in RAR (under review)",
+        title: "Aesthetics Is Not a Mirror: Recursive Aesthetic Reinforcement (under review)",
         year: "2026",
-        institution: "AIES — Anonymized while under review",
+        institution: "AIES 2026, under review",
         abstract: "A held-out falsification study of representational bias in widely used text-to-image diffusion models, showing strong statistical convergence toward a narrow occupational aesthetic across thousands of generations.",
-        technicalDetails: "Pearson r = 0.873 between LAION-Aesthetics V2 score and the model's outputs; 200,000-trial Monte Carlo (p < 1e-5). FairFace classification across an occupational prompt set. The paper title is omitted while the manuscript is under double-blind review.",
+        technicalDetails: "Pearson r = 0.873 between LAION-Aesthetics V2 score and the model's outputs; a 200,000-trial Monte Carlo joint null test (p < 1e-5); FairFace cross-classifier replication; a pre-registered held-out falsification. First-author poster at the Midwest Graduate Symposium 2026.",
     },
     {
         id: "dp-4dgs",
-        title: "DP-4DGS — Differentiable physics for 4D Gaussian Splatting",
+        title: "DP-4DGS: Dynamic Priors for 4D Gaussian Splatting",
         year: "2026",
         institution: "Dr. Aniruddha Ray Lab, UToledo",
-        abstract: "Working draft. Coupling 4D Gaussian splat scene reconstruction with a differentiable physics prior to improve dynamic-scene fidelity under sparse observation.",
-        technicalDetails: "First-author preliminary results presented at the Midwest Symposium 2026 (poster). Manuscript in preparation for a graphics/vision venue.",
-    },
-    {
-        id: "bengali-misinfo-qpain",
-        title: "Bengali Misinformation in the LLM Era",
-        year: "2025",
-        institution: "QPAIN 2025",
-        abstract: "Published. An audit of how state-of-the-art LLMs handle Bengali-language misinformation versus their English performance, with implications for low-resource language safety.",
-        technicalDetails: "Built on the earlier Bengali fake news LSTM line. Extends to current-generation LLM evaluation across a curated Bengali rumor corpus. Co-author.",
-    },
-    {
-        id: "robotheater",
-        title: "Robotheater — embodied AI as stage practice",
-        year: "2025",
-        institution: "Collaborative",
-        abstract: "An interactive installation pitch where embodied AI agents perform live, scripted-but-generative, within a theatrical structure. Built with collaborator; deliverable + demo video.",
-        technicalDetails: "Real-time agent behavior loop, audio-reactive movement, projection-mapped stage. The collaborator is pitching the work; my contribution was build and prototype.",
-        links: [
-            { url: "/projects/robotheater-demo.mp4", label: "Demo Reel" },
-        ],
+        abstract: "Working draft. Coupling 4D Gaussian splat scene reconstruction with a physics-informed prior to improve dynamic-scene fidelity under sparse observation.",
+        technicalDetails: "First-author preliminary results submitted to the Midwest Graduate Symposium 2026. Manuscript in preparation for a graphics and vision venue.",
     },
     {
         id: "bengali-fake-news",
-        title: "Bengali Fake News Detection (LSTM ensemble)",
-        year: "2023",
-        institution: "IEEE — Published",
-        abstract: "Multi-layer LSTM ensemble achieves 82.43% accuracy in detecting disinformation within Bengali news cycles.",
-        technicalDetails: "An ensemble of multi-layered LSTMs and GRUs, trained on a curated dataset of over 50,000 verified news items. Weighted prediction merging.",
+        title: "Bengali Fake News Detection: A Multi-Layered LSTM Ensemble Approach",
+        year: "2025",
+        institution: "IEEE QPAIN 2025, published",
+        abstract: "A multi-layer LSTM ensemble for detecting misinformation in Bengali-language sources, evaluated at the corpus level.",
+        technicalDetails: "An ensemble of multi-layered LSTMs trained on a curated dataset of verified Bengali news, with weighted prediction merging, reaching 82.43% accuracy.",
+        links: [
+            { url: "https://ieeexplore.ieee.org/document/11171927", label: "IEEE Xplore" },
+        ],
     },
     {
         id: "arabic-mt",
-        title: "Context-Aware Arabic MT",
-        year: "2023",
-        institution: "Research Investigation",
-        abstract: "Machine translation system handling regional register control and dialectal variations in Arabic.",
-        technicalDetails: "Context-aware embeddings and a modified Transformer architecture with dialect-specific attention heads.",
+        title: "Context-Aware Dialectal Arabic Machine Translation with Interactive Region and Register Selection",
+        year: "2026",
+        institution: "arXiv, second author",
+        abstract: "A context-aware, steerable framework for dialectal Arabic machine translation that models regional and sociolinguistic variation explicitly.",
+        technicalDetails: "A rule-based data augmentation pipeline expands a 3,000-sentence seed corpus to 57,000 parallel sentences across eight regional varieties; an mT5-base model is fine-tuned on lightweight metadata tags for controllable region and register.",
+        links: [
+            { url: "https://arxiv.org/abs/2604.06456", label: "arXiv:2604.06456" },
+        ],
     },
 ];

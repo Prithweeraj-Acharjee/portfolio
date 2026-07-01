@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tag: stri
     const { tag } = await params;
     const decoded = decodeURIComponent(tag);
     return {
-        title: `${decoded} — Prithweeraj Acharjee`,
+        title: `${decoded}, Prithweeraj Acharjee`,
         description: `Writing and notes tagged "${decoded}".`,
     };
 }
@@ -55,7 +55,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
                     >
                         <div className="flex items-baseline gap-4 text-[10px] uppercase tracking-widest text-mist/40 font-mono mb-2">
                             <span>{new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric" })}</span>
-                            <span className="text-bloodred/60">·</span>
+                            <span className="text-bloodred/60"> / </span>
                             <span>{p.kind === "note" ? "Note" : "Essay"}</span>
                         </div>
                         <h2

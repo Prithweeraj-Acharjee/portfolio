@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const photos = {
-    face: "/about-06.jpg",   // close portrait — anchor photo
+    face: "/about-06.jpg",   // close portrait, anchor photo
     couch: "/about-04.jpg",   // sitting on couch with clock
     hand: "/about-02.jpg",   // hand pressed on curtain
     artwork: "/about-01.jpg",   // holding printed collage
@@ -63,7 +63,7 @@ export default function AboutPage() {
                     </p>
                     <div className="mt-10 pt-6 border-t border-white/[0.06] space-y-1">
                         <p className="text-[10px] uppercase tracking-widest text-mist/30">
-                            Visual & Computational Artist · Systems · Research
+                            Visual & Computational Artist / Systems / Research
                         </p>
                     </div>
                 </motion.div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 {/* Right column: two stacked */}
                 <div className="col-span-12 md:col-span-7 flex flex-col gap-6 md:gap-10">
 
-                    {/* Wide landscape — couch */}
+                    {/* Wide landscape, couch */}
                     <motion.div
                         variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
                         className="relative overflow-hidden bg-stone"
@@ -93,7 +93,7 @@ export default function AboutPage() {
                         <Image src={photos.couch} alt="" fill className="object-cover object-center grayscale" />
                     </motion.div>
 
-                    {/* Small landscape — hand */}
+                    {/* Small landscape, hand */}
                     <motion.div
                         variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
                         className="relative overflow-hidden bg-stone md:ml-16"

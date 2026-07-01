@@ -55,7 +55,7 @@ export default function HomeHero() {
                         transition={{ duration: 1.5, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
                         className="text-[11px] uppercase tracking-[0.45em] text-mist/40 font-mono mb-8"
                     >
-                        Painter · Researcher · Builder
+                        Painter / Researcher / Builder
                     </motion.div>
 
                     <motion.div

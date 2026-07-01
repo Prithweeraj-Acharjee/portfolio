@@ -30,7 +30,7 @@ export async function GET() {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Prithweeraj Acharjee — Writing</title>
+    <title>Prithweeraj Acharjee, Writing</title>
     <link>${SITE_URL}</link>
     <description>Essays and notes from a painter, researcher, and builder.</description>
     <language>en-us</language>

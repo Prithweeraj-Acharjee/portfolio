@@ -21,7 +21,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Prithweeraj Acharjee — Painter, Researcher, Builder",
+  title: "Prithweeraj Acharjee, Painter, Researcher, Builder",
   description: "Selected paintings, research, and ongoing work by Prithweeraj Acharjee.",
   metadataBase: new URL("https://prithwee.vercel.app"),
   openGraph: {
