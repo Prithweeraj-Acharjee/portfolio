@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
     { name: 'Systems', href: '/systems' },
+    { name: 'HaorGrix', href: '/haorgrix' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Research', href: '/research' },
     { name: 'Writing', href: '/writing' },
