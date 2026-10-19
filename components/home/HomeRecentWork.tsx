@@ -10,14 +10,11 @@ import { MaskLines } from "@/components/fx/Reveal";
 type Work = { title: string; kind: string; year: string; href: string; image?: string; stat?: string; ext?: boolean };
 
 const works: Work[] = [
-    { title: "21 Days", kind: "Paintings · memoir", year: "2026", href: "/gallery/21-days", image: "/artworks/21-days/td-07.jpg" },
-    { title: "Material: Expressions", kind: "Paintings · book", year: "2026", href: "/gallery/material-expressions", image: "/artworks/material-expressions/me-04.jpg" },
-    { title: "Aesthetics Is Not a Mirror", kind: "AI research · first author", year: "2026", href: "/research", stat: "r = 0.873" },
-    { title: "A River of Gaze", kind: "Game · playable", year: "2026", href: "https://a-river-of-gaze.vercel.app", image: "/projects/river-of-gaze.png", ext: true },
-    { title: "The Frustrated Sun", kind: "Living painting · generative", year: "2026", href: "https://the-frustrated-sun.vercel.app", image: "/projects/frustrated-sun.png", ext: true },
-    { title: "Migration", kind: "Short film", year: "2026", href: "#film", image: "/migration-poster.jpg" },
-    { title: "HaorGrix", kind: "Studio · co-founder", year: "2026", href: "/haorgrix", image: "/projects/haorgrix.png" },
-    { title: "RoboTheater", kind: "System · theater", year: "2026", href: "/systems", image: "/projects/robotheater.png" },
+    { title: "Painting Gallery", kind: "Paintings · series", year: "2026", href: "/gallery", image: "/artworks/21-days/td-07.jpg" },
+    { title: "Collage", kind: "Freedom Under · mixed media", year: "2026", href: "/gallery/freedom-under", image: "/artworks/freedom-under/freedom-01.jpg" },
+    { title: "Research", kind: "AI research · papers", year: "2026", href: "/research", stat: "r = 0.873" },
+    { title: "Projects", kind: "Systems · games · film", year: "2026", href: "/systems", image: "/projects/robotheater.png" },
+    { title: "Blog", kind: "Writing · essays", year: "2026", href: "/writing", image: "/artworks/material-expressions/me-04.jpg" },
 ];
 
 export default function HomeRecentWork() {

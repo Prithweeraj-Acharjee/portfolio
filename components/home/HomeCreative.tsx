@@ -17,7 +17,7 @@ export default function HomeCreative() {
         <section id="film" className="relative max-w-5xl mx-auto px-6 md:px-12 py-32 md:py-44 text-center border-t border-white/[0.06] scroll-mt-20">
             <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
                 className="text-[11px] uppercase tracking-[0.45em] text-mist/80 block mb-6">
-                (04) Short Film, 2026
+                (03) Short Film, 2026
             </motion.span>
             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

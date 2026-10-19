@@ -62,7 +62,7 @@ export default function HomeHero() {
                         transition={{ duration: 1, delay: 0.9, ease }}
                         className="max-w-[34ch] text-sm md:text-base leading-relaxed text-bone/80"
                     >
-                        I make paintings about what it costs to be seen, and I audit the machines that decide what gets seen.
+                        Researcher, Painter<br />Cofounder, HaorGrix
                     </motion.p>
                 </div>
 
