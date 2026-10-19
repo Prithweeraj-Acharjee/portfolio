@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { series } from "@/lib/content";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { X, ArrowLeft, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { X, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -43,7 +43,6 @@ export default function SeriesDetailPage() {
 
     const artworks = currentSeries.artworks;
     const selectedArt = selectedIdx !== null ? artworks[selectedIdx] : null;
-    const isMaterial = currentSeries.id === "paintings";
 
     const scrollByCards = (dir: number) => {
         const el = scrollRef.current;
@@ -69,12 +68,6 @@ export default function SeriesDetailPage() {
                             style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}>
                             {currentSeries.title}
                         </motion.h1>
-                        {isMaterial && (
-                            <a href="https://material-expressions.vercel.app" target="_blank" rel="noopener"
-                                className="mt-8 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-mist/80 hover:text-bone transition-colors border border-white/[0.08] hover:border-white/[0.18] px-4 py-2.5">
-                                <ExternalLink size={13} /> View the full catalogue and book
-                            </a>
-                        )}
                     </div>
                     {currentSeries.statement && (<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
                         className="lg:col-span-5 flex flex-col justify-end">
@@ -171,9 +164,9 @@ export default function SeriesDetailPage() {
                                 <h2 className="italic text-parchment text-3xl md:text-4xl mb-4"
                                     style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}>{selectedArt.title}</h2>
                                 <div className="w-10 h-[1px] mb-6 bg-bone/30" />
-                                <p className="text-sm leading-relaxed text-mist/90 mb-8">{selectedArt.concept}</p>
+                                {selectedArt.concept && <p className="text-sm leading-relaxed text-mist/90 mb-8">{selectedArt.concept}</p>}
                                 <div className="space-y-4">
-                                    {[{ l: "Year", v: selectedArt.year }, { l: "Medium", v: selectedArt.medium }, { l: "Dimensions", v: selectedArt.dimensions }].map(d => (
+                                    {[{ l: "Year", v: selectedArt.year }, { l: "Medium", v: selectedArt.medium }, { l: "Dimensions", v: selectedArt.dimensions }].filter(d => d.v).map(d => (
                                         <div key={d.l}>
                                             <p className="text-[10px] uppercase tracking-widest text-mist/80 mb-1">{d.l}</p>
                                             <p className="text-xs text-mist">{d.v}</p>
