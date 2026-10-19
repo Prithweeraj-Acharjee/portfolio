@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     url: "https://prithwee.haorgrix.com",
     siteName: "Prithweeraj Acharjee",
     type: "website",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "A painting from 21 Days by Prithweeraj Acharjee" }],
+    images: [{ url: "/og-card.jpg", width: 1200, height: 630, alt: "Prithwee, researcher, painter, cofounder of HaorGrix" }],
   },
-  twitter: { card: "summary_large_image", images: ["/og.jpg"] },
+  twitter: { card: "summary_large_image", images: ["/og-card.jpg"] },
 };
 
 export default function RootLayout({
