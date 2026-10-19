@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Play } from "lucide-react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const others = [
     { name: "A River of Gaze", note: "a playable game", href: "https://a-river-of-gaze.vercel.app", ext: true },
@@ -11,7 +10,33 @@ const others = [
 ];
 
 export default function HomeCreative() {
-    const [playing, setPlaying] = useState(false);
+    const still = useReducedMotion();
+    const frame = useRef<HTMLDivElement>(null);
+    const video = useRef<HTMLVideoElement>(null);
+    const [muted, setMuted] = useState(true);
+    const [paused, setPaused] = useState(true);
+    const [progress, setProgress] = useState(0);
+    const { scrollYProgress } = useScroll({ target: frame, offset: ["start end", "center center"] });
+    const scale = useTransform(scrollYProgress, [0, 1], [0.86, 1]);
+    const radius = useTransform(scrollYProgress, [0, 1], [28, 2]);
+
+    // Play silently once the film is half on screen, pause when it leaves. Browsers only allow muted autoplay.
+    useEffect(() => {
+        const v = video.current;
+        if (!v || still) return;
+        const io = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) v.play().catch(() => {});
+            else v.pause();
+        }, { threshold: 0.5 });
+        io.observe(v);
+        return () => io.disconnect();
+    }, [still]);
+
+    const toggle = () => {
+        const v = video.current;
+        if (!v) return;
+        if (v.paused) v.play().catch(() => {}); else v.pause();
+    };
 
     return (
         <section id="film" className="relative max-w-5xl mx-auto px-6 md:px-12 py-32 md:py-44 text-center border-t border-white/[0.06] scroll-mt-20">
@@ -29,22 +54,42 @@ export default function HomeCreative() {
             <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="mx-auto" style={{ maxWidth: "900px" }}>
-                <div className="relative overflow-hidden" style={{ boxShadow: "0 50px 120px rgba(0,0,0,0.6)" }}>
-                    {!playing ? (
-                        <button onClick={() => setPlaying(true)} data-cursor="Play" className="relative block w-full group cursor-pointer" aria-label="Play Migration">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="/migration-poster.jpg" alt="Migration, a short film" className="w-full aspect-[2/1] object-cover block" />
-                            <span className="absolute inset-0 flex items-center justify-center bg-void/25 group-hover:bg-void/10 transition-colors duration-500">
-                                <span className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-parchment/50 flex items-center justify-center backdrop-blur-sm group-hover:border-parchment/90 group-hover:scale-105 transition-all duration-500">
-                                    <Play size={22} className="text-parchment ml-0.5" fill="currentColor" />
-                                </span>
-                            </span>
-                        </button>
-                    ) : (
-                        <video src="/migration.mp4" poster="/migration-poster.jpg" autoPlay controls playsInline
-                            className="w-full aspect-[2/1] object-cover block bg-black" />
-                    )}
-                </div>
+                <motion.div
+                    ref={frame}
+                    className="relative overflow-hidden bg-black"
+                    style={{ boxShadow: "0 50px 120px rgba(0,0,0,0.6)", ...(still ? {} : { scale, borderRadius: radius }) }}
+                >
+                    <video
+                        ref={video}
+                        src="/migration.mp4"
+                        poster="/migration-poster.jpg"
+                        muted={muted}
+                        loop
+                        playsInline
+                        preload="metadata"
+                        onClick={toggle}
+                        onPlay={() => setPaused(false)}
+                        onPause={() => setPaused(true)}
+                        onTimeUpdate={(e) => setProgress(e.currentTarget.currentTime / (e.currentTarget.duration || 1))}
+                        data-cursor={paused ? "Play" : "Pause"}
+                        aria-label="Migration, a short film"
+                        className="w-full aspect-[2/1] object-cover block cursor-pointer"
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
+                    <button
+                        onClick={() => { setMuted((m) => !m); video.current?.play().catch(() => {}); }}
+                        className="absolute left-4 bottom-4 md:left-6 md:bottom-5 inline-flex items-center gap-3 rounded-full border border-parchment/30 bg-black/30 backdrop-blur-md px-4 py-2.5 text-[10px] uppercase tracking-[0.3em] text-parchment hover:border-parchment/70 transition-colors"
+                        aria-pressed={!muted}
+                    >
+                        <span className="flex items-end gap-[2px] h-3" aria-hidden>
+                            {[0, 1, 2, 3].map((i) => (
+                                <span key={i} className={`w-[2px] bg-parchment ${muted ? "h-[3px]" : "animate-eq"}`} style={{ animationDelay: `${i * 0.15}s` }} />
+                            ))}
+                        </span>
+                        {muted ? "Sound on" : "Sound off"}
+                    </button>
+                    <span className="absolute left-0 bottom-0 h-[2px] bg-bloodred" style={{ width: `${progress * 100}%` }} />
+                </motion.div>
                 <p className="mt-6 italic text-mist/80 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
                     A short film. Best with sound.
                 </p>

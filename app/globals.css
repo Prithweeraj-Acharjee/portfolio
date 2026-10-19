@@ -146,3 +146,7 @@ html.menu-open { overflow: hidden; }
 @keyframes hg-breathe { 50% { opacity: .45; transform: scale(1.12); } }
 .hg-still, .hg-still path { animation: none; }
 @media (prefers-reduced-motion: reduce) { .hg-logo, .hg-logo path, .hg-glow { animation: none; } }
+
+/* Equalizer bars on the film's sound button */
+@keyframes eq { 0%, 100% { height: 3px; } 50% { height: 12px; } }
+.animate-eq { animation: eq 0.9s ease-in-out infinite; }
