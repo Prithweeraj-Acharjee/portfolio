@@ -1,10 +1,11 @@
 "use client";
 
 import { MaskLines, FadeUp } from "@/components/fx/Reveal";
+import HaorGrixMark from "@/components/HaorGrixMark";
 
 const links = [
     { label: "Meet the team", href: "https://haorgrix.com/team", note: "haorgrix.com/team" },
-    { label: "My profile", href: "https://haorgrix.com/team/prithweeraj-porag", note: "haorgrix.com/team/prithweeraj-porag" },
+    { label: "Profile", href: "https://haorgrix.com/team/prithweeraj-porag", note: "haorgrix.com/team/prithweeraj-porag" },
 ];
 
 export default function HaorGrixPage() {
@@ -20,7 +21,8 @@ export default function HaorGrixPage() {
                 />
             </h1>
 
-            <div className="mt-14 md:mt-24 grid md:grid-cols-12 gap-10 flex-1">
+            <div className="mt-14 md:mt-24 grid md:grid-cols-12 gap-10 flex-1 items-center">
+                <HaorGrixMark className="w-[70%] max-w-[300px] mx-auto md:w-full md:max-w-[440px] md:col-span-4 md:col-start-1" />
                 <FadeUp delay={0.3} className="md:col-span-7 md:col-start-6 space-y-8 text-xl md:text-3xl leading-[1.45] text-bone/90">
                     <p style={{ fontFamily: "var(--font-serif)" }}>
                         Most of the talent that gets pulled into outsourcing is undervalued and undermentored.

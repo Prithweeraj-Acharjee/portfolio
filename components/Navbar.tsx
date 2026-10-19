@@ -83,7 +83,7 @@ export default function Navbar() {
 
                     <div className="flex items-center gap-6">
                         <div className={cn("hidden lg:flex items-center gap-6 transition-opacity duration-500", isOpen && "lg:opacity-0 pointer-events-none")}>
-                            {navItems.slice(0, 5).map((item) => (
+                            {navItems.slice(0, 6).map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}

@@ -1,91 +1,82 @@
 "use client";
 
 import Image from "next/image";
-import PageHeader from "@/components/PageHeader";
-import { FadeUp } from "@/components/fx/Reveal";
+import { MaskLines, FadeUp } from "@/components/fx/Reveal";
+
+const STATEMENT = `Art is something I always had trouble learning in school, I could never draw those perfect lines, I kept drawing as a wonderless child. Art is something that brought trouble into my home, I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit or feel the vision embedded in a piece of mud. Art is something that messes with me, and I keep messing with it too.`;
 
 const facts = [
-    {
-        title: "Education",
-        items: ["University of Toledo, B.S. Computer Science and Engineering, 2023 to present"],
-    },
-    {
-        title: "Exhibited",
-        items: ["Mind & Soul Gallery & Studios, Toledo. Group exhibition, grand opening, May 2026"],
-    },
-    {
-        title: "Recognition",
-        items: ["International Recognition for Visual Art, Teravarna, 2025"],
-    },
-    {
-        title: "Publications",
-        items: [
-            "Bengali Fake News Detection, IEEE QPAIN 2025",
-            "Dialectal Arabic Machine Translation, arXiv 2026",
-            "Material: Painting in the Post-AI Era, book, 2026",
-        ],
-    },
-    {
-        title: "Building",
-        items: ["Co-founder and CEO, HaorGrix"],
-    },
+    { title: "Education", items: ["University of Toledo, B.S. Computer Science and Engineering, 2023 to present"] },
+    { title: "Exhibited", items: ["Mind & Soul Gallery & Studios, Toledo, May 2026"] },
+    { title: "Recognition", items: ["International Recognition for Visual Art, Teravarna, 2025"] },
+    { title: "Building", items: ["Co-founder and CEO, HaorGrix"] },
 ];
 
-const photos = [
-    { src: "/about-06.jpg", alt: "Prithwee, close portrait in black and white", cls: "md:col-span-5", ratio: "3/4", pos: "object-top" },
-    { src: "/about-04.jpg", alt: "Seated on a couch beneath a wall clock and a dartboard", cls: "md:col-span-7 md:self-end", ratio: "16/10", pos: "object-center" },
-    { src: "/about-01.jpg", alt: "Holding up a printed collage", cls: "md:col-span-8 md:col-start-3", ratio: "16/8", pos: "object-top" },
-    { src: "/about-03.jpg", alt: "Sitting cross-legged on the floor of the studio", cls: "md:col-span-4", ratio: "3/4", pos: "object-center" },
-    { src: "/about-07.jpg", alt: "A charcoal drawing and a painted piece on the studio wall", cls: "md:col-span-6 md:col-start-7", ratio: "4/5", pos: "object-center" },
-    { src: "/about-02.jpg", alt: "A hand pressed against a curtain", cls: "md:col-span-5 md:col-start-2", ratio: "4/3", pos: "object-center" },
-    { src: "/about-05.jpg", alt: "Full figure seated in a studio chair", cls: "md:col-span-5", ratio: "3/4", pos: "object-top" },
-];
+const emails = ["prithwee@haorgrix.com", "pporag@rockets.utoledo.edu", "prithweeraj.poragach02@gmail.com"];
 
 export default function AboutPage() {
     return (
-        <div>
-            <PageHeader
-                index="A"
-                label="About"
-                title={["Prithwee"]}
-                intro={
-                    <p className="text-2xl md:text-3xl leading-[1.35] text-parchment whitespace-pre-line" style={{ fontFamily: "var(--font-serif)" }}>
-                        {`Art unsettles me.
-I return to it anyway.
-
-I work with image, distortion, memory, and code,
-building systems that move, fracture, and reform.
-Through image, material, and machine,
-Just exploring what resists!!`}
-                    </p>
-                }
-                aside={<span className="text-[10px] uppercase tracking-[0.3em] text-mist/80">Visual and computational artist, systems, research</span>}
-            />
-
-            <section className="px-6 md:px-12 py-16 md:py-24 border-b border-white/[0.08]">
-                <dl className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
-                    {facts.map((f, i) => (
-                        <FadeUp key={f.title} delay={i * 0.06}>
-                            <dt className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-4">{f.title}</dt>
-                            {f.items.map((it) => (
-                                <dd key={it} className="text-base leading-snug text-bone/90 mb-3" style={{ fontFamily: "var(--font-serif)" }}>{it}</dd>
-                            ))}
-                        </FadeUp>
-                    ))}
-                </dl>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="link-slide inline-block mt-12 py-2 text-[11px] uppercase tracking-[0.3em] text-parchment">
-                    Full résumé, PDF ↗
+        <div className="px-6 md:px-12 pt-28 md:pt-36 pb-24">
+            <div className="flex items-center justify-between gap-6 border-b border-white/[0.08] pb-6">
+                <span className="text-[10px] uppercase tracking-[0.35em] text-mist/70">(A) About</span>
+                <a
+                    href="/Prithweeraj_Acharjee_CV.pdf"
+                    download
+                    className="group inline-flex items-center gap-3 rounded-full border border-parchment/25 px-5 py-3 text-[10px] uppercase tracking-[0.3em] text-parchment hover:bg-parchment hover:text-void transition-colors"
+                >
+                    Download CV <span className="transition-transform group-hover:translate-y-0.5">↓</span>
                 </a>
-            </section>
+            </div>
 
-            <section className="px-6 md:px-12 py-16 md:py-28 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
-                {photos.map((p) => (
-                    <FadeUp key={p.src} className={p.cls}>
-                        <div className="relative overflow-hidden bg-ash" style={{ aspectRatio: p.ratio }}>
-                            <Image src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 100vw, 60vw" className={`object-cover ${p.pos} grayscale`} />
-                        </div>
+            <section className="grid md:grid-cols-12 gap-12 md:gap-16 pt-14 md:pt-20 items-start">
+                <FadeUp className="md:col-span-5 md:sticky md:top-28">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-ash">
+                        <Image src="/the-artist.jpg" alt="Prithwee, photographed in Toledo, 2026" fill priority sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
+                    </div>
+                    <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-mist/70">The artist. Photograph, 2026</p>
+                </FadeUp>
+
+                <div className="md:col-span-7">
+                    <h1>
+                        <MaskLines
+                            onLoad
+                            lines={["About", <em key="a" className="text-bone/70">the artist</em>]}
+                            className="block text-[16vw] md:text-[7vw] leading-[0.9] tracking-[-0.03em] text-parchment"
+                            style={{ fontFamily: "var(--font-serif)", fontWeight: 400 }}
+                        />
+                    </h1>
+
+                    <FadeUp delay={0.2}>
+                        <p className="mt-12 text-2xl md:text-3xl leading-snug text-parchment" style={{ fontFamily: "var(--font-serif)" }}>
+                            Prithwee is a Bangladeshi student, a painter and an alien in America.
+                        </p>
+                        <blockquote className="mt-10 text-lg md:text-xl leading-[1.75] text-bone/85" style={{ fontFamily: "var(--font-serif)" }}>
+                            &ldquo;{STATEMENT}&rdquo;
+                        </blockquote>
+                        <p className="mt-8 text-[11px] uppercase tracking-[0.3em] text-mist/80">
+                            Prithwee, Bancroft Street, Toledo
+                        </p>
                     </FadeUp>
-                ))}
+
+                    <dl className="mt-20 grid sm:grid-cols-2 gap-x-10 gap-y-10 border-t border-white/[0.08] pt-12">
+                        {facts.map((f) => (
+                            <div key={f.title}>
+                                <dt className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-3">{f.title}</dt>
+                                {f.items.map((it) => (
+                                    <dd key={it} className="text-base leading-snug text-bone/90" style={{ fontFamily: "var(--font-serif)" }}>{it}</dd>
+                                ))}
+                            </div>
+                        ))}
+                        <div className="sm:col-span-2">
+                            <dt className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-3">Email</dt>
+                            {emails.map((e) => (
+                                <dd key={e}>
+                                    <a href={`mailto:${e}`} className="link-slide inline-block py-1 text-base md:text-lg text-parchment break-all" style={{ fontFamily: "var(--font-serif)" }}>{e}</a>
+                                </dd>
+                            ))}
+                        </div>
+                    </dl>
+                </div>
             </section>
         </div>
     );

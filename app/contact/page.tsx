@@ -7,6 +7,8 @@ import LocalTime from "@/components/fx/LocalTime";
 const EMAIL = "prithweeraj.poragach02@gmail.com";
 
 const channels = [
+    { name: "HaorGrix", label: "prithwee@haorgrix.com", href: "mailto:prithwee@haorgrix.com" },
+    { name: "University", label: "pporag@rockets.utoledo.edu", href: "mailto:pporag@rockets.utoledo.edu" },
     { name: "Instagram", label: "@prithwee____", href: "https://www.instagram.com/prithwee____" },
     { name: "GitHub", label: "Prithweeraj-Acharjee", href: "https://github.com/Prithweeraj-Acharjee" },
     { name: "Handshake", label: "Prithweeraj Acharjee", href: "https://app.joinhandshake.com/profiles/bsn78c" },
