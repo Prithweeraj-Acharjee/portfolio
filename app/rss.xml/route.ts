@@ -1,6 +1,6 @@
 import { getAllPosts } from "@/lib/writing";
 
-const SITE_URL = "https://prithwee.vercel.app";
+const SITE_URL = "https://prithwee.haorgrix.com";
 
 function escapeXml(s: string) {
     return s

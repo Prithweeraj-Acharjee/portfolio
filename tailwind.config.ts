@@ -32,6 +32,7 @@ const config: Config = {
         "accent": "#c8bfb0",
         // signature crimson — matches RAR theater + recent paintings
         "bloodred": "#7f1d1d",
+        "ember": "#c8382c",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "serif"],

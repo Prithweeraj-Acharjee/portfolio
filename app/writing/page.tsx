@@ -23,7 +23,7 @@ export default function WritingPage() {
                     Writing
                 </span>
                 <h1
-                    className="font-sans text-5xl md:text-7xl tracking-tighter leading-none mb-6 text-gray-300"
+                    className="font-serif text-5xl md:text-7xl tracking-[-0.03em] leading-none mb-6 text-parchment"
                     style={{ fontWeight: 400 }}
                 >
                     Essays & Notes
@@ -58,7 +58,7 @@ export default function WritingPage() {
                                         </div>
                                         <div className="flex-1">
                                             <h3
-                                                className="font-sans text-2xl md:text-3xl mb-3 leading-tight tracking-tighter text-gray-300 group-hover:text-parchment transition-colors"
+                                                className="font-serif text-2xl md:text-3xl mb-3 leading-tight tracking-tight text-parchment group-hover:text-parchment transition-colors"
                                                 style={{ fontWeight: 400 }}
                                             >
                                                 {post.title}

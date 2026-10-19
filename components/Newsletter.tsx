@@ -48,7 +48,7 @@ export default function Newsletter({ compact = false }: { compact?: boolean }) {
         <form onSubmit={submit} className={compact ? "" : "py-6"}>
             {!compact && (
                 <div className="mb-4">
-                    <span className="text-[10px] uppercase tracking-[0.35em] text-bloodred/80 block mb-2">
+                    <span className="text-[10px] uppercase tracking-[0.35em] text-ember/80 block mb-2">
                         Letters from the studio
                     </span>
                     <p className="text-mist/60 text-sm max-w-md leading-relaxed">
@@ -74,7 +74,7 @@ export default function Newsletter({ compact = false }: { compact?: boolean }) {
                 </button>
             </div>
             {status === "err" && (
-                <p className="text-xs text-bloodred/80 mt-2">Something failed. Try again.</p>
+                <p className="text-xs text-ember/80 mt-2">Something failed. Try again.</p>
             )}
         </form>
     );

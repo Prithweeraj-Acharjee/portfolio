@@ -34,7 +34,7 @@ export default function AboutPage() {
                         About
                     </span>
                     <h1
-                        className="font-sans text-[clamp(2.8rem,8vw,7rem)] leading-[0.88] tracking-tighter text-gray-300"
+                        className="font-serif text-[clamp(3.4rem,10vw,9rem)] leading-[0.88] tracking-[-0.03em] text-parchment"
                         style={{ fontWeight: 400 }}
                     >
                         Prithwee

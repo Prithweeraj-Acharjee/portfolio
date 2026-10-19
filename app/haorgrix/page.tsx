@@ -78,7 +78,7 @@ export default function HaorGrixPage() {
                 </motion.span>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease }}
-                    className="font-sans text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] text-gray-200"
+                    className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-[-0.03em] leading-[0.9] text-parchment"
                     style={{ fontWeight: 400 }}>
                     HaorGrix
                 </motion.h1>
@@ -128,7 +128,7 @@ export default function HaorGrixPage() {
                     {services.map((s, i) => (
                         <div key={s} className="border-b border-r border-white/[0.06] p-6 md:p-8 flex items-center gap-4 hover:bg-white/[0.015] transition-colors">
                             <span className="text-[10px] font-mono tracking-widest text-bone/40">{String(i + 1).padStart(2, "0")}</span>
-                            <h3 className="text-lg text-gray-200" style={{ fontWeight: 400 }}>{s}</h3>
+                            <h3 className="text-lg text-parchment" style={{ fontWeight: 400 }}>{s}</h3>
                         </div>
                     ))}
                 </div>
@@ -152,7 +152,7 @@ export default function HaorGrixPage() {
                                 </a>
                             </div>
                             <div className={`lg:col-span-5 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                                <h3 className="font-sans text-4xl md:text-5xl tracking-tighter text-gray-200" style={{ fontWeight: 400 }}>{p.name}</h3>
+                                <h3 className="font-serif text-4xl md:text-5xl tracking-tight text-parchment" style={{ fontWeight: 400 }}>{p.name}</h3>
                                 <p className="mt-3 italic text-xl text-bone/70" style={{ fontFamily: "var(--font-serif)" }}>{p.line}</p>
                                 <p className="mt-6 text-mist/55 leading-relaxed">{p.desc}</p>
                                 <a href={p.href} target="_blank" rel="noopener"
@@ -179,7 +179,7 @@ export default function HaorGrixPage() {
                                     sizes="(max-width: 768px) 100vw, 33vw" />
                             </div>
                             <span className="mt-5 block text-[10px] uppercase tracking-widest text-bone/40">{a.type}</span>
-                            <h3 className="mt-2 text-xl text-gray-200" style={{ fontWeight: 400 }}>{a.name}</h3>
+                            <h3 className="mt-2 text-xl text-parchment" style={{ fontWeight: 400 }}>{a.name}</h3>
                             <p className="mt-2 text-sm text-mist/50 leading-relaxed">{a.desc}</p>
                         </motion.div>
                     ))}
@@ -203,7 +203,7 @@ export default function HaorGrixPage() {
                                     className="object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-[1000ms] ease-out"
                                     sizes="(max-width: 768px) 50vw, 25vw" />
                             </motion.div>
-                            <h3 className="mt-4 text-base text-gray-200 leading-tight" style={{ fontWeight: 400 }}>{m.name}</h3>
+                            <h3 className="mt-4 text-base text-parchment leading-tight" style={{ fontWeight: 400 }}>{m.name}</h3>
                             <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-mist/40">{m.role}</p>
                         </motion.div>
                     ))}
@@ -224,7 +224,7 @@ export default function HaorGrixPage() {
                                     <Image src={c.photo} alt={c.person} fill className="object-cover" sizes="44px" />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-200">{c.person}</p>
+                                    <p className="text-sm text-parchment">{c.person}</p>
                                     <p className="text-[10px] uppercase tracking-widest text-mist/40">{c.role}, {c.company}</p>
                                 </div>
                             </div>

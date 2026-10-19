@@ -13,7 +13,7 @@ export function Aside({ children, label }: { children: ReactNode; label?: string
     return (
         <aside className="my-10 border border-white/[0.06] bg-white/[0.015] p-6 rounded">
             {label && (
-                <div className="text-[10px] uppercase tracking-[0.3em] text-bloodred/80 mb-3">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-ember/80 mb-3">
                     {label}
                 </div>
             )}

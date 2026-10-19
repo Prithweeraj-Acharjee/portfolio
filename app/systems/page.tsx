@@ -30,7 +30,7 @@ export default function SystemsPage() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
                     <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, ease }}
-                        className="font-sans text-5xl md:text-7xl tracking-tighter leading-none text-gray-300"
+                        className="font-serif text-5xl md:text-7xl tracking-[-0.03em] leading-none text-parchment"
                         style={{ fontWeight: 400 }}>
                         Built Systems
                     </motion.h1>
@@ -63,7 +63,7 @@ export default function SystemsPage() {
                             <motion.div variants={fadeUp} className="lg:col-span-5 flex flex-col gap-6">
                                 <div className="flex gap-5 items-start">
                                     <div className="w-px self-stretch flex-shrink-0 mt-1 rounded-full bg-bone/20" />
-                                    <h2 className="font-sans text-3xl md:text-5xl tracking-tighter leading-tight text-gray-300"
+                                    <h2 className="font-serif text-3xl md:text-5xl tracking-tight leading-tight text-parchment"
                                         style={{ fontWeight: 400 }}>{project.title}</h2>
                                 </div>
                                 <p className="text-mist/60 leading-relaxed">{project.summary}</p>

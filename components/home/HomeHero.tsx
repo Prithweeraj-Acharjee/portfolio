@@ -1,87 +1,123 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { MaskLines } from "@/components/fx/Reveal";
 
-const quote = `well, Art is something I always had trouble learning in school, as I could never draw those perfect lines, yet I kept drawing as a wonderless child. Art is something that brought trouble into my home, yet I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit or feel the vision embedded in a piece of mud. Art is something that messes with me, and I keep messing with it too.`;
+const slides = [
+    "/artworks/21-days/td-07.jpg",
+    "/artworks/21-days/td-05.jpg",
+    "/artworks/21-days/td-12.jpg",
+    "/artworks/21-days/td-20.jpg",
+    "/artworks/21-days/td-01.jpg",
+];
+
+const roles = ["Painter", "Researcher", "Builder"];
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function HomeHero() {
+    const still = useReducedMotion();
+    const ref = useRef<HTMLElement>(null);
+    const [slide, setSlide] = useState(0);
+    const [role, setRole] = useState(0);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+    const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+    const nameY = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+    const fade = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+    useEffect(() => {
+        if (still) return;
+        const a = setInterval(() => setSlide((s) => (s + 1) % slides.length), 5200);
+        const b = setInterval(() => setRole((r) => (r + 1) % roles.length), 2400);
+        return () => { clearInterval(a); clearInterval(b); };
+    }, [still]);
+
     return (
-        <section className="relative h-screen w-full overflow-hidden">
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2.5, ease: "easeInOut" }}
-                className="absolute inset-0 md:inset-y-0 md:left-0 md:w-[52vw] z-0"
-            >
-                <Image
-                    src="/prithwee.jpg"
-                    alt="Prithweeraj"
-                    fill
-                    priority
-                    className="object-cover object-center"
-                    style={{ filter: "contrast(1.05) brightness(0.82)" }}
-                />
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background:
-                            "linear-gradient(to bottom, rgba(8,8,8,0.35) 0%, transparent 30%, transparent 60%, rgba(8,8,8,0.6) 100%), " +
-                            "linear-gradient(to right, transparent 55%, rgba(8,8,8,0.95) 100%)",
-                    }}
-                />
-                <div
-                    className="absolute top-0 left-0 right-0 h-32"
-                    style={{ background: "linear-gradient(to bottom, rgba(8,8,8,0.5), transparent)" }}
-                />
+        <section ref={ref} className="relative h-[100svh] min-h-[560px] w-full overflow-hidden">
+            <motion.div className="absolute inset-0" style={still ? undefined : { y: imgY }}>
+                <AnimatePresence initial={false}>
+                    <motion.div
+                        key={slide}
+                        className="absolute inset-0"
+                        initial={{ opacity: 0, scale: 1.12 }}
+                        animate={{ opacity: 1, scale: 1.02 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ opacity: { duration: 1.6 }, scale: { duration: 7, ease: "linear" } }}
+                    >
+                        <Image
+                            src={slides[slide]}
+                            alt=""
+                            fill
+                            priority={slide === 0}
+                            sizes="100vw"
+                            className="object-cover"
+                            style={{ filter: "contrast(1.08) brightness(0.55) saturate(1.05)" }}
+                        />
+                    </motion.div>
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(8,8,8,0.85)_100%)]" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-void to-transparent" />
             </motion.div>
 
-            <div className="relative z-10 h-full flex flex-col justify-end md:justify-center pointer-events-none">
-                <div className="w-full md:w-[52vw] md:ml-[42vw] px-8 md:px-12 pb-20 md:pb-0 pointer-events-auto">
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 16 }}
+            <motion.div
+                className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 pb-10 md:pb-12"
+                style={still ? undefined : { opacity: fade }}
+            >
+                <div className="flex items-end justify-between gap-6 mb-6 md:mb-8">
+                    <motion.p
+                        initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-sans text-[clamp(4rem,10vw,9rem)] leading-[0.85] tracking-tighter text-gray-400 mb-4 select-none"
-                        style={{ fontWeight: 400 }}
+                        transition={{ duration: 1, delay: 0.9, ease }}
+                        className="max-w-[34ch] text-sm md:text-base leading-relaxed text-bone/80"
                     >
-                        PRITHWEE
-                    </motion.h1>
-
+                        I make paintings about what it costs to be seen, and I audit the machines that decide what gets seen.
+                    </motion.p>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 1.5, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-[11px] uppercase tracking-[0.45em] text-mist/40 font-mono mb-8"
+                        transition={{ delay: 1.2 }}
+                        className="hidden md:flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-mist/80"
                     >
-                        Painter / Researcher / Builder
+                        <span className="relative h-10 w-px bg-mist/30 overflow-hidden">
+                            <span className="absolute inset-x-0 top-0 h-1/2 bg-parchment animate-scrollcue" />
+                        </span>
+                        Scroll
                     </motion.div>
-
-                    <motion.div
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: 1.2, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="h-[1px] w-16 bg-bone/40 mb-8 origin-left"
-                    />
-
-                    <motion.blockquote
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 2, delay: 2 }}
-                        className="font-serif text-[clamp(0.85rem,1.4vw,1.05rem)] leading-[1.85] text-bone/60 max-w-[42ch]"
-                        style={{ fontWeight: 300 }}
-                    >
-                        {quote}
-                    </motion.blockquote>
-
                 </div>
-            </div>
 
-            <div
-                className="absolute bottom-0 left-0 right-0 h-[55%] md:hidden z-[1] pointer-events-none"
-                style={{ background: "linear-gradient(to bottom, transparent, rgba(8,8,8,0.97) 70%)" }}
-            />
+                <motion.h1 style={still ? undefined : { y: nameY }} className="relative" aria-label="Prithwee: painter, researcher, builder">
+                    <MaskLines
+                        onLoad
+                        delay={0.15}
+                        lines={["Prithwee"]}
+                        className="block text-[25vw] md:text-[21vw] leading-[0.78] tracking-[-0.045em] text-parchment"
+                        style={{ fontFamily: "var(--font-serif)", fontWeight: 400 }}
+                    />
+                </motion.h1>
+
+                <div className="mt-6 md:mt-8 pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-[10px] md:text-[11px] uppercase tracking-[0.35em] text-mist/70">
+                    <span className="flex items-center gap-3">
+                        <span className="w-2 h-2 rounded-full bg-bloodred animate-pulse" />
+                        <span className="relative inline-block h-[1.2em] overflow-hidden w-[20ch]">
+                            <AnimatePresence mode="popLayout" initial={false}>
+                                <motion.span
+                                    key={role}
+                                    className="block text-parchment"
+                                    initial={{ y: "100%" }}
+                                    animate={{ y: "0%" }}
+                                    exit={{ y: "-100%" }}
+                                    transition={{ duration: 0.7, ease }}
+                                >
+                                    {roles[role]}
+                                </motion.span>
+                            </AnimatePresence>
+                        </span>
+                    </span>
+                    <span className="hidden sm:inline">Habiganj, Bangladesh → Toledo, Ohio</span>
+                    <span className="tabular-nums">{String(slide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")} · 21 Days</span>
+                </div>
+            </motion.div>
         </section>
     );
 }

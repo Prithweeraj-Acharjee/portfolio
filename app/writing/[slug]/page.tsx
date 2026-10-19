@@ -41,7 +41,7 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
                     <span>{post.readingMinutes} min read</span>
                 </div>
                 <h1
-                    className="font-sans text-4xl md:text-6xl tracking-tighter leading-[1.05] text-parchment mb-8"
+                    className="font-serif text-4xl md:text-6xl tracking-tight leading-[1.05] text-parchment mb-8"
                     style={{ fontWeight: 400 }}
                 >
                     {post.title}

@@ -142,6 +142,41 @@ export const projects: Project[] = [
 
 export const series: Series[] = [
     {
+        id: "21-days",
+        title: "21 Days",
+        statement: `A memoir in paintings. Twenty one days of a life put on hold, painted as they happened, and the work that came after.
+
+The paintings are the record. The book, 21 Days, is forthcoming.
+
+Prithwee, 2026`,
+        coverImage: "/artworks/21-days/td-07.jpg",
+        artworks: [
+            { id: "td-01", title: "Breaking Out", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-01.jpg" },
+            { id: "td-02", title: "Anger Under Suspension", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-02.jpg" },
+            { id: "td-03", title: "Face in Suspension Days", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-03.jpg" },
+            { id: "td-04", title: "The Night of the Appeal", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-04.jpg" },
+            { id: "td-05", title: "Waves of Shock II", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-05.jpg" },
+            { id: "td-06", title: "Waves of Shock", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-06.jpg" },
+            { id: "td-07", title: "Synthesis Under Suspension", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-07.jpg" },
+            { id: "td-08", title: "Synthesis Under Suspension II", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-08.jpg" },
+            { id: "td-09", title: "Synthesis Under Suspension III", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-09.jpg" },
+            { id: "td-10", title: "Synthesis in the Pick", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-10.jpg" },
+            { id: "td-11", title: "Father I", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-11.jpg" },
+            { id: "td-12", title: "Father II", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-12.jpg" },
+            { id: "td-13", title: "Breathing", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-13.jpg" },
+            { id: "td-14", title: "Affection", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-14.jpg" },
+            { id: "td-15", title: "Outside and Inside", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-15.jpg" },
+            { id: "td-16", title: "Destructive Sapien", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-16.jpg" },
+            { id: "td-17", title: "Colors Behind the Window", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-17.jpg" },
+            { id: "td-18", title: "Freedom Under (Veil of Observation)", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-18.jpg" },
+            { id: "td-19", title: "Grass", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-19.jpg" },
+            { id: "td-20", title: "Multi-identity", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-20.jpg" },
+            { id: "td-21", title: "Kemone Chinibo Tomare IV", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-21.jpg" },
+            { id: "td-22", title: "Self Portrait", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-22.jpg" },
+            { id: "td-23", title: "Unnamed", year: "2026", concept: "From 21 Days, a memoir in paintings.", medium: "Mixed media", dimensions: "Variable", media: "/artworks/21-days/td-23.jpg" },
+        ],
+    },
+    {
         id: "material-expressions",
         title: "Material: Expressions",
         statement: `The most recent body of work, 2026. Paintings made under a specific condition in twenty one days, and the ones that came after. Mixed media on paper and canvas, mostly large, at the size of a person.
@@ -619,9 +654,9 @@ export const writings: Writing[] = [
 export const research: Research[] = [
     {
         id: "rar",
-        title: "Aesthetics Is Not a Mirror: Recursive Aesthetic Reinforcement (under review)",
+        title: "Aesthetics Is Not a Mirror",
         year: "2026",
-        institution: "AIES 2026, under review",
+        institution: "First author, manuscript under review",
         abstract: "A held-out falsification study of representational bias in widely used text-to-image diffusion models, showing strong statistical convergence toward a narrow occupational aesthetic across thousands of generations.",
         technicalDetails: "Pearson r = 0.873 between LAION-Aesthetics V2 score and the model's outputs; a 200,000-trial Monte Carlo joint null test (p < 1e-5); FairFace cross-classifier replication; a pre-registered held-out falsification. First-author poster at the Midwest Graduate Symposium 2026.",
     },

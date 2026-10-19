@@ -32,11 +32,11 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
             </Link>
 
             <header className="mb-16">
-                <span className="text-[10px] uppercase tracking-[0.45em] text-bloodred/70 block mb-3">
+                <span className="text-[10px] uppercase tracking-[0.45em] text-ember/70 block mb-3">
                     Tag
                 </span>
                 <h1
-                    className="font-sans text-5xl md:text-6xl tracking-tighter leading-none text-parchment"
+                    className="font-serif text-5xl md:text-6xl tracking-tight leading-none text-parchment"
                     style={{ fontWeight: 400 }}
                 >
                     {decoded}
@@ -55,11 +55,11 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
                     >
                         <div className="flex items-baseline gap-4 text-[10px] uppercase tracking-widest text-mist/40 font-mono mb-2">
                             <span>{new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric" })}</span>
-                            <span className="text-bloodred/60"> / </span>
+                            <span className="text-ember/60"> / </span>
                             <span>{p.kind === "note" ? "Note" : "Essay"}</span>
                         </div>
                         <h2
-                            className="font-sans text-xl md:text-2xl tracking-tight text-gray-300 group-hover:text-parchment transition-colors leading-tight"
+                            className="font-serif text-xl md:text-2xl tracking-tight text-parchment group-hover:text-parchment transition-colors leading-tight"
                             style={{ fontWeight: 400 }}
                         >
                             {p.title}

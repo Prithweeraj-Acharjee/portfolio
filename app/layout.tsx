@@ -6,6 +6,9 @@ import Navbar from "@/components/Navbar";
 import GrainBackground from "@/components/GrainBackground";
 import ScribbleBackground from "@/components/ScribbleBackground";
 import SiteFooter from "@/components/SiteFooter";
+import SmoothScroll from "@/components/fx/SmoothScroll";
+import Cursor from "@/components/fx/Cursor";
+import Preloader from "@/components/fx/Preloader";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -23,11 +26,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Prithweeraj Acharjee, Painter, Researcher, Builder",
   description: "Selected paintings, research, and ongoing work by Prithweeraj Acharjee.",
-  metadataBase: new URL("https://prithwee.vercel.app"),
+  metadataBase: new URL("https://prithwee.haorgrix.com"),
   openGraph: {
     title: "Prithweeraj Acharjee",
     description: "Selected paintings, research, and ongoing work.",
-    url: "https://prithwee.vercel.app",
+    url: "https://prithwee.haorgrix.com",
     siteName: "Prithweeraj Acharjee",
     type: "website",
   },
@@ -41,6 +44,9 @@ export default function RootLayout({
       <body className="bg-void text-parchment antialiased overflow-x-hidden">
         <ModeProvider>
           <div className="relative min-h-screen flex flex-col">
+            <SmoothScroll />
+            <Preloader />
+            <Cursor />
             <GrainBackground />
             <ScribbleBackground />
             <Navbar />

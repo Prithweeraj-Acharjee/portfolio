@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getEssays, getNotes, getAllTags } from "@/lib/writing";
 import { series, projects, research } from "@/lib/content";
 
-const SITE = "https://prithwee.vercel.app";
+const SITE = "https://prithwee.haorgrix.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = ["", "/gallery", "/writing", "/research", "/systems", "/about", "/contact"].map((p) => ({

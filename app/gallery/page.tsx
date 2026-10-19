@@ -22,7 +22,7 @@ export default function GalleryPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease }}
-                    className="font-sans text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-none mb-6 text-gray-300"
+                    className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-[-0.03em] leading-none mb-6 text-parchment"
                     style={{ fontWeight: 400 }}
                 >
                     Selected<br />Series
@@ -46,10 +46,10 @@ export default function GalleryPage() {
                         viewport={{ once: true, margin: "-12%" }}
                         transition={{ duration: 1.0, ease }}
                     >
-                        <Link href={`/gallery/${item.id}`} className="group block">
+                        <Link href={`/gallery/${item.id}`} data-cursor="View" className="group block">
                             <div className="flex items-baseline justify-between mb-6">
                                 <h2
-                                    className="font-sans text-3xl md:text-5xl tracking-tighter leading-tight text-parchment group-hover:text-bone transition-colors duration-500"
+                                    className="font-serif text-3xl md:text-5xl tracking-tight leading-tight text-parchment group-hover:text-bone transition-colors duration-500"
                                     style={{ fontWeight: 400 }}
                                 >
                                     {item.title}

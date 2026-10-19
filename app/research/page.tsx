@@ -12,7 +12,7 @@ export default function ResearchPage() {
                     className="text-[11px] uppercase tracking-[0.45em] text-mist/50 mb-4 block">Research</motion.span>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-sans text-5xl md:text-7xl tracking-tighter leading-none mb-6 text-gray-300"
+                    className="font-serif text-5xl md:text-7xl tracking-[-0.03em] leading-none mb-6 text-parchment"
                     style={{ fontWeight: 400 }}>
                     Research
                 </motion.h1>
@@ -42,7 +42,7 @@ export default function ResearchPage() {
                             <BookOpen size={15} className="text-mist/20 group-hover:text-bone/40 transition-colors" />
                         </div>
 
-                        <h2 className="font-sans text-xl md:text-2xl mb-4 leading-tight tracking-tighter text-gray-300"
+                        <h2 className="font-serif text-xl md:text-2xl mb-4 leading-tight tracking-tight text-parchment"
                             style={{ fontWeight: 400 }}>{item.title}</h2>
                         <p className="text-sm text-mist/60 leading-relaxed mb-6">{item.abstract}</p>
 

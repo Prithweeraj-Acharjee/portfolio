@@ -18,7 +18,7 @@ export default function ContactPage() {
                     className="text-[11px] uppercase tracking-[0.45em] text-mist/50 mb-6 block">Contact</motion.span>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-sans text-6xl md:text-9xl tracking-tighter leading-none mb-8 text-gray-300"
+                    className="font-serif text-6xl md:text-9xl tracking-[-0.03em] leading-none mb-8 text-parchment"
                     style={{ fontWeight: 400 }}>
                     Get in<br />Touch
                 </motion.h1>
