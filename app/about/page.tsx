@@ -9,7 +9,7 @@ const facts = [
     { title: "Education", items: ["University of Toledo, B.S. Computer Science and Engineering, 2024 to present", "University of Dhaka, Faculty of Fine Arts, 2022 to 2023"] },
     { title: "Exhibited", items: ["Mind & Soul Gallery & Studios, Toledo, May 2026"] },
     { title: "Recognition", items: ["International Recognition for Visual Art, Teravarna, 2025"] },
-    { title: "Building", items: ["Co-founder and CEO, HaorGrix"] },
+    { title: "Building", items: ["Co-founder, HaorGrix"] },
 ];
 
 const emails = ["prithwee@haorgrix.com", "pporag@rockets.utoledo.edu", "prithweeraj.poragach02@gmail.com"];
