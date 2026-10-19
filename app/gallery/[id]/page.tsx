@@ -166,7 +166,7 @@ export default function SeriesDetailPage() {
                                 <div className="w-10 h-[1px] mb-6 bg-bone/30" />
                                 {selectedArt.concept && <p className="text-sm leading-relaxed text-mist/90 mb-8">{selectedArt.concept}</p>}
                                 <div className="space-y-4">
-                                    {[{ l: "Year", v: selectedArt.year }, { l: "Medium", v: selectedArt.medium }, { l: "Dimensions", v: selectedArt.dimensions }].filter(d => d.v).map(d => (
+                                    {[{ l: "Year", v: selectedArt.year }, { l: "Medium", v: selectedArt.medium }, { l: "Dimensions", v: selectedArt.dimensions }].filter(d => d.v && d.v !== "Variable").map(d => (
                                         <div key={d.l}>
                                             <p className="text-[10px] uppercase tracking-widest text-mist/80 mb-1">{d.l}</p>
                                             <p className="text-xs text-mist">{d.v}</p>
@@ -175,7 +175,7 @@ export default function SeriesDetailPage() {
                                 </div>
                                 {selectedArt.writing && (
                                     <div className="mt-10 pt-8 border-t border-white/[0.08]">
-                                        <p className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-5">From <em className="normal-case tracking-normal text-[12px]" style={{ fontFamily: "var(--font-serif)" }}>21 Days</em></p>
+                                        <p className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-5">From <em className="normal-case tracking-normal text-[12px]" style={{ fontFamily: "var(--font-serif)" }}>{currentSeries.id === "collages" ? "Freedom Under" : "21 Days"}</em></p>
                                         <div className="space-y-4 text-[15px] leading-[1.75] text-bone/90" style={{ fontFamily: "var(--font-serif)" }}>
                                             {selectedArt.writing.split(/\n\n/).map((para, i) => <p key={i}>{para}</p>)}
                                         </div>
