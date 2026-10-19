@@ -56,7 +56,7 @@ export default function SeriesDetailPage() {
                 <button onClick={() => router.push("/gallery")}
                     className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/80 hover:text-bone transition-colors mb-14 group">
                     <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform" />
-                    All Series
+                    Gallery
                 </button>
 
                 <header className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-16 md:mb-20">
