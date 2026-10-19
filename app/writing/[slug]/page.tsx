@@ -5,6 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { getEssays, getPostBySlug } from "@/lib/writing";
 import { mdxComponents } from "@/components/MDXComponents";
 import Prose from "@/components/Prose";
+import JsonLd from "@/components/JsonLd";
+import { SITE } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return getEssays().map((p) => ({ slug: p.slug }));
@@ -15,8 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const post = getPostBySlug(slug, "essay");
     if (!post) return {};
     return {
-        title: post.title,
+        title: { absolute: `${post.title} · Prithwee` },
         description: post.summary,
+        alternates: { canonical: `/writing/${slug}` },
+        openGraph: { type: "article", title: post.title, description: post.summary, publishedTime: new Date(post.date).toISOString(), authors: ["Prithweeraj Acharjee"] },
     };
 }
 
@@ -27,6 +31,18 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
 
     return (
         <div className="max-w-3xl mx-auto px-6 pt-28 md:pt-40 pb-20 md:pb-28">
+            <JsonLd data={{
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                headline: post.title,
+                description: post.summary,
+                datePublished: new Date(post.date).toISOString(),
+                author: { "@id": `${SITE}/#person`, name: "Prithweeraj Acharjee" },
+                url: `${SITE}/writing/${slug}`,
+                mainEntityOfPage: `${SITE}/writing/${slug}`,
+                wordCount: post.words,
+                keywords: post.tags,
+            }} />
             <Link
                 href="/writing"
                 className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/80 hover:text-bone transition-colors mb-16"
