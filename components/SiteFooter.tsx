@@ -76,8 +76,8 @@ export default function SiteFooter() {
                 <span>© {new Date().getFullYear()} Prithweeraj Acharjee</span>
                 <LocalTime />
                 <div className="flex gap-6">
-                    <Link href="/rss.xml" className="hover:text-parchment transition-colors">RSS</Link>
-                    <button onClick={() => scrollToTop()} className="hover:text-parchment transition-colors">Back to top ↑</button>
+                    <Link href="/rss.xml" className="inline-block py-3 hover:text-parchment transition-colors">RSS</Link>
+                    <button onClick={() => scrollToTop()} className="py-3 hover:text-parchment transition-colors">Back to top ↑</button>
                 </div>
             </div>
         </footer>
@@ -88,14 +88,14 @@ function FooterCol({ title, items, internal = false, className = "" }: { title: 
     return (
         <div className={`md:col-span-2 ${className}`}>
             <p className="text-[10px] uppercase tracking-[0.35em] text-mist/70 mb-5">{title}</p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
                 {items.map((i) => (
-                    <li key={i.href}>
+                    <li key={i.href} className="leading-none">
                         {internal ? (
-                            <Link href={i.href} className="link-slide text-sm text-bone/80 hover:text-parchment">{i.name}</Link>
+                            <Link href={i.href} className="link-slide inline-block py-1.5 text-sm text-bone/80 hover:text-parchment">{i.name}</Link>
                         ) : (
-                            <a href={i.href} target="_blank" rel="noopener noreferrer" className="link-slide text-sm text-bone/80 hover:text-parchment">
-                                {i.name} <span className="text-mist/70">↗</span>
+                            <a href={i.href} target="_blank" rel="noopener noreferrer" className="link-slide inline-block py-1.5 text-sm text-bone/80 hover:text-parchment">
+                                {i.name}&nbsp;<span className="text-mist/70">↗</span>
                             </a>
                         )}
                     </li>

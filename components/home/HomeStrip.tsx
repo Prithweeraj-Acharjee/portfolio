@@ -5,10 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { series } from "@/lib/content";
+import { useMedia } from "@/lib/use-media";
 
 /* 21 Days as a gallery wall that slides sideways while you scroll down. */
 export default function HomeStrip() {
-    const still = useReducedMotion();
+    const reduced = useReducedMotion();
+    const wide = useMedia("(min-width: 768px)");
+    /* Phones get a native swipe row; the scroll-driven wall is for wider screens. */
+    const still = reduced || !wide;
     const s = series.find((x) => x.id === "21-days") ?? series[0];
     const works = s.artworks.slice(0, 12);
     const outer = useRef<HTMLElement>(null);
@@ -66,9 +70,10 @@ export default function HomeStrip() {
 
     if (still) {
         return (
-            <section className="py-28 border-t border-white/[0.06]">
+            <section className="py-24 border-t border-white/[0.06]">
                 {head}
-                <div className="flex gap-6 overflow-x-auto snap-x px-6 md:px-12 pb-6">{cards}</div>
+                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-6 px-6 md:px-12 pb-6 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: "none" }} data-lenis-prevent-wheel>{cards}</div>
+                <p className="px-6 text-[10px] uppercase tracking-[0.35em] text-mist/70">Swipe · {s.artworks.length} paintings · <Link href={`/gallery/${s.id}`} className="underline underline-offset-4">see all</Link></p>
             </section>
         );
     }

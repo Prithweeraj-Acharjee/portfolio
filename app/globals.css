@@ -125,3 +125,8 @@ html.menu-open { overflow: hidden; }
   .animate-marquee, .animate-scrollcue, .animate-pulse { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Phones cannot render an embedded PDF; the page links to the full-screen reader instead. */
+@media (max-width: 767px) {
+  main iframe[src*=".pdf"] { display: none; }
+}

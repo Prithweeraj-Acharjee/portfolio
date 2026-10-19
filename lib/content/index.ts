@@ -2,23 +2,6 @@ import { Project, Artwork, Writing, Research, Series } from "@/types/content";
 
 export const projects: Project[] = [
     {
-        id: "haorgrix",
-        title: "HaorGrix",
-        year: "2026",
-        tags: ["Studio", "AI", "Bangladesh", "Co-Founder"],
-        summary: "A 13-person digital studio building AI-native products. Co-founded as a venture-capable studio that backs the people inside it, not just the projects.",
-        longDescription: "HaorGrix is a digital studio I co-founded. We build AI-native products for clients while incubating our own. The team is 13 people as of 2026, working across web, mobile, AI engineering, and design. The bet is simple: a small, senior team can outbuild a much larger agency, given the right product focus.",
-        conceptualFraming: "Most of the talent that gets pulled into outsourcing is undervalued and undermentored. HaorGrix is an attempt to build something else, a place where the work is hard, the equity is real, and the products carry our names.",
-        technicalArchitecture: "Stack varies by client. House defaults: Next.js, TypeScript, FastAPI and Postgres, Anthropic and OpenAI APIs, Vercel.",
-        stack: ["Next.js", "TypeScript", "FastAPI", "Postgres", "Anthropic API", "OpenAI API"],
-        links: {
-            demo: "https://haorgrix.com",
-        },
-        media: {
-            hero: "/projects/haorgrix.png",
-        },
-    },
-    {
         id: "robotheater",
         title: "RoboTheater",
         year: "2026",

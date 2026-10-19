@@ -28,12 +28,12 @@ export default function HomeCreative() {
 
             <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="mx-auto" style={{ maxWidth: "620px" }}>
+                className="mx-auto" style={{ maxWidth: "900px" }}>
                 <div className="relative overflow-hidden" style={{ boxShadow: "0 50px 120px rgba(0,0,0,0.6)" }}>
                     {!playing ? (
-                        <button onClick={() => setPlaying(true)} className="relative block w-full group cursor-pointer" aria-label="Play Migration">
+                        <button onClick={() => setPlaying(true)} data-cursor="Play" className="relative block w-full group cursor-pointer" aria-label="Play Migration">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="/migration-poster.jpg" alt="Migration, a short film" className="w-full h-auto block" />
+                            <img src="/migration-poster.jpg" alt="Migration, a short film" className="w-full aspect-[2/1] object-cover block" />
                             <span className="absolute inset-0 flex items-center justify-center bg-void/25 group-hover:bg-void/10 transition-colors duration-500">
                                 <span className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-parchment/50 flex items-center justify-center backdrop-blur-sm group-hover:border-parchment/90 group-hover:scale-105 transition-all duration-500">
                                     <Play size={22} className="text-parchment/90 ml-0.5" fill="currentColor" />
@@ -42,7 +42,7 @@ export default function HomeCreative() {
                         </button>
                     ) : (
                         <video src="/migration.mp4" poster="/migration-poster.jpg" autoPlay controls playsInline
-                            className="w-full h-auto block" />
+                            className="w-full aspect-[2/1] object-cover block bg-black" />
                     )}
                 </div>
                 <p className="mt-6 italic text-mist/50 text-sm" style={{ fontFamily: "var(--font-serif)" }}>

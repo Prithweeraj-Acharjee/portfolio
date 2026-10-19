@@ -10,7 +10,6 @@ const stats = [
     { n: String(paintings), label: "Paintings online" },
     { n: String(series.length), label: "Series" },
     { n: String(research.length), label: "Research papers" },
-    { n: "13", label: "People at HaorGrix" },
 ];
 
 const record = [
@@ -18,7 +17,6 @@ const record = [
     { year: "2026", what: "Midwest Graduate Symposium", note: "First-author poster, AI aesthetics audit", href: "/research" },
     { year: "2026", what: "arXiv", note: "Dialectal Arabic machine translation, second author", href: "https://arxiv.org/abs/2604.06456" },
     { year: "2026", what: "Material: Painting in the Post-AI Era", note: "Book, published online", href: "https://material-expressions.vercel.app/book" },
-    { year: "2026", what: "HaorGrix", note: "Co-founded, 13-person AI-native studio", href: "/haorgrix" },
     { year: "2025", what: "IEEE QPAIN 2025", note: "Bengali fake news detection, published", href: "https://ieeexplore.ieee.org/document/11171927" },
 ];
 
@@ -36,7 +34,7 @@ export default function HomeRecognition() {
                 </div>
 
                 <div className="md:col-span-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.08] mb-16">
+                    <div className="grid grid-cols-3 gap-px bg-white/[0.08] mb-16">
                         {stats.map((s, i) => (
                             <FadeUp key={s.label} delay={i * 0.08} className="bg-void p-5 md:p-6">
                                 <span className="block text-5xl md:text-6xl tabular-nums text-parchment" style={{ fontFamily: "var(--font-serif)" }}>{s.n}</span>

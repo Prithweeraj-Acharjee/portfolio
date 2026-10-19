@@ -90,12 +90,11 @@ export default function SeriesDetailPage() {
                     className="flex items-start gap-14 md:gap-24 overflow-x-auto snap-x snap-mandatory pb-4 px-8 md:px-[12vw] [&::-webkit-scrollbar]:hidden"
                     style={{ scrollbarWidth: "none" }}>
                     {artworks.map((art, i) => (
-                        <figure key={art.id} className="snap-center shrink-0 flex flex-col items-center"
+                        <motion.figure key={art.id} className="snap-center shrink-0 flex flex-col items-center"
+                            initial="hidden" whileInView="shown" viewport={{ once: true, amount: 0.15 }}
                             style={{ scrollSnapAlign: "center" }}>
                             <motion.button onClick={() => setSelectedIdx(i)}
-                                initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
-                                whileInView={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
-                                viewport={{ once: true, margin: "-8%" }}
+                                variants={{ hidden: { opacity: 0, clipPath: "inset(0 0 100% 0)" }, shown: { opacity: 1, clipPath: "inset(0 0 0% 0)" } }}
                                 transition={{ duration: 1.15, ease }}
                                 className="group cursor-zoom-in block overflow-hidden"
                                 style={{ background: "#e9e1d3", padding: "clamp(10px,1.1vw,16px)", boxShadow: "0 44px 90px rgba(0,0,0,0.62)" }}>
@@ -114,7 +113,7 @@ export default function SeriesDetailPage() {
                                 </p>
                                 <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.3em] text-mist/25">{art.year}</p>
                             </figcaption>
-                        </figure>
+                        </motion.figure>
                     ))}
                 </div>
 
