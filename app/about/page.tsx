@@ -29,14 +29,14 @@ export default function AboutPage() {
             </div>
 
             <section className="grid md:grid-cols-12 gap-12 md:gap-16 pt-14 md:pt-20 items-start">
-                <FadeUp className="md:col-span-5 md:sticky md:top-28">
+                <FadeUp className="order-2 md:order-none md:col-span-5 md:sticky md:top-28">
                     <div className="relative aspect-[3/4] overflow-hidden bg-ash">
                         <Image src="/the-artist.jpg" alt="Prithwee, photographed in Toledo, 2026" fill priority sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
                     </div>
                     <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-mist/70">The artist. Photograph, 2026</p>
                 </FadeUp>
 
-                <div className="md:col-span-7">
+                <div className="order-1 md:order-none md:col-span-7">
                     <h1>
                         <MaskLines
                             onLoad

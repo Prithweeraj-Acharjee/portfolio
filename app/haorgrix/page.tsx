@@ -56,7 +56,7 @@ export default function HaorGrixPage() {
                     >
                         {l.label}
                     </span>
-                    <span className="shrink-0 text-[10px] uppercase tracking-[0.3em] text-mist/80 group-hover:text-parchment transition-colors">
+                    <span className="min-w-0 break-all text-right text-[10px] uppercase tracking-[0.3em] text-mist/80 group-hover:text-parchment transition-colors">
                         {l.note} ↗
                     </span>
                 </a>

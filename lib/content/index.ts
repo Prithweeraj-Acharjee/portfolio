@@ -407,7 +407,7 @@ export const research: Research[] = [
         id: "arabic-mt",
         title: "Context-Aware Dialectal Arabic Machine Translation with Interactive Region and Register Selection",
         year: "2026",
-        institution: "arXiv, second author",
+        institution: "arXiv, co-authored",
         abstract: "A context-aware, steerable framework for dialectal Arabic machine translation that models regional and sociolinguistic variation explicitly.",
         technicalDetails: "A rule-based data augmentation pipeline expands a 3,000-sentence seed corpus to 57,000 parallel sentences across eight regional varieties; an mT5-base model is fine-tuned on lightweight metadata tags for controllable region and register.",
         links: [

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import LocalTime from "@/components/fx/LocalTime";
 import { scrollToTop } from "@/components/fx/SmoothScroll";
 import FooterCTA from "@/components/FooterCTA";
@@ -33,9 +34,10 @@ const play = [
 
 
 export default function SiteFooter() {
+    const pathname = usePathname();
     return (
         <footer className="relative z-10 border-t border-white/[0.06] bg-void overflow-hidden">
-            <FooterCTA />
+            {pathname !== "/contact" && <FooterCTA />}
 
             <div className="px-6 md:px-12 py-16 grid grid-cols-2 md:grid-cols-12 gap-10">
                 <div className="col-span-2 md:col-span-5">

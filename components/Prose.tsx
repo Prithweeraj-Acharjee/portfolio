@@ -5,7 +5,7 @@ export default function Prose({ children, className }: { children: ReactNode; cl
     return (
         <article
             className={cn(
-                "prose-custom font-serif text-bone/85 leading-[1.85] text-[1.05rem]",
+                "prose-custom font-serif text-bone/90 leading-[1.8] text-[1.15rem] md:text-[1.3rem]",
                 "[&_h2]:font-sans [&_h2]:text-3xl [&_h2]:tracking-tighter [&_h2]:text-parchment [&_h2]:font-normal [&_h2]:mt-16 [&_h2]:mb-6",
                 "[&_h3]:font-sans [&_h3]:text-xl [&_h3]:tracking-tight [&_h3]:text-parchment [&_h3]:font-normal [&_h3]:mt-12 [&_h3]:mb-4",
                 "[&_p]:mb-7",
