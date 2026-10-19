@@ -4,7 +4,8 @@ import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { series } from "@/lib/content";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { X, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -21,6 +22,8 @@ export default function SeriesDetailPage() {
     const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const total = currentSeries?.artworks.length ?? 0;
+    // Portal the lightbox to <body> so it sits above the fixed navbar, outside the page transition layer.
+    const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
 
     useEffect(() => {
         if (selectedIdx === null) return;
@@ -128,12 +131,12 @@ export default function SeriesDetailPage() {
             </div>
 
             {/* Lightbox */}
-            <AnimatePresence>
+            {mounted && createPortal(<AnimatePresence>
                 {selectedArt && selectedIdx !== null && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }} onClick={() => setSelectedIdx(null)}
                         role="dialog" aria-modal="true" aria-label={selectedArt.title} data-lenis-prevent
-                        className="fixed inset-0 z-[130] flex items-center justify-center p-6 md:p-12 overflow-y-auto"
+                        className="fixed inset-0 z-[300] flex items-center justify-center p-6 md:p-12 overflow-y-auto"
                         style={{ background: "rgba(8,8,8,0.98)", backdropFilter: "blur(20px)" }}>
                         <button aria-label="Close" className="absolute top-4 right-4 p-3 z-10 text-mist/80 hover:text-parchment transition-colors"
                             onClick={() => setSelectedIdx(null)}>
@@ -159,7 +162,7 @@ export default function SeriesDetailPage() {
                                         className="block w-auto" style={{ maxHeight: "78vh", maxWidth: "100%", height: "auto" }} priority />
                                 </div>
                             </div>
-                            <div className="lg:col-span-4 lg:border-l border-white/[0.05] lg:pl-8 lg:max-h-[78vh] lg:overflow-y-auto" data-lenis-prevent>
+                            <div className="lg:col-span-4 lg:border-l border-white/[0.05] lg:pl-8 lg:max-h-[78vh] lg:overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" data-lenis-prevent>
                                 <span className="text-[10px] uppercase tracking-[0.45em] text-mist/80 mb-3 block">{currentSeries.title}</span>
                                 <h2 className="italic text-parchment text-3xl md:text-4xl mb-4"
                                     style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}>{selectedArt.title}</h2>
@@ -186,7 +189,7 @@ export default function SeriesDetailPage() {
                         </div>
                     </motion.div>
                 )}
-            </AnimatePresence>
+            </AnimatePresence>, document.body)}
         </div>
     );
 }
