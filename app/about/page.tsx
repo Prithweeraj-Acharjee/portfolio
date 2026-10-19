@@ -6,7 +6,7 @@ import { MaskLines, FadeUp } from "@/components/fx/Reveal";
 const STATEMENT = `Art is something I always had trouble learning in school, I could never draw those perfect lines, I kept drawing as a wonderless child. Art is something that brought trouble into my home, I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit or feel the vision embedded in a piece of mud. Art is something that messes with me, and I keep messing with it too.`;
 
 const facts = [
-    { title: "Education", items: ["University of Toledo, B.S. Computer Science and Engineering, 2023 to present"] },
+    { title: "Education", items: ["University of Toledo, B.S. Computer Science and Engineering, 2024 to present", "University of Dhaka, Faculty of Fine Arts, 2022 to 2023"] },
     { title: "Exhibited", items: ["Mind & Soul Gallery & Studios, Toledo, May 2026"] },
     { title: "Recognition", items: ["International Recognition for Visual Art, Teravarna, 2025"] },
     { title: "Building", items: ["Co-founder and CEO, HaorGrix"] },
