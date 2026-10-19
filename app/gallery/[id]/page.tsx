@@ -159,7 +159,7 @@ export default function SeriesDetailPage() {
                                         className="block w-auto" style={{ maxHeight: "78vh", maxWidth: "100%", height: "auto" }} priority />
                                 </div>
                             </div>
-                            <div className="lg:col-span-4 lg:border-l border-white/[0.05] lg:pl-8">
+                            <div className="lg:col-span-4 lg:border-l border-white/[0.05] lg:pl-8 lg:max-h-[78vh] lg:overflow-y-auto" data-lenis-prevent>
                                 <span className="text-[10px] uppercase tracking-[0.45em] text-mist/80 mb-3 block">{currentSeries.title}</span>
                                 <h2 className="italic text-parchment text-3xl md:text-4xl mb-4"
                                     style={{ fontFamily: "var(--font-serif)", fontWeight: 500 }}>{selectedArt.title}</h2>
@@ -173,6 +173,14 @@ export default function SeriesDetailPage() {
                                         </div>
                                     ))}
                                 </div>
+                                {selectedArt.writing && (
+                                    <div className="mt-10 pt-8 border-t border-white/[0.08]">
+                                        <p className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-5">From <em className="normal-case tracking-normal text-[12px]" style={{ fontFamily: "var(--font-serif)" }}>21 Days</em></p>
+                                        <div className="space-y-4 text-[15px] leading-[1.75] text-bone/90" style={{ fontFamily: "var(--font-serif)" }}>
+                                            {selectedArt.writing.split(/\n\n/).map((para, i) => <p key={i}>{para}</p>)}
+                                        </div>
+                                    </div>
+                                )}
                                 <p className="mt-8 text-[10px] text-mist/80 font-mono">{selectedIdx + 1} / {artworks.length}</p>
                             </div>
                         </div>

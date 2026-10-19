@@ -24,6 +24,7 @@ export type Artwork = {
     title: string;
     year: string;
     concept: string;
+    writing?: string;
     medium: string;
     dimensions: string;
     media: string;

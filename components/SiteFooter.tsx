@@ -4,6 +4,7 @@ import Link from "next/link";
 import LocalTime from "@/components/fx/LocalTime";
 import { MaskLines } from "@/components/fx/Reveal";
 import { scrollToTop } from "@/components/fx/SmoothScroll";
+import FooterCTA from "@/components/FooterCTA";
 
 const pages = [
     { name: "Gallery", href: "/gallery" },
@@ -31,30 +32,11 @@ const play = [
     { name: "RoboTheater", href: "https://robotheater-site.vercel.app" },
 ];
 
-const marquee = "Let's make something that stays";
 
 export default function SiteFooter() {
     return (
         <footer className="relative z-10 border-t border-white/[0.06] bg-void overflow-hidden">
-            <Link href="/contact" data-cursor="Write" className="group block py-16 md:py-24 border-b border-white/[0.06]" aria-label="Get in touch">
-                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]" aria-hidden>
-                    {[0, 1].map((k) => (
-                        <span key={k} className="flex items-center shrink-0">
-                            {[0, 1, 2].map((j) => (
-                                <span key={j} className="flex items-center">
-                                    <span
-                                        className="text-[16vw] md:text-[10vw] leading-none tracking-tight whitespace-nowrap text-parchment/90 group-hover:text-parchment italic px-[3vw]"
-                                        style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }}
-                                    >
-                                        {marquee}
-                                    </span>
-                                    <span className="inline-block w-[3vw] h-[3vw] rounded-full bg-bloodred" />
-                                </span>
-                            ))}
-                        </span>
-                    ))}
-                </div>
-            </Link>
+            <FooterCTA />
 
             <div className="px-6 md:px-12 py-16 grid grid-cols-2 md:grid-cols-12 gap-10">
                 <div className="col-span-2 md:col-span-5">
