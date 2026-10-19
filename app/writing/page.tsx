@@ -19,7 +19,7 @@ export default function WritingPage() {
 
     return (
         <div>
-            <PageHeader index="W" label="Writing" title={["Essays", <em key="n" className="text-bone/80">and notes</em>]} intro={<p>Long-form thinking and short notes from the studio.</p>} />
+            <PageHeader index="W" label="Writing" title={["Essays", <em key="n" className="text-bone/80">and notes</em>]} />
             <div className="max-w-5xl px-6 md:px-12 py-16 md:py-24">
 
 
