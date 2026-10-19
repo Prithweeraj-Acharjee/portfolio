@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, useMotionTemplate, useMotionValue, useReducedMotion, useSpring, type Variants } from "framer-motion";
 import { useMedia } from "@/lib/use-media";
 
@@ -11,6 +12,22 @@ const lines = [
     { text: "something", cls: "italic text-bone/80 md:pl-[12vw]" },
     { text: "that stays.", cls: "" },
 ];
+
+// Each page reveals a different painting under the cursor; unlisted pages pick one from their path.
+const byPage: Record<string, string> = {
+    "/": "p-25",
+    "/gallery": "p-02",
+    "/research": "p-16",
+    "/systems": "p-20",
+    "/writing": "p-08",
+    "/haorgrix": "p-23",
+    "/about": "p-15",
+};
+const pool = Array.from({ length: 25 }, (_, i) => `p-${String(i + 1).padStart(2, "0")}`);
+const paintingFor = (path: string) => {
+    const key = byPage[path] ?? pool[[...path].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % pool.length];
+    return `/artworks/paintings/${key}.jpg`;
+};
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const line: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.028 } } };
@@ -21,6 +38,7 @@ const letter: Variants = {
 
 export default function FooterCTA() {
     const still = useReducedMotion();
+    const pathname = usePathname();
     const fine = useMedia("(pointer: fine)");
     const ref = useRef<HTMLDivElement>(null);
     const x = useMotionValue(-999);
@@ -47,7 +65,7 @@ export default function FooterCTA() {
         >
             {fine && !still && (
                 <motion.div aria-hidden className="pointer-events-none absolute inset-0" style={{ WebkitMaskImage: mask, maskImage: mask }}>
-                    <Image src="/artworks/paintings/p-25.jpg" alt="" fill sizes="100vw" className="object-cover" style={{ filter: "contrast(1.1) brightness(0.8)" }} />
+                    <Image key={pathname} src={paintingFor(pathname)} alt="" fill sizes="100vw" className="object-cover" style={{ filter: "contrast(1.1) brightness(0.8)" }} />
                 </motion.div>
             )}
 
