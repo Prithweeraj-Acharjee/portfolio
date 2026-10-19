@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { MaskLines, FadeUp } from "@/components/fx/Reveal";
 
-const STATEMENT = `Art is something I always had trouble learning in school, I could never draw those perfect lines, I kept drawing as a wonderless child. Art is something that brought trouble into my home, I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit or feel the vision embedded in a piece of mud. Art is something that messes with me, and I keep messing with it too.`;
+const STATEMENT = `In Toledo my walls hold nothing finished. Kraft paper, torn at the edges, taped to rental drywall with packaging tape that lets go in the summer humidity. No frame, no glass, no good plates underneath. My father hung a famous face to prove his life was going somewhere. I pin up faces nobody knows to prove mine has not stopped.`;
 
 const facts = [
     { title: "Education", items: ["University of Toledo, B.S. Computer Science and Engineering, 2024 to present", "University of Dhaka, Faculty of Fine Arts, 2022 to 2023"] },
@@ -54,7 +54,7 @@ export default function AboutPage() {
                             &ldquo;{STATEMENT}&rdquo;
                         </blockquote>
                         <p className="mt-8 text-[11px] uppercase tracking-[0.3em] text-mist/80">
-                            Prithwee, Bancroft Street, Toledo
+                            From 21 Days, Bancroft Street, Toledo
                         </p>
                     </FadeUp>
 
