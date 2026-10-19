@@ -5,6 +5,7 @@ import { projects } from "@/lib/content";
 import { useMode } from "@/lib/mode-context";
 import Image from "next/image";
 import { ExternalLink, Github, Network } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -18,44 +19,35 @@ const fadeUp: Variants = {
 };
 
 export default function SystemsPage() {
-    const { mode } = useMode();
+    const { mode, toggleMode } = useMode();
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-            <header className="mb-24">
-                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    className="text-[11px] uppercase tracking-[0.45em] text-mist/50 mb-4 block">
-                    Systems & Engineering
-                </motion.span>
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
-                    <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease }}
-                        className="font-serif text-5xl md:text-7xl tracking-[-0.03em] leading-none text-parchment"
-                        style={{ fontWeight: 400 }}>
-                        Built Systems
-                    </motion.h1>
-                    <motion.a
-                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-                        href="/resume.pdf" target="_blank"
-                        className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-mist/60 hover:text-bone transition-colors border border-white/[0.06] hover:border-white/[0.12] px-4 py-2"
-                        style={{ background: "rgba(255,255,255,0.01)" }}>
-                        <ExternalLink size={13} /> View Resume
-                    </motion.a>
-                </div>
-                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
-                    className="text-mist/60 max-w-xl leading-relaxed">
-                    An intersection of architectural rigor and experimental implementation.
-                    {mode === 'aesthetic' && <span> Toggle <span className="text-parchment">Technical Mode</span> for stack analysis.</span>}
-                </motion.p>
-            </header>
+        <div>
+            <PageHeader
+                index="S"
+                label="Systems and engineering"
+                title={["Built", <em key="s" className="text-bone/80">systems</em>]}
+                intro={<p>Software, AI products, and interactive work, each with a live demo.</p>}
+                aside={
+                    <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+                        <button onClick={toggleMode} aria-pressed={mode === 'technical'} className="link-slide inline-block py-2 text-[11px] uppercase tracking-[0.3em] text-parchment">
+                            {mode === 'technical' ? 'Hide' : 'Show'} the stack
+                        </button>
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="link-slide inline-block py-2 text-[11px] uppercase tracking-[0.3em] text-parchment">
+                            Résumé, PDF ↗
+                        </a>
+                    </div>
+                }
+            />
+            <div className="px-6 md:px-12 pt-16 md:pt-24">
 
-            <div className="space-y-32">
+            <div className="space-y-28 md:space-y-40 pb-24">
                 {projects.map((project, index) => (
                     <motion.section key={project.id} variants={stagger} initial="hidden"
                         whileInView="show" viewport={{ once: true, margin: "-80px" }}>
                         <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
                             <span className="text-[10px] font-mono tracking-widest uppercase text-bone/60">0{index + 1}</span>
-                            <span className="text-[10px] text-mist/30 font-mono uppercase tracking-widest">// {project.year}</span>
+                            <span className="text-[10px] text-mist/80 font-mono uppercase tracking-widest">{project.year}</span>
                             <div className="flex-1 h-px bg-white/[0.04]" />
                         </motion.div>
 
@@ -66,10 +58,10 @@ export default function SystemsPage() {
                                     <h2 className="font-serif text-3xl md:text-5xl tracking-tight leading-tight text-parchment"
                                         style={{ fontWeight: 400 }}>{project.title}</h2>
                                 </div>
-                                <p className="text-mist/60 leading-relaxed">{project.summary}</p>
+                                <p className="text-bone/85 leading-relaxed">{project.summary}</p>
                                 <div>
-                                    <h3 className="text-[10px] uppercase tracking-widest text-mist/30 mb-2">Conceptual Framing</h3>
-                                    <p className="text-sm text-mist/50 leading-relaxed">"{project.conceptualFraming}"</p>
+                                    <h3 className="text-[10px] uppercase tracking-widest text-mist/80 mb-2">Framing</h3>
+                                    <p className="text-sm text-bone/80 leading-relaxed italic" style={{ fontFamily: "var(--font-serif)", fontSize: "1.05rem" }}>“{project.conceptualFraming}”</p>
                                 </div>
 
                                 {mode === 'technical' && (
@@ -78,13 +70,13 @@ export default function SystemsPage() {
                                         style={{ background: "rgba(200,191,176,0.03)" }}>
                                         <div className="flex items-center gap-2 px-5 py-3 border-b border-white/[0.04]">
                                             <Network size={13} className="text-bone/40" />
-                                            <span className="text-[10px] uppercase tracking-widest text-mist/40 font-semibold">Architecture</span>
+                                            <span className="text-[10px] uppercase tracking-widest text-mist/80 font-semibold">Architecture</span>
                                         </div>
                                         <div className="px-5 py-4">
-                                            <p className="text-xs font-mono leading-relaxed text-mist/50">{project.technicalArchitecture}</p>
+                                            <p className="text-xs font-mono leading-relaxed text-mist/90">{project.technicalArchitecture}</p>
                                             <div className="mt-4 flex flex-wrap gap-1.5">
                                                 {project.stack.map((s) => (
-                                                    <span key={s} className="text-[9px] uppercase tracking-wide px-2.5 py-1 border border-white/[0.06] text-mist/40">
+                                                    <span key={s} className="text-[9px] uppercase tracking-wide px-2.5 py-1 border border-white/[0.06] text-mist/80">
                                                         {s}
                                                     </span>
                                                 ))}
@@ -95,15 +87,15 @@ export default function SystemsPage() {
 
                                 <div className="flex items-center gap-6 pt-2">
                                     {project.links?.demo && (
-                                        <a href={project.links.demo} target="_blank"
-                                            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-mist/40 hover:text-parchment transition-colors">
+                                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
+                                            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-mist/80 hover:text-parchment transition-colors">
                                             <ExternalLink size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                             Live Demo
                                         </a>
                                     )}
                                     {project.links?.github && (
-                                        <a href={project.links.github} target="_blank"
-                                            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-mist/40 hover:text-parchment transition-colors">
+                                        <a href={project.links.github} target="_blank" rel="noopener noreferrer"
+                                            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-widest text-mist/80 hover:text-parchment transition-colors">
                                             <Github size={13} />
                                             Repository
                                         </a>
@@ -131,6 +123,7 @@ export default function SystemsPage() {
                         </div>
                     </motion.section>
                 ))}
+            </div>
             </div>
         </div>
     );

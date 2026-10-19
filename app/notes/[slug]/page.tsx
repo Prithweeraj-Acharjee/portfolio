@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const post = getPostBySlug(slug, "note");
     if (!post) return {};
     return {
-        title: `${post.title}, Prithweeraj Acharjee`,
+        title: post.title,
         description: post.summary,
     };
 }
@@ -28,7 +28,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
         <div className="max-w-2xl mx-auto px-6 py-20 md:py-28">
             <Link
                 href="/writing"
-                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/40 hover:text-bone transition-colors mb-16"
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/80 hover:text-bone transition-colors mb-16"
             >
                 <ArrowLeft size={11} /> Back
             </Link>

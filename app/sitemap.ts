@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 import { getEssays, getNotes, getAllTags } from "@/lib/writing";
-import { series, projects, research } from "@/lib/content";
+import { series, projects } from "@/lib/content";
 
 const SITE = "https://prithwee.haorgrix.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticRoutes = ["", "/gallery", "/writing", "/research", "/systems", "/about", "/contact"].map((p) => ({
+    const staticRoutes = ["", "/gallery", "/writing", "/research", "/systems", "/about", "/contact", "/haorgrix"].map((p) => ({
         url: `${SITE}${p}`,
         lastModified: new Date(),
     }));

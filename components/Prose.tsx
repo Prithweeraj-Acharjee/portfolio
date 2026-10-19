@@ -10,7 +10,7 @@ export default function Prose({ children, className }: { children: ReactNode; cl
                 "[&_h3]:font-sans [&_h3]:text-xl [&_h3]:tracking-tight [&_h3]:text-parchment [&_h3]:font-normal [&_h3]:mt-12 [&_h3]:mb-4",
                 "[&_p]:mb-7",
                 "[&_a]:text-ember [&_a]:underline-offset-4 [&_a]:decoration-bloodred/40 hover:[&_a]:decoration-bloodred",
-                "[&_em]:italic [&_em]:text-parchment/90",
+                "[&_em]:italic [&_em]:text-parchment",
                 "[&_strong]:text-parchment [&_strong]:font-medium",
                 "[&_blockquote]:border-l-2 [&_blockquote]:border-bloodred/60 [&_blockquote]:pl-6 [&_blockquote]:my-10 [&_blockquote]:italic [&_blockquote]:text-mist/80",
                 "[&_ul]:my-7 [&_ul]:pl-6 [&_ul]:list-disc [&_ul]:marker:text-ember/50",
@@ -21,7 +21,7 @@ export default function Prose({ children, className }: { children: ReactNode; cl
                 "[&_pre]:bg-ash/80 [&_pre]:border [&_pre]:border-white/[0.06] [&_pre]:rounded [&_pre]:p-5 [&_pre]:overflow-x-auto [&_pre]:my-8",
                 "[&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-[0.88em]",
                 "[&_img]:my-10 [&_img]:rounded",
-                "first-letter:font-serif first-letter:text-6xl first-letter:font-medium first-letter:text-ember first-letter:float-left first-letter:mr-3 first-letter:leading-none first-letter:mt-1",
+
                 className,
             )}
         >

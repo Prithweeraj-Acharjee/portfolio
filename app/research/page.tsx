@@ -1,69 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { research } from "@/lib/content";
-import { Link2, BookOpen } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
+import { FadeUp } from "@/components/fx/Reveal";
 
 export default function ResearchPage() {
     return (
-        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-            <header className="mb-20">
-                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    className="text-[11px] uppercase tracking-[0.45em] text-mist/50 mb-4 block">Research</motion.span>
-                <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-serif text-5xl md:text-7xl tracking-[-0.03em] leading-none mb-6 text-parchment"
-                    style={{ fontWeight: 400 }}>
-                    Research
-                </motion.h1>
-                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
-                    className="text-mist/60 max-w-xl leading-relaxed">
-                    Ongoing investigations into machine learning, digital twins, and the intersection of physical conservation and digital state-space.
-                </motion.p>
-            </header>
+        <div>
+            <PageHeader
+                index="R"
+                label="Research"
+                title={["Research"]}
+                intro={<p>Papers and ongoing studies in AI fairness, language technology, and graphics.</p>}
+                aside={
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="link-slide inline-block py-2 text-[11px] uppercase tracking-[0.3em] text-parchment">
+                        Résumé, PDF ↗
+                    </a>
+                }
+            />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {research.map((item, index) => (
-                    <motion.article key={item.id}
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1, duration: 0.6 }}
-                        className="group relative border border-white/[0.04] p-7 overflow-hidden transition-all duration-500 hover:border-white/[0.1]"
-                        style={{ background: "rgba(255,255,255,0.01)" }}>
-
-                        <div className="absolute top-0 left-0 right-0 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-bone/30" />
-
-                        <div className="flex justify-between items-start mb-5">
-                            <div className="flex items-center gap-3">
-                                <span className="text-[9px] uppercase tracking-widest px-2.5 py-1 border border-white/[0.06] text-mist/40">
-                                    {item.year}
-                                </span>
-                                <span className="text-[10px] text-mist/30 font-mono">{item.institution || "Independent"}</span>
+            <ol className="px-6 md:px-12">
+                {research.map((item, i) => (
+                    <li key={item.id} className="border-b border-white/[0.08]">
+                        <FadeUp className="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16">
+                            <div className="md:col-span-3 flex flex-wrap md:flex-col gap-x-4 gap-y-3 text-[10px] uppercase tracking-[0.3em] text-mist/80">
+                                <span className="font-mono">{String(i + 1).padStart(2, "0")}</span>
+                                <span>{item.year}</span>
+                                <span className="text-bone/90">{item.institution ?? "Independent"}</span>
                             </div>
-                            <BookOpen size={15} className="text-mist/20 group-hover:text-bone/40 transition-colors" />
-                        </div>
-
-                        <h2 className="font-serif text-xl md:text-2xl mb-4 leading-tight tracking-tight text-parchment"
-                            style={{ fontWeight: 400 }}>{item.title}</h2>
-                        <p className="text-sm text-mist/60 leading-relaxed mb-6">{item.abstract}</p>
-
-                        <div className="space-y-2">
-                            <span className="text-[10px] uppercase tracking-widest text-mist/30">Technical Focus</span>
-                            <p className="text-xs font-mono text-mist/40 leading-relaxed">{item.technicalDetails}</p>
-                        </div>
-
-                        {item.links && (
-                            <div className="mt-6 pt-5 border-t border-white/[0.04] flex flex-wrap gap-5">
-                                {item.links.map((link) => (
-                                    <a key={link.url} href={link.url}
-                                        className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-mist/40 hover:text-parchment transition-colors">
-                                        <Link2 size={11} />{link.label}
-                                    </a>
-                                ))}
+                            <div className="md:col-span-9">
+                                <h2 className="text-3xl md:text-5xl leading-[1.05] tracking-tight text-parchment" style={{ fontFamily: "var(--font-serif)" }}>
+                                    {item.title}
+                                </h2>
+                                <p className="mt-6 max-w-3xl text-base md:text-lg leading-relaxed text-bone/85">{item.abstract}</p>
+                                <p className="mt-5 max-w-3xl text-sm leading-relaxed text-mist/90">{item.technicalDetails}</p>
+                                {item.links && (
+                                    <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2">
+                                        {item.links.map((link) => (
+                                            <a
+                                                key={link.url}
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="link-slide inline-block py-2 text-[11px] uppercase tracking-[0.3em] text-parchment"
+                                            >
+                                                {link.label} ↗
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    </motion.article>
+                        </FadeUp>
+                    </li>
                 ))}
-            </div>
+            </ol>
         </div>
     );
 }

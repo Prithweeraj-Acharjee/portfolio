@@ -16,7 +16,7 @@ export default function HomeCreative() {
     return (
         <section id="film" className="relative max-w-5xl mx-auto px-6 md:px-12 py-32 md:py-44 text-center border-t border-white/[0.06] scroll-mt-20">
             <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-                className="text-[11px] uppercase tracking-[0.45em] text-mist/50 block mb-6">
+                className="text-[11px] uppercase tracking-[0.45em] text-mist/80 block mb-6">
                 (04) Short Film, 2026
             </motion.span>
             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -36,7 +36,7 @@ export default function HomeCreative() {
                             <img src="/migration-poster.jpg" alt="Migration, a short film" className="w-full aspect-[2/1] object-cover block" />
                             <span className="absolute inset-0 flex items-center justify-center bg-void/25 group-hover:bg-void/10 transition-colors duration-500">
                                 <span className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-parchment/50 flex items-center justify-center backdrop-blur-sm group-hover:border-parchment/90 group-hover:scale-105 transition-all duration-500">
-                                    <Play size={22} className="text-parchment/90 ml-0.5" fill="currentColor" />
+                                    <Play size={22} className="text-parchment ml-0.5" fill="currentColor" />
                                 </span>
                             </span>
                         </button>
@@ -45,13 +45,13 @@ export default function HomeCreative() {
                             className="w-full aspect-[2/1] object-cover block bg-black" />
                     )}
                 </div>
-                <p className="mt-6 italic text-mist/50 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
+                <p className="mt-6 italic text-mist/80 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
                     A short film. Best with sound.
                 </p>
             </motion.div>
 
             <div className="mt-24 md:mt-32">
-                <p className="text-[10px] uppercase tracking-[0.4em] text-mist/30 mb-10">Other creative works</p>
+                <p className="text-[10px] uppercase tracking-[0.4em] text-mist/80 mb-10">Other creative works</p>
                 <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-14 gap-y-6">
                     {others.map((o) => (
                         <a key={o.name} href={o.href} target={o.ext ? "_blank" : undefined} rel={o.ext ? "noopener" : undefined}
@@ -60,7 +60,7 @@ export default function HomeCreative() {
                                 style={{ fontFamily: "var(--font-serif)" }}>
                                 {o.name}
                             </span>
-                            <span className="block mt-1 text-[10px] uppercase tracking-[0.3em] text-mist/40">{o.note}</span>
+                            <span className="block mt-1 text-[10px] uppercase tracking-[0.3em] text-mist/80">{o.note}</span>
                         </a>
                     ))}
                 </div>

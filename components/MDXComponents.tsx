@@ -45,7 +45,7 @@ export function Figure({
                 className="w-full h-auto"
             />
             {caption && (
-                <figcaption className="text-xs text-mist/50 font-sans mt-3 text-center italic">
+                <figcaption className="text-xs text-mist/80 font-sans mt-3 text-center italic">
                     {caption}
                 </figcaption>
             )}
@@ -58,7 +58,7 @@ export const mdxComponents = {
     Aside,
     Figure,
     img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-        // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+        // eslint-disable-next-line @next/next/no-img-element
         <img {...props} alt={props.alt ?? ""} className="w-full h-auto my-10 rounded" />
     ),
 };

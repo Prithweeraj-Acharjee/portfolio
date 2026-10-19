@@ -24,7 +24,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Prithweeraj Acharjee, Painter, Researcher, Builder",
+  title: { default: "Prithweeraj Acharjee, Painter, Researcher, Builder", template: "%s · Prithweeraj Acharjee" },
   description: "Selected paintings, research, and ongoing work by Prithweeraj Acharjee.",
   metadataBase: new URL("https://prithwee.haorgrix.com"),
   openGraph: {
@@ -33,7 +33,9 @@ export const metadata: Metadata = {
     url: "https://prithwee.haorgrix.com",
     siteName: "Prithweeraj Acharjee",
     type: "website",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "A painting from 21 Days by Prithweeraj Acharjee" }],
   },
+  twitter: { card: "summary_large_image", images: ["/og.jpg"] },
 };
 
 export default function RootLayout({
@@ -44,13 +46,14 @@ export default function RootLayout({
       <body className="bg-void text-parchment antialiased overflow-x-hidden">
         <ModeProvider>
           <div className="relative min-h-screen flex flex-col">
+            <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[400] focus:bg-parchment focus:text-void focus:px-4 focus:py-2 text-xs uppercase tracking-[0.2em]">Skip to content</a>
             <SmoothScroll />
             <Preloader />
             <Cursor />
             <GrainBackground />
             <ScribbleBackground />
             <Navbar />
-            <main className="flex-grow relative z-10">
+            <main id="main" className="flex-grow relative z-10">
               {children}
             </main>
             <SiteFooter />

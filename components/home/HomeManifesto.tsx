@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { FadeUp } from "@/components/fx/Reveal";
 
-const quote = `Art is something I always had trouble learning in school, as I could never draw those perfect lines, yet I kept drawing as a wonderless child. Art is something that brought trouble into my home, yet I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit. Art is something that messes with me, and I keep messing with it too.`;
+const quote = `Art is something I always had trouble learning in school, as I could never draw those perfect lines, yet I kept drawing as a wonderless child. Art is something that brought trouble into my home, yet I kept drawing through my adolescence. Art is something I don't easily understand, but I find myself staring at a soulful ceramic sculpture in the hands of a village potter, trying to understand his spirit or feel the vision embedded in a piece of mud. Art is something that messes with me, and I keep messing with it too.`;
 
 function Word({ w, i, n, p }: { w: string; i: number; n: number; p: MotionValue<number> }) {
     const start = i / n;
@@ -35,7 +35,7 @@ export default function HomeManifesto() {
                         className="text-[7.4vw] md:text-[3.3vw] leading-[1.18] tracking-[-0.01em] text-parchment"
                         style={{ fontFamily: "var(--font-serif)", fontWeight: 400 }}
                     >
-                        <span className="text-ember italic">Well, </span>
+                        <span className="text-ember italic">well, </span>
                         {still
                             ? quote
                             : words.map((w, i) => <Word key={i} w={w} i={i} n={words.length} p={scrollYProgress} />)}

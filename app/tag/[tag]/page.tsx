@@ -26,7 +26,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
         <div className="max-w-3xl mx-auto px-6 py-20 md:py-28">
             <Link
                 href="/writing"
-                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/40 hover:text-bone transition-colors mb-12"
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/80 hover:text-bone transition-colors mb-12"
             >
                 <ArrowLeft size={11} /> All Writing
             </Link>
@@ -41,7 +41,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
                 >
                     {decoded}
                 </h1>
-                <p className="text-mist/50 text-sm mt-4">
+                <p className="text-mist/80 text-sm mt-4">
                     {posts.length} {posts.length === 1 ? "post" : "posts"}
                 </p>
             </header>
@@ -53,7 +53,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
                         href={p.kind === "note" ? `/notes/${p.slug}` : `/writing/${p.slug}`}
                         className="group block py-6 first:pt-0"
                     >
-                        <div className="flex items-baseline gap-4 text-[10px] uppercase tracking-widest text-mist/40 font-mono mb-2">
+                        <div className="flex items-baseline gap-4 text-[10px] uppercase tracking-widest text-mist/80 font-mono mb-2">
                             <span>{new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric" })}</span>
                             <span className="text-ember/60"> / </span>
                             <span>{p.kind === "note" ? "Note" : "Essay"}</span>

@@ -1,154 +1,92 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import PageHeader from "@/components/PageHeader";
+import { FadeUp } from "@/components/fx/Reveal";
 
-const photos = {
-    face: "/about-06.jpg",   // close portrait, anchor photo
-    couch: "/about-04.jpg",   // sitting on couch with clock
-    hand: "/about-02.jpg",   // hand pressed on curtain
-    artwork: "/about-01.jpg",   // holding printed collage
-    floor: "/about-03.jpg",   // sitting cross-legged on floor
-    art: "/about-07.jpg",   // charcoal drawing + painted piece on wall
-    chair: "/about-05.jpg",   // full body in studio chair
-};
+const facts = [
+    {
+        title: "Education",
+        items: ["University of Toledo, B.S. Computer Science and Engineering, 2023 to present"],
+    },
+    {
+        title: "Exhibited",
+        items: ["Mind & Soul Gallery & Studios, Toledo. Group exhibition, grand opening, May 2026"],
+    },
+    {
+        title: "Recognition",
+        items: ["International Recognition for Visual Art, Teravarna, 2025"],
+    },
+    {
+        title: "Publications",
+        items: [
+            "Bengali Fake News Detection, IEEE QPAIN 2025",
+            "Dialectal Arabic Machine Translation, arXiv 2026",
+            "Material: Painting in the Post-AI Era, book, 2026",
+        ],
+    },
+    {
+        title: "Building",
+        items: ["Co-founder and CEO, HaorGrix"],
+    },
+];
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
-};
+const photos = [
+    { src: "/about-06.jpg", alt: "Prithwee, close portrait in black and white", cls: "md:col-span-5", ratio: "3/4", pos: "object-top" },
+    { src: "/about-04.jpg", alt: "Seated on a couch beneath a wall clock and a dartboard", cls: "md:col-span-7 md:self-end", ratio: "16/10", pos: "object-center" },
+    { src: "/about-01.jpg", alt: "Holding up a printed collage", cls: "md:col-span-8 md:col-start-3", ratio: "16/8", pos: "object-top" },
+    { src: "/about-03.jpg", alt: "Sitting cross-legged on the floor of the studio", cls: "md:col-span-4", ratio: "3/4", pos: "object-center" },
+    { src: "/about-07.jpg", alt: "A charcoal drawing and a painted piece on the studio wall", cls: "md:col-span-6 md:col-start-7", ratio: "4/5", pos: "object-center" },
+    { src: "/about-02.jpg", alt: "A hand pressed against a curtain", cls: "md:col-span-5 md:col-start-2", ratio: "4/3", pos: "object-center" },
+    { src: "/about-05.jpg", alt: "Full figure seated in a studio chair", cls: "md:col-span-5", ratio: "3/4", pos: "object-top" },
+];
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen pt-20 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div>
+            <PageHeader
+                index="A"
+                label="About"
+                title={["Prithwee"]}
+                intro={
+                    <p className="text-2xl md:text-3xl leading-[1.35] text-parchment whitespace-pre-line" style={{ fontFamily: "var(--font-serif)" }}>
+                        {`Art unsettles me.
+I return to it anyway.
 
-            {/* ── Name header & Bio ───────────────────────────────────── */}
-            <div className="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5 }}
-                    className="lg:col-span-6"
-                >
-                    <span className="text-[11px] uppercase tracking-[0.45em] text-mist/40 block mb-4">
-                        About
-                    </span>
-                    <h1
-                        className="font-serif text-[clamp(3.4rem,10vw,9rem)] leading-[0.88] tracking-[-0.03em] text-parchment"
-                        style={{ fontWeight: 400 }}
-                    >
-                        Prithwee
-                    </h1>
-                </motion.div>
-
-                {/* Bio panel at top */}
-                <motion.div
-                    variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                    className="lg:col-span-5 lg:col-start-8 flex flex-col justify-end pb-2"
-                >
-                    <span className="text-[10px] uppercase tracking-[0.4em] text-mist/40 mb-6 block">
-                        Biography
-                    </span>
-                    <p
-                        className="font-sans text-xl md:text-2xl leading-relaxed text-bone/70 whitespace-pre-wrap"
-                        style={{ fontWeight: 300 }}
-                    >
-                        Art unsettles me.
-                        I return to it anyway.
-
-                        I work with image, distortion, memory, and code,
-                        building systems that move, fracture, and reform.
-                        Through image, material, and machine,
-                        Just exploring what resists!!
+I work with image, distortion, memory, and code,
+building systems that move, fracture, and reform.
+Through image, material, and machine,
+Just exploring what resists!!`}
                     </p>
-                    <div className="mt-10 pt-6 border-t border-white/[0.06] space-y-1">
-                        <p className="text-[10px] uppercase tracking-widest text-mist/30">
-                            Visual & Computational Artist / Systems / Research
-                        </p>
-                    </div>
-                </motion.div>
-            </div>
+                }
+                aside={<span className="text-[10px] uppercase tracking-[0.3em] text-mist/80">Visual and computational artist, systems, research</span>}
+            />
 
-            {/* ── Row 1: Large portrait left, small inset right ─── */}
-            <div className="grid grid-cols-12 gap-6 md:gap-10 mb-16 md:mb-24 items-end">
+            <section className="px-6 md:px-12 py-16 md:py-24 border-b border-white/[0.08]">
+                <dl className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+                    {facts.map((f, i) => (
+                        <FadeUp key={f.title} delay={i * 0.06}>
+                            <dt className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-4">{f.title}</dt>
+                            {f.items.map((it) => (
+                                <dd key={it} className="text-base leading-snug text-bone/90 mb-3" style={{ fontFamily: "var(--font-serif)" }}>{it}</dd>
+                            ))}
+                        </FadeUp>
+                    ))}
+                </dl>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="link-slide inline-block mt-12 py-2 text-[11px] uppercase tracking-[0.3em] text-parchment">
+                    Full résumé, PDF ↗
+                </a>
+            </section>
 
-                {/* Large face portrait */}
-                <motion.div
-                    variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                    className="col-span-12 md:col-span-5 relative overflow-hidden bg-stone"
-                    style={{ aspectRatio: "3/4" }}
-                >
-                    <Image src={photos.face} alt="" fill className="object-cover object-top grayscale" />
-                </motion.div>
-
-                {/* Right column: two stacked */}
-                <div className="col-span-12 md:col-span-7 flex flex-col gap-6 md:gap-10">
-
-                    {/* Wide landscape, couch */}
-                    <motion.div
-                        variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                        className="relative overflow-hidden bg-stone"
-                        style={{ aspectRatio: "16/9" }}
-                    >
-                        <Image src={photos.couch} alt="" fill className="object-cover object-center grayscale" />
-                    </motion.div>
-
-                    {/* Small landscape, hand */}
-                    <motion.div
-                        variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                        className="relative overflow-hidden bg-stone md:ml-16"
-                        style={{ aspectRatio: "4/3" }}
-                    >
-                        <Image src={photos.hand} alt="" fill className="object-cover object-center grayscale" />
-                    </motion.div>
-                </div>
-            </div>
-
-            {/* ── Row 2: offset single wide ─────────────────────── */}
-            <div className="grid grid-cols-12 gap-6 md:gap-10 mb-16 md:mb-24">
-                <motion.div
-                    variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                    className="col-span-12 md:col-start-3 md:col-span-8 relative overflow-hidden bg-stone"
-                    style={{ aspectRatio: "16/8" }}
-                >
-                    <Image src={photos.artwork} alt="" fill className="object-cover object-top grayscale" />
-                </motion.div>
-            </div>
-
-            {/* ── Row 3: split two with intentional gap ─────────── */}
-            <div className="grid grid-cols-12 gap-6 md:gap-10 mb-16 md:mb-24 items-start">
-
-                <motion.div
-                    variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                    className="col-span-12 md:col-span-4 relative overflow-hidden bg-stone"
-                    style={{ aspectRatio: "3/4" }}
-                >
-                    <Image src={photos.floor} alt="" fill className="object-cover object-center grayscale" />
-                </motion.div>
-
-                {/* Intentional gap (cols 5-6 empty) */}
-
-                <motion.div
-                    variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                    className="col-span-12 md:col-start-7 md:col-span-6 relative overflow-hidden bg-stone"
-                    style={{ aspectRatio: "4/5" }}
-                >
-                    <Image src={photos.art} alt="" fill className="object-cover object-center grayscale" />
-                </motion.div>
-            </div>
-
-            {/* ── Row 4: full-width chair ─────────────────── */}
-            <div className="grid grid-cols-12 gap-6 md:gap-10 items-end">
-
-                <motion.div
-                    variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-                    className="col-span-12 md:col-span-6 md:col-start-4 relative overflow-hidden bg-stone"
-                    style={{ aspectRatio: "3/4" }}
-                >
-                    <Image src={photos.chair} alt="" fill className="object-cover object-top grayscale" />
-                </motion.div>
-
-            </div>
+            <section className="px-6 md:px-12 py-16 md:py-28 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
+                {photos.map((p) => (
+                    <FadeUp key={p.src} className={p.cls}>
+                        <div className="relative overflow-hidden bg-ash" style={{ aspectRatio: p.ratio }}>
+                            <Image src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 100vw, 60vw" className={`object-cover ${p.pos} grayscale`} />
+                        </div>
+                    </FadeUp>
+                ))}
+            </section>
         </div>
     );
 }

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const post = getPostBySlug(slug, "essay");
     if (!post) return {};
     return {
-        title: `${post.title}, Prithweeraj Acharjee`,
+        title: post.title,
         description: post.summary,
     };
 }
@@ -26,27 +26,27 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
     if (!post) notFound();
 
     return (
-        <div className="max-w-3xl mx-auto px-6 py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-6 pt-28 md:pt-40 pb-20 md:pb-28">
             <Link
                 href="/writing"
-                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/40 hover:text-bone transition-colors mb-16"
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist/80 hover:text-bone transition-colors mb-16"
             >
                 <ArrowLeft size={11} /> All Writing
             </Link>
 
             <header className="mb-16">
-                <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-mist/40 font-mono mb-6">
+                <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-mist/80 font-mono mb-6">
                     <span>{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
                     <span> / </span>
                     <span>{post.readingMinutes} min read</span>
                 </div>
                 <h1
-                    className="font-serif text-4xl md:text-6xl tracking-tight leading-[1.05] text-parchment mb-8"
+                    className="font-serif text-5xl md:text-7xl tracking-[-0.03em] leading-[1] text-parchment mb-8"
                     style={{ fontWeight: 400 }}
                 >
                     {post.title}
                 </h1>
-                <p className="font-serif italic text-mist/70 text-lg leading-relaxed max-w-2xl">
+                <p className="font-serif italic text-mist/90 text-lg leading-relaxed max-w-2xl">
                     {post.summary}
                 </p>
                 {post.tags && post.tags.length > 0 && (
@@ -55,7 +55,7 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
                             <Link
                                 key={t}
                                 href={`/tag/${encodeURIComponent(t)}`}
-                                className="text-[10px] uppercase tracking-widest text-mist/50 hover:text-bone border border-white/[0.06] hover:border-white/[0.15] px-3 py-1 transition-colors"
+                                className="text-[10px] uppercase tracking-widest text-mist/80 hover:text-bone border border-white/[0.06] hover:border-white/[0.15] px-3 py-1 transition-colors"
                             >
                                 {t}
                             </Link>
@@ -70,7 +70,7 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
             </Prose>
 
             <footer className="mt-24 pt-12 border-t border-white/[0.05]">
-                <p className="text-mist/50 font-serif italic text-sm">
+                <p className="text-mist/80 font-serif italic text-sm">
                   Prithweeraj
                 </p>
             </footer>

@@ -1,4 +1,4 @@
-import { Project, Artwork, Writing, Research, Series } from "@/types/content";
+import { Project, Writing, Research, Series } from "@/types/content";
 
 export const projects: Project[] = [
     {
@@ -212,7 +212,7 @@ Prithwee A, 2026`,
         title: "Freedom Under",
         statement: `“Being born a woman is my awful tragedy. From the moment I was conceived I was doomed to sprout breasts and ovaries rather than penis and scrotum; to have my whole circle of action, thought and feeling rigidly circumscribed by my inescapable feminity. Yes, my consuming desire to mingle with road crews, sailors and soldiers, bar room regulars--to be a part of a scene, anonymous, listening, recording--all is spoiled by the fact that I am a girl, a female always in danger of assault and battery. My consuming interest in men and their lives is often misconstrued as a desire to seduce them, or as an invitation to intimacy. Yet, God, I want to talk to everybody I can as deeply as I can. I want to be able to sleep in an open field, to travel west, to walk freely at night...”, Sylvia Plath, The Unabridged Journals of Sylvia Plath 
 
-The lives of women in my country have always been entangled in a system of observation. As I grew up, beginning with my mother -I witnessed their quiet performances: existing under constant surveillance, maintaining beauty not as expression but as expectation. Under that, the definition of femininity, shaped by dominance, remains here elusive and distorted. 
+The lives of women in my country have always been entangled in a system of observation. As I grew up, beginning with my mother, I witnessed their quiet performances: existing under constant surveillance, maintaining beauty not as expression but as expectation. Under that, the definition of femininity, shaped by dominance, remains here elusive and distorted. 
 Balancing these everyday burdens becomes a ritual, an act of endurance. Some remain untethered, but many, like my mother, carry invisible chains, generations deep. 
 
 Freedom Under IV: The Veil of Observance reflects that half-conscious state that descends after sunset, when the sky feels both sheltering and suffocating. 
@@ -416,8 +416,8 @@ Prithwee A, 2026`,
     },
     {
         id: "trouble-in-my-head",
-        title: "Trouble in my head",
-        statement: "Artist statement coming soon...",
+        title: "Trouble in My Head",
+        statement: "Mixed media works on paper, 2024.",
         coverImage: "/artworks/trouble-in-head/trouble-01.jpg",
         artworks: [
             {
@@ -531,7 +531,7 @@ Prithwee A, 2026`,
     },
     {
         id: "fighting-bugs",
-        title: "Fighting bugs",
+        title: "Fighting Bugs",
         statement: "Technical friction as artistic catalyst. Exploring the aesthetic of failure and recovery through digital and print experimentation.",
         coverImage: "/artworks/fighting-bugs/bug-01.jpg",
         artworks: [
@@ -639,9 +639,9 @@ export const research: Research[] = [
         id: "rar",
         title: "Aesthetics Is Not a Mirror",
         year: "2026",
-        institution: "First author, manuscript under review",
-        abstract: "A held-out falsification study of representational bias in widely used text-to-image diffusion models, showing strong statistical convergence toward a narrow occupational aesthetic across thousands of generations.",
-        technicalDetails: "Pearson r = 0.873 between LAION-Aesthetics V2 score and the model's outputs; a 200,000-trial Monte Carlo joint null test (p < 1e-5); FairFace cross-classifier replication; a pre-registered held-out falsification. First-author poster at the Midwest Graduate Symposium 2026.",
+        institution: "First author",
+        abstract: "An end-to-end audit of Stable Diffusion v1.5 outputs against the LAION-Aesthetics V2 curation step: what an aesthetic filter keeps, and what a model trained on it learns to see.",
+        technicalDetails: "Across 15 occupations and 3,000 Stable Diffusion v1.5 generations, the gender composition of the curated data predicts the model's outputs (r = 0.873). 200,000-trial Monte Carlo joint null test, FairFace cross-classifier replication, pre-registered held-out falsification. First-author poster, Midwest Graduate Symposium 2026.",
     },
     {
         id: "dp-4dgs",
