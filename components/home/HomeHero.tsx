@@ -55,17 +55,6 @@ export default function HomeHero() {
                 className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 pb-10 md:pb-12"
                 style={still ? undefined : { opacity: fade }}
             >
-                <div className="mb-6 md:mb-8">
-                    <motion.p
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.9, ease }}
-                        className="max-w-[34ch] text-sm md:text-base leading-relaxed text-bone/80"
-                    >
-                        Researcher, Painter<br />Cofounder, HaorGrix
-                    </motion.p>
-                </div>
-
                 <motion.h1 style={still ? undefined : { y: nameY }} className="relative" aria-label="Prithwee">
                     <MaskLines
                         onLoad
@@ -75,6 +64,17 @@ export default function HomeHero() {
                         style={{ fontFamily: "var(--font-serif)", fontWeight: 400 }}
                     />
                 </motion.h1>
+
+                <div className="mt-6 md:mt-8">
+                    <motion.p
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.9, ease }}
+                        className="max-w-[34ch] text-sm md:text-base leading-relaxed text-bone/80"
+                    >
+                        Researcher, Painter<br />Cofounder, HaorGrix
+                    </motion.p>
+                </div>
             </motion.div>
         </section>
     );
