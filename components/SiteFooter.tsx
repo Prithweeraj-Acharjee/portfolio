@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import LocalTime from "@/components/fx/LocalTime";
-import { MaskLines } from "@/components/fx/Reveal";
 import { scrollToTop } from "@/components/fx/SmoothScroll";
 import FooterCTA from "@/components/FooterCTA";
 
@@ -40,12 +39,7 @@ export default function SiteFooter() {
 
             <div className="px-6 md:px-12 py-16 grid grid-cols-2 md:grid-cols-12 gap-10">
                 <div className="col-span-2 md:col-span-5">
-                    <MaskLines
-                        lines={["Painter, researcher,", "builder. Habiganj", "to Toledo."]}
-                        className="block text-3xl md:text-5xl leading-[1.05] tracking-tight text-bone"
-                        style={{ fontFamily: "var(--font-serif)" }}
-                    />
-                    <a href="mailto:prithweeraj.poragach02@gmail.com" className="inline-block mt-8 text-sm text-parchment underline decoration-bloodred underline-offset-8 hover:decoration-parchment transition-colors break-all">
+                    <a href="mailto:prithweeraj.poragach02@gmail.com" className="inline-block text-sm text-parchment underline decoration-bloodred underline-offset-8 hover:decoration-parchment transition-colors break-all">
                         prithweeraj.poragach02@gmail.com
                     </a>
                 </div>

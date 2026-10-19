@@ -2,7 +2,10 @@
 
 import { MaskLines, FadeUp } from "@/components/fx/Reveal";
 
-const TEAM_URL = "https://haorgrix.com/team";
+const links = [
+    { label: "Meet the team", href: "https://haorgrix.com/team", note: "haorgrix.com/team" },
+    { label: "My profile", href: "https://haorgrix.com/team/prithweeraj-porag", note: "haorgrix.com/team/prithweeraj-porag" },
+];
 
 export default function HaorGrixPage() {
     return (
@@ -35,24 +38,27 @@ export default function HaorGrixPage() {
                 </FadeUp>
             </div>
 
-            <FadeUp delay={0.5}>
+            <FadeUp delay={0.5} className="mt-20 md:mt-28">
+                {links.map((l) => (
                 <a
-                    href={TEAM_URL}
+                    key={l.href}
+                    href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="Open"
-                    className="group mt-20 md:mt-28 flex items-end justify-between gap-6 border-t border-white/10 pt-8"
+                    className="group flex items-end justify-between gap-6 border-t border-white/10 py-8"
                 >
                     <span
                         className="text-4xl md:text-7xl leading-none tracking-tight text-parchment group-hover:italic transition-all"
                         style={{ fontFamily: "var(--font-serif)" }}
                     >
-                        Meet the team
+                        {l.label}
                     </span>
                     <span className="shrink-0 text-[10px] uppercase tracking-[0.3em] text-mist/80 group-hover:text-parchment transition-colors">
-                        haorgrix.com/team ↗
+                        {l.note} ↗
                     </span>
                 </a>
+                ))}
             </FadeUp>
         </div>
     );
