@@ -63,7 +63,7 @@ export default function AboutPage() {
                             <div key={f.title}>
                                 <dt className="text-[10px] uppercase tracking-[0.35em] text-mist/80 mb-3">{f.title}</dt>
                                 {f.items.map((it) => (
-                                    <dd key={it} className="text-base leading-snug text-bone/90" style={{ fontFamily: "var(--font-serif)" }}>{it}</dd>
+                                    <dd key={it} className="text-base leading-snug text-bone/90 [&+&]:mt-4" style={{ fontFamily: "var(--font-serif)" }}>{it}</dd>
                                 ))}
                             </div>
                         ))}
