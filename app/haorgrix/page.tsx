@@ -25,14 +25,10 @@ export default function HaorGrixPage() {
                 <HaorGrixMark className="w-[70%] max-w-[300px] mx-auto md:w-full md:max-w-[440px] md:col-span-4 md:col-start-1" />
                 <FadeUp delay={0.3} className="md:col-span-7 md:col-start-6 space-y-8 text-xl md:text-3xl leading-[1.45] text-bone/90">
                     <p style={{ fontFamily: "var(--font-serif)" }}>
-                        Most of the talent that gets pulled into outsourcing is undervalued and undermentored.
-                        HaorGrix is an attempt to build something else, a place where the work is hard, the equity
-                        is real, and the products carry our names.
+                        HaorGrix was our plan to attempt to make an exceptional team, with most of the talent that gets pulled into outsourcing, undervalued and undermentored, a place where the work is actually hard, but we feel ours.
                     </p>
                     <p style={{ fontFamily: "var(--font-serif)" }}>
-                        We are a small, senior team of engineers, designers, and operators who like shipping. We take
-                        a limited number of things and build them properly, with AI where it earns its place and
-                        craft everywhere.
+                        HaorGrix is a small team of engineers and designers who liked to vision. We take a limited number of things and build them properly. The equity is real, and the products carry our names. We would rather be known for a few things that last than for many that don&rsquo;t.
                     </p>
                     <p className="text-[10px] uppercase tracking-[0.35em] text-mist/70" style={{ fontFamily: "var(--font-sans)" }}>
                         Prithwee
