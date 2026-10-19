@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   publisher: NAME,
   category: "art",
   metadataBase: new URL(SITE),
+  verification: { google: "TEu5kJBkqybFhtw7aeSJJRvlhpNxREAKRrfixYgEinI" },
   alternates: { canonical: "/" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   openGraph: {
