@@ -12,9 +12,9 @@ import LocalTime from '@/components/fx/LocalTime';
 const navItems = [
     { name: 'Gallery', href: '/gallery', image: '/artworks/21-days/td-07.jpg' },
     { name: 'Research', href: '/research', image: '/artworks/21-days/td-20.jpg' },
-    { name: 'Systems', href: '/systems', image: '/projects/river-of-gaze.png' },
+    { name: 'Projects', href: '/systems', image: '/projects/river-of-gaze.png' },
+    { name: 'Blog', href: '/writing', image: '/artworks/material-expressions/me-04.jpg' },
     { name: 'HaorGrix', href: '/haorgrix', image: '/projects/haorgrix.png' },
-    { name: 'Writing', href: '/writing', image: '/artworks/material-expressions/me-04.jpg' },
     { name: 'About', href: '/about', image: '/studio-01.jpg' },
     { name: 'Contact', href: '/contact', image: '/artworks/21-days/td-05.jpg' },
 ];
@@ -83,7 +83,7 @@ export default function Navbar() {
 
                     <div className="flex items-center gap-6">
                         <div className={cn("hidden lg:flex items-center gap-6 transition-opacity duration-500", isOpen && "lg:opacity-0 pointer-events-none")}>
-                            {navItems.slice(0, 4).map((item) => (
+                            {navItems.slice(0, 5).map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}

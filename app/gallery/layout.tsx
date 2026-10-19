@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Gallery",
-    description: "Paintings by Prithweeraj Acharjee, organized by series, including 21 Days and Material: Expressions.",
+    description: "Paintings by Prithweeraj Acharjee, Paintings and collages by Prithweeraj Acharjee.",
     alternates: { canonical: "/gallery" },
 };
 

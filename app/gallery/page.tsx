@@ -11,7 +11,7 @@ const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 export default function GalleryPage() {
     return (
         <div>
-            <PageHeader index="G" label="Gallery" title={["Selected", <em key="s" className="text-bone/80">series</em>]} intro={<p>Bodies of work, organized by inquiry. {series.length} series, {series.reduce((n, s) => n + s.artworks.length, 0)} works.</p>} />
+            <PageHeader index="G" label="Gallery" title={["Paintings", <em key="s" className="text-bone/80">and collages</em>]} intro={<p>{series.reduce((n, s) => n + s.artworks.length, 0)} works.</p>} />
             <div className="px-6 md:px-12">
 
 

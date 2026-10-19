@@ -43,7 +43,7 @@ export default function SeriesDetailPage() {
 
     const artworks = currentSeries.artworks;
     const selectedArt = selectedIdx !== null ? artworks[selectedIdx] : null;
-    const isMaterial = currentSeries.id === "material-expressions";
+    const isMaterial = currentSeries.id === "paintings";
 
     const scrollByCards = (dir: number) => {
         const el = scrollRef.current;
@@ -62,7 +62,7 @@ export default function SeriesDetailPage() {
                 <header className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-16 md:mb-20">
                     <div className="lg:col-span-7">
                         <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                            className="text-[11px] uppercase tracking-[0.45em] text-mist/80 mb-4 block">Series</motion.span>
+                            className="text-[11px] uppercase tracking-[0.45em] text-mist/80 mb-4 block">Gallery</motion.span>
                         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease }}
                             className="italic tracking-tight leading-[0.95] text-parchment text-5xl md:text-7xl lg:text-8xl"
@@ -76,14 +76,14 @@ export default function SeriesDetailPage() {
                             </a>
                         )}
                     </div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+                    {currentSeries.statement && (<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
                         className="lg:col-span-5 flex flex-col justify-end">
                         <h2 className="text-[10px] uppercase tracking-[0.4em] text-mist/80 mb-4">Statement</h2>
                         <p className="text-sm leading-[1.9] text-bone/85 whitespace-pre-wrap"
                             style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontSize: "0.98rem" }}>
                             {currentSeries.statement}
                         </p>
-                    </motion.div>
+                    </motion.div>)}
                 </header>
             </div>
 

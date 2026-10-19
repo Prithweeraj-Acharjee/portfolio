@@ -5,7 +5,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const { id } = await params;
     const s = series.find((x) => x.id === id);
     if (!s) return { title: "Series not found" };
-    const description = `${s.title}, a series of ${s.artworks.length} works by Prithweeraj Acharjee.`;
+    const description = `${s.title}, ${s.artworks.length} works by Prithweeraj Acharjee.`;
     return {
         title: s.title,
         description,

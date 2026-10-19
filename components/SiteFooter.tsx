@@ -8,9 +8,9 @@ import { scrollToTop } from "@/components/fx/SmoothScroll";
 const pages = [
     { name: "Gallery", href: "/gallery" },
     { name: "Research", href: "/research" },
-    { name: "Systems", href: "/systems" },
+    { name: "Projects", href: "/systems" },
     { name: "HaorGrix", href: "/haorgrix" },
-    { name: "Writing", href: "/writing" },
+    { name: "Blog", href: "/writing" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
 ];

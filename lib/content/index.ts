@@ -123,7 +123,7 @@ export const projects: Project[] = [
     },
 ];
 
-export const series: Series[] = [
+const sourceSeries: Series[] = [
     {
         id: "21-days",
         title: "21 Days",
@@ -307,317 +307,23 @@ Prithwee A, 2026`,
             }
         ]
     },
+];
+
+const pick = (id: string) => sourceSeries.find((s) => s.id === id)!;
+
+export const series: Series[] = [
     {
-        id: "underneath-remain",
-        title: "Underneath Remain",
-        statement: "A collaborative exploration between collage and photography, documenting the residual weight of gravity on the human spirit.",
-        coverImage: "/artworks/underneath-remain/underneath-03.jpg",
-        artworks: [
-            {
-                id: "ur-01",
-                title: "Psychic Layering",
-                year: "2025",
-                concept: "The intersection of subconscious forms and digital abstraction.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-01.jpg"
-            },
-            {
-                id: "ur-02",
-                title: "Measured Biological",
-                year: "2026",
-                concept: "Exploring the quantification of the human form through archive and measure.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-02.jpg"
-            },
-            {
-                id: "ur-03",
-                title: "Silent Witness",
-                year: "2025",
-                concept: "Visualizing the persistence of identity underneath technical and biological stress.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-03.jpg"
-            },
-            {
-                id: "ur-04",
-                title: "Gravity Beneath",
-                year: "2026",
-                concept: "Mapping the descent of the self into structural and emotional depths.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-04.jpg"
-            },
-            {
-                id: "ur-05",
-                title: "Archival Anatomy",
-                year: "2025",
-                concept: "The reconstruction of health and history through surgical collage.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-05.jpg"
-            },
-            {
-                id: "ur-06",
-                title: "Fragmented Clinical",
-                year: "2026",
-                concept: "Deconstructing medical gaze through anatomical overlay and structural noise.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-06.jpg"
-            },
-            {
-                id: "ur-07",
-                title: "Torn Gaze",
-                year: "2025",
-                concept: "Fragmented portraiture exploring internal conflict and chromatic separation.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-07.jpg"
-            },
-            {
-                id: "ur-08",
-                title: "Subconscious Voyage",
-                year: "2026",
-                concept: "Navigating the deep waters of memory through surreal nautical symbolism.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-08.jpg"
-            },
-            {
-                id: "ur-09",
-                title: "Censored Memory",
-                year: "2025",
-                concept: "The obstruction of identity through high-contrast graphic interventions.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-09.jpg"
-            },
-            {
-                id: "ur-10",
-                title: "Rainbow Descent",
-                year: "2026",
-                concept: "Dynamic collapse of the digital self into prismatic data streams.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-10.jpg"
-            },
-            {
-                id: "ur-11",
-                title: "Violet Persistence",
-                year: "2026",
-                concept: "An exploration of memory and form through vibrant chromatic layering.",
-                medium: "Mixed media collage and photograph",
-                dimensions: "Variable",
-                media: "/artworks/underneath-remain/underneath-11.jpg"
-            }
-        ]
+        id: "paintings",
+        title: "Paintings",
+        statement: "",
+        coverImage: "/artworks/21-days/td-07.jpg",
+        artworks: ["21-days", "material-expressions", "central-face"].flatMap((id) => pick(id).artworks),
     },
     {
-        id: "trouble-in-my-head",
-        title: "Trouble in My Head",
-        statement: "Mixed media works on paper, 2024.",
-        coverImage: "/artworks/trouble-in-head/trouble-01.jpg",
-        artworks: [
-            {
-                id: "th-01",
-                title: "Radio Gaga",
-                year: "2024",
-                concept: "An explosive exploration of psychological noise and media saturation.",
-                medium: "Acrylic, Mixed on canvas",
-                dimensions: "Variable",
-                media: "/artworks/trouble-in-head/trouble-01.jpg"
-            },
-            {
-                id: "th-02",
-                title: "Self-Destructive Light",
-                year: "2024",
-                concept: "Poetic text integrated into vibrant, aggressive brushwork exploring vulnerability.",
-                medium: "Acrylic, Mixed on canvas",
-                dimensions: "Variable",
-                media: "/artworks/trouble-in-head/trouble-02.jpg"
-            },
-            {
-                id: "th-03",
-                title: "Internal Anatomy",
-                year: "2024",
-                concept: "Skeletal structures meeting visceral red fields in a study of mortality.",
-                medium: "Acrylic, Mixed on canvas",
-                dimensions: "Variable",
-                media: "/artworks/trouble-in-head/trouble-03.jpg"
-            },
-            {
-                id: "th-04",
-                title: "The Observer",
-                year: "2024",
-                concept: "Shadow figures and chaotic textures reflecting state-of-mind entropy.",
-                medium: "Acrylic, Mixed on canvas",
-                dimensions: "Variable",
-                media: "/artworks/trouble-in-head/trouble-04.jpg"
-            },
-            {
-                id: "th-05",
-                title: "Screaming Silence",
-                year: "2024",
-                concept: "Abstracted portraiture layered with symbolic weight and frantic energy.",
-                medium: "Acrylic, Mixed on canvas",
-                dimensions: "Variable",
-                media: "/artworks/trouble-in-head/trouble-05.jpg"
-            }
-        ]
+        ...pick("freedom-under"),
+        id: "collages",
+        title: "Collages",
     },
-    {
-        id: "isolated",
-        title: "Isolated",
-        statement: "Individual studies on psychological state and physical withdrawal.",
-        coverImage: "/artworks/isolated/isolated-01.jpg",
-        artworks: [
-            {
-                id: "iso-01",
-                title: "Fragmented Self",
-                year: "2024",
-                concept: "A study on the multiplicity of persona and the fragmentation of memory.",
-                medium: "Mixed media on paper",
-                dimensions: "Variable",
-                media: "/artworks/isolated/isolated-01.jpg"
-            },
-            {
-                id: "iso-02",
-                title: "Gaze and Mask",
-                year: "2024",
-                concept: "Exploring the tension between social visibility and personal concealment.",
-                medium: "Mixed media on paper",
-                dimensions: "Variable",
-                media: "/artworks/isolated/isolated-02.jpg"
-            },
-            {
-                id: "iso-03",
-                title: "The Musician",
-                year: "2024",
-                concept: "Visualizing sonic isolation and the physical weight of creative practice.",
-                medium: "Mixed media on paper",
-                dimensions: "Variable",
-                media: "/artworks/isolated/isolated-03.jpg"
-            },
-            {
-                id: "iso-04",
-                title: "Synthetic Joy",
-                year: "2024",
-                concept: "The contrast between performative happiness and internal isolation.",
-                medium: "Mixed media on paper",
-                dimensions: "Variable",
-                media: "/artworks/isolated/isolated-04.jpg"
-            },
-            {
-                id: "iso-05",
-                title: "Quiet Contemplation",
-                year: "2024",
-                concept: "A portrait of stillness amidst a chaotic world of technical noise.",
-                medium: "Mixed media on paper",
-                dimensions: "Variable",
-                media: "/artworks/isolated/isolated-05.jpg"
-            },
-            {
-                id: "iso-06",
-                title: "Neural Static",
-                year: "2024",
-                concept: "Mapping the electrical dissonance of an overactive, isolated mind.",
-                medium: "Mixed media on paper",
-                dimensions: "Variable",
-                media: "/artworks/isolated/isolated-06.jpg"
-            }
-        ]
-    },
-    {
-        id: "fighting-bugs",
-        title: "Fighting Bugs",
-        statement: "Technical friction as artistic catalyst. Exploring the aesthetic of failure and recovery through digital and print experimentation.",
-        coverImage: "/artworks/fighting-bugs/bug-01.jpg",
-        artworks: [
-            {
-                id: "fb-01",
-                title: "Meow Debug",
-                year: "2025",
-                concept: "The noise of technical debt translated into feline-associative geometry.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-01.jpg"
-            },
-            {
-                id: "fb-02",
-                title: "Floating Balloon",
-                year: "2024",
-                concept: "Isolation in a digital landscape, anchored by a single point of organic color.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-02.jpg"
-            },
-            {
-                id: "fb-03",
-                title: "Alien Cat",
-                year: "2025",
-                concept: "Biological forms meeting technical grids in a study of external witness.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-03.jpg"
-            },
-            {
-                id: "fb-04",
-                title: "State of Kids",
-                year: "2024",
-                concept: "A visceral critique of systemic pressure on future generations.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-04.jpg"
-            },
-            {
-                id: "fb-05",
-                title: "No Mother, No Cry",
-                year: "2025",
-                concept: "Digital mourning and the persistence of form in technical void.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-05.jpg"
-            },
-            {
-                id: "fb-06",
-                title: "Technical Gaze",
-                year: "2025",
-                concept: "The distortion of focus in a high-stress development environment.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-06.jpg"
-            },
-            {
-                id: "fb-07",
-                title: "Pop Era",
-                year: "2024",
-                concept: "Vibrant icons of liberty meeting the absurdity of digital consumerism.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-07.jpg"
-            },
-            {
-                id: "fb-08",
-                title: "Animal Spirits",
-                year: "2025",
-                concept: "Dynamic movement within a restricted digital field.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-08.jpg"
-            },
-            {
-                id: "fb-09",
-                title: "Systemic Armor",
-                year: "2024",
-                concept: "Depicting the psychological barricades built during technical conflict.",
-                medium: "Mixed media, print and digital illustration",
-                dimensions: "Variable",
-                media: "/artworks/fighting-bugs/bug-09.jpg"
-            }
-        ]
-    }
 ];
 
 export const writings: Writing[] = [
@@ -639,7 +345,7 @@ export const research: Research[] = [
         id: "rar",
         title: "Aesthetics Is Not a Mirror",
         year: "2026",
-        institution: "First author",
+        institution: "University of Toledo",
         abstract: "An end-to-end audit of Stable Diffusion v1.5 outputs against the LAION-Aesthetics V2 curation step: what an aesthetic filter keeps, and what a model trained on it learns to see.",
         technicalDetails: "Across 15 occupations and 3,000 Stable Diffusion v1.5 generations, the gender composition of the curated data predicts the model's outputs (r = 0.873). 200,000-trial Monte Carlo joint null test, FairFace cross-classifier replication, pre-registered held-out falsification. First-author poster, Midwest Graduate Symposium 2026.",
     },
@@ -647,7 +353,7 @@ export const research: Research[] = [
         id: "dp-4dgs",
         title: "DP-4DGS: Dynamic Priors for 4D Gaussian Splatting",
         year: "2026",
-        institution: "Dr. Aniruddha Ray Lab, UToledo",
+        institution: "University of Toledo",
         abstract: "Working draft. Coupling 4D Gaussian splat scene reconstruction with a physics-informed prior to improve dynamic-scene fidelity under sparse observation.",
         technicalDetails: "First-author preliminary results submitted to the Midwest Graduate Symposium 2026. Manuscript in preparation for a graphics and vision venue.",
     },
