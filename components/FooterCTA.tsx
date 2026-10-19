@@ -65,13 +65,13 @@ export default function FooterCTA() {
         >
             {fine && !still && (
                 <motion.div aria-hidden className="pointer-events-none absolute inset-0" style={{ WebkitMaskImage: mask, maskImage: mask }}>
-                    <Image key={pathname} src={paintingFor(pathname)} alt="" fill sizes="100vw" className="object-cover" style={{ filter: "contrast(1.1) brightness(0.8)" }} />
+                    <Image key={pathname} src={paintingFor(pathname)} alt="" fill sizes="100vw" className="object-cover" style={{ filter: "contrast(1.05) brightness(0.55)" }} />
                 </motion.div>
             )}
 
             <p className="relative text-[10px] uppercase tracking-[0.35em] text-mist/70 mb-10 md:mb-14">(End) Get in touch</p>
 
-            <h2 className="relative text-parchment mix-blend-difference" style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }} aria-label="Let's make something that stays.">
+            <h2 className="relative z-10 text-parchment [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]" style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }} aria-label="Let's make something that stays.">
                 {lines.map((l) => (
                     <motion.span
                         key={l.text}
