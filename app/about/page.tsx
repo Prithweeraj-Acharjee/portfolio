@@ -48,7 +48,7 @@ export default function AboutPage() {
 
                     <FadeUp delay={0.2}>
                         <p className="mt-12 text-2xl md:text-3xl leading-snug text-parchment" style={{ fontFamily: "var(--font-serif)" }}>
-                            Prithwee is a Bangladeshi student, and a painter.
+                            Prithwee is a Bangladeshi student and a painter.
                         </p>
                         <blockquote className="mt-10 text-lg md:text-xl leading-[1.75] text-bone/85" style={{ fontFamily: "var(--font-serif)" }}>
                             &ldquo;{STATEMENT}&rdquo;
